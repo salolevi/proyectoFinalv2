@@ -739,6 +739,12 @@ span {
   transition: opacity .25s ease-in;
 }
 
+@media screen and (max-width:860px) {
+  .about-text {
+    display: none;
+  }
+}
+
 .about-btn {
   padding-top: .2em;
   position: relative;
