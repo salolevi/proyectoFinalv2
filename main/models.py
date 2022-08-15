@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 from email.policy import default
 from django.db import models
 from django.core.validators import int_list_validator
