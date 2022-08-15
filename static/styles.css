@@ -932,6 +932,10 @@ box-shadow: 0px 9px 0px -3px rgba(83,53,7,1);
     min-width: 150px;
   }
 
+  /* Estilo menu indice */
+  .menu-container {
+    width: unset;
+  }
   
 
   .information__container {
