@@ -742,7 +742,7 @@ span {
 .about-btn {
   padding-top: .2em;
   position: relative;
-  z-index: 40;
+  z-index: 10;
   padding: 1rem 1.5rem;
   margin: 0.5em 0;
   font-size: 2em;
@@ -786,7 +786,7 @@ box-shadow: 0px 9px 0px -3px rgba(83,53,7,1);
 
 .game-section {
   position: relative;
-  z-index: 50;
+  z-index: 20;
   display: block;
   /* margin: auto; */
   font-family: 'Mario';
@@ -846,6 +846,7 @@ box-shadow: 0px 9px 0px -3px rgba(83,53,7,1);
     height: 100%;
     display: flex;
     align-items: center;
+    z-index: 1000;
   }
 
   .burger {
@@ -896,7 +897,6 @@ box-shadow: 0px 9px 0px -3px rgba(83,53,7,1);
 
   .dropdown-menu {
     position: absolute;
-    z-index: -1;
     top: 60px;
     background-color: #963de9;
     right:0;
@@ -906,6 +906,7 @@ box-shadow: 0px 9px 0px -3px rgba(83,53,7,1);
     font-size: 2.5rem;
     transition: transform .4s ease-in-out;
     transform: translateY(-500px);
+    z-index: 100;
   }
 
   .dropdown-menu ul {

@@ -12,5 +12,9 @@ window.addEventListener('resize', () => {
   if (document.body.clientWidth<=860) 
     document.querySelectorAll('.about-text').forEach(elem => {
       elem.style.display = 'none';
-    })
+  }); 
+  else
+  document.querySelectorAll('.about-text').forEach(elem => {
+    elem.style.display = 'block';
+  })
 })
