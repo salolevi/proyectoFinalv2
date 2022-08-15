@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 # from decouple import config
 import os
-
+import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -154,3 +154,5 @@ CORS_ALLOW_CREDENTIALS = True
 # SETTING UP TIME ZONE
 USE_TZ = True
 TIME_ZONE = 'America/Argentina/Buenos_Aires'
+
+django_heroku.settings(locals())
