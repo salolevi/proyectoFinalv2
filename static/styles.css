@@ -15,6 +15,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  min-height: 100%;
 }
 
 h1 {
@@ -30,7 +31,6 @@ body {
   background-image: url('../media/media/background_all.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 100vh;
 }
 
 .logo {
