@@ -10,7 +10,7 @@ from django.utils import timezone
 
 class Profile(models.Model):
   user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
-  profile_pic = models.ImageField(null=True, blank=True, upload_to="media/", default='./mushroom.png')
+  profile_pic = models.ImageField(null=True, blank=True, upload_to="media/", default='mushroom.png')
   bio = models.TextField(default="Usuario misterioso...")
   birthday = models.DateField(default=datetime.today)
   def __str__(self) -> str:

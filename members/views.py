@@ -80,7 +80,7 @@ class CreateUser(View):
         return redirect('createuser')
     else:
       new_user = User.objects.create_user(username, _email, password, first_name = user_name, last_name = user_lastn)
-      profile = Profile(user=new_user, birthday=birthday)
+      profile = Profile(user=new_user, birthday=birthday, profile_pic='mushroom.png')
       new_user.is_active = False
       new_user.save()
       profile.save()
