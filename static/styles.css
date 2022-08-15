@@ -67,6 +67,7 @@ header {
   background-color: rgb(150, 61, 233);
   align-items: center;
   font-family: 'Magic Owl', sans-serif;
+  box-sizing: border-box;
 }
 
 .absolute-footer {
