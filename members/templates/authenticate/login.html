@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+
+{% block script %}
+{% load static %}
+<script src="{% static 'login.js' %}" defer></script>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'abs-footer.css' %}">
+{% endblock %}
+
+{% block logo %}
+<a href="/" class="logo"><img src="../media/media/brain-logo.png" alt=""></a>
+{% endblock %}
+
+{% block title %}
+<h1 class="title">Log In</h1>
+{% endblock %}
+
+{% block content %}
+<section class="content-container" id="login-container">
+  <form action="" class="form" method='post' class="form">
+    {% csrf_token %}
+    <div class="form-input">
+      <label for="username">Nombre de Usuario</label>
+      <input type="text" name='username' id='username' required placeholder="Ingrese su nombre de ususario">
+    </div>
+    <div class="form-input">
+      <label for="user_password">Clave</label>
+      <input type="password" name='user_password' id='user_password' required placeholder="Ingrese su clave">
+    </div>
+    <div class="form-input">
+      <a href='/' class="back">Back</a>
+      <input type="submit" value="Iniciar Sesion">
+    </div>
+  </form>
+</section>
+
+
+{% endblock %}

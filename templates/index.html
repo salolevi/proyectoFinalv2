@@ -1,0 +1,43 @@
+{% extends "base.html"%}
+
+{% block script %}
+{% load static %}
+<script src="{% static 'index.js' %}" defer></script>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'abs-footer.css' %}">
+{% endblock%}
+
+{% block logo %}
+<a href="/" class="logo"><img src="../media/media/brain-logo.png" alt=""></a>
+{% endblock %}
+
+{% block title %}
+<h1 class="title">Bienvenidos a CogniCices!</h1>
+{% endblock %}
+
+{% block content %}
+{% if messages %}
+{% for message in messages%}
+{{message}}
+
+{%endfor%}
+{% endif %}
+<div class="menu-container">
+  <div class="menuItem-container">
+    <a href="/dislexia" class="game-section" id='dislexia'>Dislexia</a>
+    <div class="about-section">
+      <a href="{% url 'about-dislexia' %}" class="about-btn">?</a>
+      <p class="about-text">¿Qué es la dislexia?</p>
+    </div>
+  </div>
+  <div class="menuItem-container">
+    <a href="{% url 'logic' %}" class="game-section">Juegos de Logica</a>
+    <div class="about-section">
+      <a href="" class="about-btn">?</a>
+      <p class="about-text">¿Por qué jugarlos?</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

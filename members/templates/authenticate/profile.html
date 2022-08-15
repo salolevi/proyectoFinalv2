@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'block-footer.css' %}">
+{% endblock %}
+
+{% block logo %}
+<a href="/" class="logo"><img src="../../../media/media/brain-logo.png" alt=""></a>
+{% endblock %}
+
+{% block title %}
+<h1 class="title">Perfil de {{request.user.get_full_name}}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="content-container more-margin">
+  <div class="information__container">
+    <div class="information__container-priminfo">
+      <div class="information__container-profilepic"><img src="{{profile.profile_pic.url}}" alt=""/></div>
+      </div>
+    <div class="information__container-secinfo">
+      <div class="information__container-name">{{request.user.get_full_name}}</div>
+      <div class="information__container-secinfofield" id='username'><span>Nombre de Usuario: </span>{{request.user.username}}</div>
+      <div class="information__container-secinfofield"><span>Email: </span>{{request.user.email}}</div>
+      <div class="information__container-secinfofield"><span>Fecha de Nacimiento: </span>{{profile.birthday}}</div>
+      <div class="information__container-secinfofield"><span>Edad: </span>{{age}}</div>
+    </div>
+    <div class="information__container-bio">{{profile.bio}}</div>
+  </div>
+  <div class="top-right-btns">
+    <a href="{% url 'stats' request.user.username %}" class="btn stats-page-btn">VER ESTADISTICAS</a>
+    <a href="{% url 'edit' request.user.username %}"class="btn edit-btn">Editar Perfil</a>
+  </div>
+</div>
+{% endblock %}

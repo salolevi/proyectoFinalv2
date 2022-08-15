@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block script%}
+{% load static %}
+<script src="{% static 'script.js' %}" defer></script>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'abs-footer.css' %}">
+{% endblock %}
+
+{% block logo %}
+<a href="/" class="logo"><img src="../../../media/media/brain-logo.png" alt=""></a>
+{% endblock %}
+
+{% block content %}
+<section class="content-container">
+  <div class="confirmation-message">Se le ha enviado un correo a su <a href="#" class="content-link">{{email}}</a>.<br>Reviselo para poder terminar de activar su cuenta.</div>
+</section>
+{% endblock %}

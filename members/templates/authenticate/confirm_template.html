@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block script %}
+{% load static %}
+<script src="{% static 'confirmation.js' %}" defer></script>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'abs-footer.css' %}">
+{% endblock %}
+
+{% block logo %}
+<a href="/" class="logo"><img src="../../../media/media/brain-logo.png" alt=""></a>
+{% endblock %}
+
+{% block title%}
+<h1 class="title">Confirmacion de Cuenta</h1>
+{% endblock %}
+
+{% block content %}
+<section class="content-container">
+  <div class="confirmation-message">
+    <div>¡Felicidades!</div>
+    <p>Su cuenta se ha creado satisfactoriamente. Haga click <a href="{% url 'main-index' %}" class="content-link">aquí</a> para volver al inicio.</p>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,974 @@
+@font-face {
+  font-family: 'Magic Owl';
+  src: url(fonts/MagicOwl.otf);
+}
+
+@font-face {
+  font-family: 'Mario';
+  src: url(fonts/SuperMario256.ttf);
+}
+
+.filter-violet {
+  filter: invert(25%) sepia(81%) saturate(2543%) hue-rotate(260deg) brightness(95%) contrast(92%);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: 'Mario';
+  font-size: 2em;
+  color: rgba(150, 61, 233, .7);
+  text-align: center;
+  margin: 50px 0;
+}
+
+body {
+  background: #DDD;
+  background-image: url('../media/media/background_all.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.4em;
+  height: 100%;
+}
+
+.logo img {
+  width: 40px;
+}
+
+
+header {
+  height: 60px;
+  color: rgba(255,255,255, .9);
+  vertical-align: middle;
+  background-color: rgb(150, 61, 233);
+  font-family: 'Magic Owl', sans-serif;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.footer {
+  display: none;
+  width: 100%;
+  height: 80px;
+  color: rgba(255,255,255, .9);
+  /* display: flex; */
+  justify-content: center;
+  background-color: rgb(150, 61, 233);
+  align-items: center;
+  font-family: 'Magic Owl', sans-serif;
+}
+
+.absolute-footer {
+  display: none;
+  position: absolute;
+  bottom: 0;
+}
+
+.block-footer {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: #EEE;
+}
+
+/* Estilos Nav y responsive nav */
+
+.responsive-nav {
+  display: none;
+}
+
+.nav {
+  display: flex;
+  /* justify-content: space-between; */
+  height: 100%;
+  /* margin: 0 20px; */
+  font-size: 1.4em;
+
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  height: 100%;
+  align-items: center;
+  display: flex;
+}
+
+.nav ul li {
+  display: inline-block;
+  margin-left: 25px;
+  height: 100%;
+}
+
+.nav ul li a {
+  display: block;
+  padding: 17px 5px 0px 5px;
+  height: calc(100% - 17px);
+  font-weight: bold;
+  transition: background-color .3s, color .3s;
+}
+
+.nav ul li a:hover {
+  background-color: #EEE;
+  color: rgb(150, 61, 233);
+}
+
+.content-container {
+  position: relative;
+  margin: 125px auto;
+  padding: 35px 50px;
+  max-width: 600px;
+  border-radius: 15px;
+  background-color: rgba(240,240,240, .8);
+  box-shadow: 0px 0px 7px 2px rgb(34,34,34, .2);
+}
+
+.more-margin {
+  margin-bottom: 160px;
+}
+
+.contentStats-container {
+  max-height: 45vh;
+  overflow: hidden;
+  min-height: 45vh;
+}
+
+.contentStats-container.expanded {
+  max-height: unset;
+}
+
+.tabs {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.tablink {
+  border: 0;
+  position: relative;
+  font-size: 1rem;
+  padding: .5rem .5rem;
+  background-color: inherit;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #F08080;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.tablink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  display: block;
+  background-color: #963de9;
+  height: 2px;
+  left: 50%;
+  right: 50%;
+  transition: all .5s;
+  border-radius: 999px;
+}
+
+.tablink:hover {
+  opacity: .8;
+}
+
+.tablink.active {
+  opacity: 1;
+  color: #963de9;
+}
+
+.tablink.active::after {
+  left: 0;
+  right: 0;
+}
+
+.tab-content {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Utilities */
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+
+.show-more {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  left: 0;
+  right: 0;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.show-more-btn {
+  font-family: 'Dosis', sans-serif;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  /* font-style: italic; */
+  /* font-weight: 700; */
+  font-size: 1.1em;
+  color:rgba(35 40 49 / .6);
+  animation-name: showMore;
+  animation-duration: .7s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+  animation-play-state: paused;
+}
+
+.show-more-btn img {
+  width: 7px;
+}
+
+.top-right-btns {
+  position: absolute;
+  top: .8rem;
+  right: .75rem;
+  font-size: .8em;
+  display: flex;
+  gap: 2rem;
+}
+
+@keyframes showMore {
+  0% {
+    color: rgba(35 40 49 / .6);
+  }
+
+  50% {
+    transform: translateY(3px);
+    color:rgba(35 40 49 / .8);
+  }
+  100% {
+    transform: translateY(0);
+    color:rgba(35 40 49 / .6);
+  }
+}
+
+
+#createuser-container {
+  font-family: 'Mario', sans-serif;
+}
+
+#createuser-container input[type="submit"] {
+  font-family: 'Mario', sans-serif;
+  background-color: rgb(150, 61, 233);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  color: #EEE;
+}
+
+.back {
+  position: relative;
+  font-family: 'Mario', sans-serif;
+  background-color: #EEE;
+  padding: 10px 0;
+  /* border: 2px solid rgb(150, 61, 233); */
+  border-radius: 9999px;
+  cursor: pointer;
+  color: rgb(150, 61, 233);
+}
+
+.back::before {
+  content: '';
+  background-color: #963de9;
+  display: block;
+  position: absolute;
+  width: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 10px;
+  height: 3px;
+  transition: all .3s;
+}
+
+.back:hover::before {
+  left:0;
+  width: 100%;
+}
+
+#login-container {
+  font-family: 'Mario', sans-serif;
+}
+
+#login-container input[type="submit"] {
+  font-family: 'Mario', sans-serif;
+  background-color: rgb(150, 61, 233);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  color: #EEE;
+
+}
+
+.form-input input {
+  display: block;
+  margin-top: 7px;
+}
+
+.form-input {
+  margin: 10px 0;
+}
+
+.form-input label {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+
+.form input[type="text"], .form input[type="email"], .form input[type="password"] {
+  font-family: 'Roboto Mono', monospace;
+  width: 100%;
+  padding: 8px 5px;
+  border: none;
+  /* border-left: 2px solid #ffb6e6; */
+  border-bottom: 2px solid #ffb6e6;
+  background-color: #FFF;
+  border-radius: 0 5px 0 5px;
+  outline: none;
+  transition: border-bottom ease .3s;
+}
+
+.form input[type="text"]:focus,  input[type="email"]:focus, input[type="password"]:focus {
+  /* border-left: 2px solid rgb(150, 61, 233); */
+  border-bottom: 2px solid rgb(150, 61, 233);
+  outline: none;
+}
+
+.form input[type="text"]::placeholder,  input[type="email"]::placeholder, input[type="password"]::placeholder {
+  font-family: 'Roboto Mono', monospace;
+  /* font-style: italic; */
+  color: rgba(133, 27, 124, .8);
+  /* font-weight: bold; */
+  font-size: 1.2em;
+}
+
+.form-input input[type="checkbox"], .form-input .tos__div {
+  display: inline-block !important;
+  font-style: italic;
+  color: #c1392b;
+  font-family: sans-serif;
+  font-size: .8em;
+}
+
+.datepicker-toggle {
+  display: inline-block;
+  position: relative;
+  width: 25px;
+  height: 25px;
+}
+
+.datepicker-togglebtn {
+  margin-top: 7px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../media/media/calendar.svg");
+}
+
+.datepicker-input {
+  position: absolute;
+  left:0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  /* margin-top: 0 !important; */
+}
+
+.datepicker-input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+
+.form-input:last-child {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.error-msg {
+  display: none;
+  width: 0;
+  opacity: 0;
+  height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #c1392b;
+  color: #EEE;
+  font-family: sans-serif;
+  border-radius: 5px;
+  animation-name: appear;
+  animation-duration: 5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes appear {
+  0% {
+    width: 25%;
+  }
+
+  10% {
+    width: 50%;
+    opacity: 1;
+  }
+
+  95% {
+    width: 50%;
+    opacity: 1;
+  }
+
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+.information__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: 'Roboto Mono', monospace;
+  gap: 20px;
+}
+
+.information__container-priminfo {
+  text-align: center;
+  margin: 50px 0;
+  padding: 5px;
+}
+
+.information__container-priminfo:last-child {
+  margin-top: 20px;
+}
+
+.information__container-profilepic {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.information__container-profilepic input {
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.information__container-profilepic img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0px 0px 7px 2px rgb(34,34,34, .2);
+}
+
+.hover-img__container {
+  position: absolute;
+  top:0;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;
+  opacity: .6;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}
+
+.hover-img__container:hover {
+  background-color: rgba(0,0,0, .5);
+}
+
+#hover-img {
+  object-fit: contain;
+  width: 50%;
+  opacity: 0;
+  filter: invert(100%) sepia(20%) saturate(4569%) hue-rotate(289deg) brightness(124%) contrast(89%);
+}
+
+.information__container-secinfo {
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 2px solid rgba(155,155,155, .5);
+}
+
+.information__container-secinfofield {
+  padding-top: 5px;
+  border-top: 2px dotted rgba(144,144,144, .8);
+  text-align: left;
+  /* border-radius: 1px; */
+}
+
+.btn-container {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.btn {
+  
+  font-family: 'Mario', sans-serif;
+  background-color: rgb(150, 61, 233);
+  padding: 10px 15px;
+  border: 2px solid transparent;
+  border-radius: 9999px;
+  cursor: pointer;
+  color: #EEE;
+  
+}
+
+.error-msg .safe {
+  background-color: green;
+}
+
+.confirmation-message {
+  text-align: center;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.information__container-name {
+  text-align: left;
+  margin-top: 15px;
+  /* font-weight: bold; */
+  font-size: 1.3em;
+  opacity: .6;
+}
+
+
+.information__container-bio {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  grid-column: 1 /span 2;
+}
+
+.average-section {
+  font-size: 0.95em;
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(max-content, 4);
+  gap: 1.5em;
+}
+
+.gameOneStats-container {
+  position: relative;
+  display: grid;
+  gap: 15px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  place-content: start;
+}
+
+.gameTwoStats-container {
+  position: relative;
+  display: grid;
+  gap: 15px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  place-content: start;
+}
+
+.logicGameStats-container {
+  position: relative;
+  display: grid;
+  gap: 15px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  place-content: start;
+  grid-column: span 2;
+  place-content: center;
+}
+
+.grid-gameOne, .grid-gameTwo, .grid-gameThree, .grid-gameFour {
+  font-size: 1em;
+  /* display: none; */
+  opacity: 0;
+  transition: opacity .4s;
+}
+
+.stats-btn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(50% - 8px);
+  width: max-content;
+  height: max-content;
+  margin: auto;
+  font-family: 'Mario', sans-serif;
+  background-color: #f17926;
+  padding: 10px 15px;
+  border: 2px solid transparent;
+  border-radius: 9999px;
+  cursor: pointer;
+  color: #EEE;
+  transition: opacity .3s ease;
+}
+
+.stats-page-btn {
+  background-color: #f17926;
+}
+
+.btn:hover {
+  opacity: .8;
+}
+
+/* Grilla de Primer Juego */
+.chart-section {
+  grid-column: span 2;
+}
+
+.first-chart {
+  padding-bottom: 3rem;
+  border-bottom: 2px dashed rgba(68 68 68 / .4);
+}
+
+.stats-title {
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: 'Mario';
+  color: #963de9;
+  opacity: 1;
+}
+
+.average-score {
+  display: block;
+  font-family: 'Mario', sans-serif;
+}
+
+.average-time-movement {
+  display: block;
+  font-family: 'Mario', sans-serif;
+}
+
+.inline {
+  display: inline;
+}
+
+span {
+  color: rgba(0,0,0, .7)
+}
+
+.form-input #date-textinput {
+  display: inline-block;
+  width: 250px;
+}
+
+.menu-container {
+  display: grid;
+  width: max-content;
+  margin: auto;
+  margin-top: 9rem;
+  gap: 2em;
+}
+
+.menuItem-container {
+  display: flex;
+  gap: 1em;
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.about-text {
+  position: absolute;
+  left: calc(100% + .75rem);
+  background-color: #2e2e2e;
+  color: #fdfdfd;
+  padding: .75rem 1rem .75rem 2rem;
+  clip-path: polygon(16% 0, 100% 0%, 100% 100%, 16% 100%, 16% 71%, 0 55%, 16% 55%);
+  border-radius: 3px;
+  text-align: center;
+  font-family: 'Dosis', sans-serif;
+  opacity: 0;
+  transition: opacity .25s ease-in;
+}
+
+.about-btn {
+  padding-top: .2em;
+  position: relative;
+  z-index: 40;
+  padding: 1rem 1.5rem;
+  margin: 0.5em 0;
+  font-size: 2em;
+  font-family: 'Mario', sans-serif;
+  color: #fdfdfd;
+  background-color: #533507;
+  border: 0;
+  -webkit-box-shadow: 0px 9px 0px -3px rgba(83,53,7,1);
+-moz-box-shadow: 0px 9px 0px -3px rgba(83,53,7,1);
+box-shadow: 0px 9px 0px -3px rgba(83,53,7,1);
+  /* border-radius: 0.2em; */
+  clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+  cursor: pointer;
+  transform: rotate3d(1, 0, 0, 20deg);
+  /* transition: transform .3s; */
+}
+
+ .about-btn::before {
+  content: '';
+  display: block;
+  background-color: #3a2402;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(30% 87%, 71% 87%, 100% 60%, 100% 80%, 80% 100%, 20% 100%, 0 80%, 0 60%);
+  transform: rotate3d(1, 0, 0, 20deg);
+  /* transform: translateY(10px); */
+} 
+
+
+.about-btn:active {
+  transform: translateY(2px) rotate3d(1, 0, 0, 20deg);
+}
+
+.about-btn:active::before {
+  height: 0;
+} 
+
+
+.game-section {
+  position: relative;
+  z-index: 50;
+  display: block;
+  /* margin: auto; */
+  font-family: 'Mario';
+  background-color: #963de9;
+  font-size: 3em;
+  color: rgba(240, 128, 128, .9);
+  border-radius: 10px;
+  border: 2px solid #F08080;
+  padding: 15px 25px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform .4s;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  flex-grow: 1;
+  align-self: center;
+  /* flex-basis: 7em; */
+  /* flex: 1; */
+}
+
+.game-section:hover {
+  transform: scale(1.25);
+}
+
+.content-link {
+  color: #963de9;
+}
+
+.content-link:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width:768px) {
+
+  h1 {
+    margin: 50px 10px;
+  }
+
+  header {
+    position: relative;
+    z-index: 50;
+  }
+
+  /* Estilos responsive nav */
+
+  .nav {
+    display: none;
+  }
+
+  .responsive-nav {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .burger-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .burger {
+    display: inline-block;
+    height: 4px;
+    width: 2.5rem;
+    background-color: #ededed;
+    border-radius: 999px;
+    box-shadow: 0 2px 7px #e7798a;
+    transition: transform .6s ease;
+  }
+
+  .burger::before, .burger::after {
+    content: '';
+    position: absolute;
+    width: 2.5rem;
+    height: 4px;
+    background: #ededed;
+    border-radius: 999px;
+    box-shadow: 0 2px 7px #e7798a;
+    transition: transform .6s ease;
+  }
+
+  .burger::before {
+    transform: translateY(-0.75em);
+  }
+  
+  .burger::after {
+    transform: translateY(0.75rem);
+  }
+  /* Animacion hamburguer */
+
+  .burger-container.open.open .burger {
+    transform: translateX(-40px);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .burger-container.open .burger::before {
+    transform: rotate(45deg) translateX(28px) translateY(-28px);
+  }
+
+  .burger-container.open .burger::after {
+    transform: rotate(-45deg) translateX(28px) translateY(28px);
+  }
+
+  /* Configurando dropdown */
+
+  .dropdown-menu {
+    position: absolute;
+    z-index: -1;
+    top: 60px;
+    background-color: #963de9;
+    right:0;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 2.5rem;
+    transition: transform .4s ease-in-out;
+    transform: translateY(-500px);
+  }
+
+  .dropdown-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .dropdown_list-item {
+    margin: 40px 0;
+  }
+
+  .dropdown_list-item a {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .dropdown_list-item a:focus {
+    opacity: .8;
+  }
+
+  .content-container {
+    position: relative;
+    width: 60%;
+    min-width: 150px;
+  }
+
+  
+
+  .information__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .information__container-secinfo {
+    margin: 10px 0;
+    gap: 10px;
+    border-left: none;
+    border-top: 2px solid rgba(155,155,155, .5);
+  }
+
+  .profile__input {
+    flex-grow: 1;
+  }
+
+  #birthday input[type="text"] {
+    flex-grow: 1;
+    max-width: inherit !important;
+  }
+
+  .bio {
+    margin-top: 5px;
+  }
+
+  .form-input {
+    margin: 20px 0;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .information__container-profilepic img {
+    width: 100%;
+    height: 100%;
+    min-width: 120px;
+    min-height: 120px;
+  }
+}

@@ -1,0 +1,483 @@
+:root {
+  --incorrect-red: rgb(230, 72, 72);
+  --correct-green: rgb(70, 156, 43);
+  --theme-violet: #ab6ce5;
+  --start-yellow : #e2d734;
+}
+
+@font-face {
+  font-family: 'Mario';
+  src: url(fonts/SuperMario256.ttf);
+}
+
+.game-container, .game-container * {
+  box-sizing: border-box;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+.game-container * {
+  transition: display .4s ease;
+}
+
+.game-container {
+  border: 20px solid goldenrod;
+  position: relative;
+  max-width: 650px;
+  min-height: 650px;
+  background-image: url('../media/media/background_logic.webp');
+  background-size: 100% 100%;
+  margin: 80px auto 5% auto;
+  border-radius: 15px;
+  display: flex;
+  /* transition: background-image .2s, background-color .2s; */
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-play-state: paused;
+  overflow: hidden;
+  user-select: none;
+}
+
+@keyframes backgroundLevel1 {
+  0% {
+    background-image: url('../media/media/background_logic.webp');
+  }
+
+  25% {
+    background-image: none;
+  }
+
+  50% {
+    background-color: #222;
+  }
+
+  100% {
+    background-image: url('../media/media/blank_background.png');
+  }
+}
+
+/* Anmiacion de A Jugar */
+.welcome-msg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(50% - 1em);
+  margin: auto;
+  font-size: 4em;
+  text-align: center;
+  animation-name: messageAnimation;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+}
+
+.welcome-msg font {
+  font-family: 'Mario';
+  text-shadow: #444 1px 0 10px;
+}
+
+@keyframes messageAnimation {
+  0% {
+    transform: translateY(-120vh);
+    opacity: .8;
+  }
+
+  50% {
+    opacity: .8;
+    transform: translateY(1.5em);
+  }
+
+  75% {
+    opacity: .8;
+    transform: translateY(0);
+  }
+
+  90% {
+    opacity: .8;
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Botones de seleccion de juego */
+.start {
+  cursor: pointer;
+  font-family: 'Comic Sans MS', sans-serif;
+  border-radius: 30px;
+  text-align: center;
+  background: rgb(228, 231, 163);
+  align-self: end;
+  margin: 0 auto 2.5em auto;
+  padding: 20px;
+  font-weight: bolder;
+  font-size: 1.5em;
+  border: 5px solid #EEE;
+  color: #EEE;
+  transition: border .3s ease, color .3s ease;
+  animation-name: hoverStart;
+  animation-duration: .5s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: infinite;
+  animation-play-state:paused;
+  flex: 1;
+  max-width: 250px;
+}
+
+.start:last-child {
+  animation-name: hoverStart2;
+}
+
+@keyframes hoverStart {
+  0% {
+    border: 5px solid #FD8C04;
+    color: #FD8C04;
+  }
+  
+  100% {
+    border: 5px solid rgb(199, 25, 69);
+    color: rgb(199, 25, 69);
+  }
+}
+
+@keyframes hoverStart2 {
+  0% {
+    border: 5px solid #FD8C04;
+    color: #FD8C04;
+  }
+  
+  100% {
+    border: 5px solid #5a65d6;
+    color: #5a65d6;
+  }
+}
+
+/* estilos partes imagenes */
+
+.image-part {
+  /* background-size: cover; */
+  background-size: 100% 100%;
+  outline: 1px solid rgba(255 255 255 / .5);
+  /* box-sizing: content-box; */
+  animation-name: appear;
+  animation-duration: 1s;
+  /* animation-fill-mode: forwards; */
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  cursor: pointer;
+  position: relative;
+}
+
+.image-part:hover {
+  opacity: .8;
+}
+
+.dragging::after {
+  content: '';
+  position: absolute;
+  inset: 0 0 0 0;
+  background-color: rgba(255 0 0 /.4);
+}
+
+.dragover::after {
+  content: '';
+  position: absolute;
+  inset: 0 0 0 0;
+  background-color: rgba(0 255 0 /.4);
+}
+
+@keyframes appear {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes reorder {
+  0%{
+    /* order: 1; */
+  }
+
+  100% {
+    order: -1;
+  }
+}
+
+/* Estilos punutaciones */
+.scores-container {
+  position: absolute;
+  font-family: 'Mario', 'Comic Sans MS', sans-serif;
+  top: 0;
+  right: 0;
+  padding: .8em .8em 0 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.scores-container * {
+  font-family: 'Mario', 'Comic Sans MS', sans-serif;
+  color: magenta;
+  user-select: none;
+}
+
+/* Estilos timer */
+
+.timer {
+  color: #004d86;
+}
+
+.timer-num {
+  color: #004d86;
+}
+
+.timer-num.last50 {
+  color: #990000;
+}
+
+.timer-num.finished {
+  animation-name: glowInOut;
+  animation-duration: .8s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+@keyframes glowInOut {
+  0%,50% {
+    opacity: .7;
+  }
+
+  51%, 100% {
+    opacity: 1;
+  }
+}
+
+
+/* Estilo mensaje de tiempo acabado */
+.times-up {
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  color: #B58B00;
+  font-size: 3em;
+}
+
+/* Modals */
+.modal {
+  position: absolute;
+  inset: 0 0 0 0;
+  background-color: #242424;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.appear-modal {
+  animation-name: appear;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.disappear-modal {
+  animation-name: disappear;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.disable-drag-modal {
+  background-color: transparent;
+}
+
+.info-msg {
+  font-size: 2em;
+  color: #FD8C04;
+}
+
+/* boton de modales*/
+
+.game-btn {
+  font-size: 1em;
+  padding: .5em .8em;
+  font-family: 'Mario', sans-serif;
+  cursor: pointer;
+  background-color: #222;
+}
+
+.next-level {
+  border: 5px solid #005400;
+  color: #005400;
+}
+
+.next-level:hover {
+  background-color: #005400;
+  color: #222;
+}
+
+.try-again {
+  border: 5px solid #990000;
+  color: #990000;
+}
+
+.try-again:hover {
+  background-color: #990000;
+  color: #222;
+}
+
+.menu {
+  border: 5px solid #76c4eb;
+  color: #76c4eb;
+  transition: opacity .3s ease;
+}
+
+.menu:hover {
+  background-color: #76c4eb;
+  color: #222;
+}
+
+.menu-btn {
+  font-size: .8em;
+  border: 5px solid #B58B00;
+  color: #B58B00;
+  position: absolute;
+  top: .5rem;
+  left: .5rem
+}
+
+.menu-btn:hover {
+  background-color: #B58B00;
+  color: #222;
+}
+
+/* Mensaje gracias por jugar */
+.gameCompleted-msg {
+  font-size: 3em;
+  animation-name: thankYouMessageAnimation;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+
+.gameCompleted-msg font {
+  font-family: 'Mario', 'Comic Sans MS', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@keyframes thankYouMessageAnimation {
+  0% {
+    opacity: 1;
+  }
+  
+  10% {
+    opacity: .8;
+    transform: scale(1.2);
+  }
+
+  25% {
+    transform: translateY(1.5em);
+  }
+
+  100% {
+    transform: translateY(-120vh);
+  }
+}
+
+
+/* Juego 4 (memoria) */
+
+.element {
+  background-color: rgb(184, 89, 7);
+  outline: 1px solid rgba(255 255 255 / .5);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  cursor: pointer;
+  transition: all .5s;
+  display: grid;
+  place-content: center;
+  position: relative;
+}
+
+
+.element__content {
+  font-size: 5rem;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+
+.element.descubierto {
+  transform: rotateY(-180deg);
+}
+
+.guessed {
+  animation: guessedCard 1.5s;
+}
+
+.guessed::after {
+  content: '';
+  position: absolute;
+  display: block;
+  inset: 0 0 0 0;
+  background-color: rgba(150 150 150 /.5);
+  transform-style: preserve-3d;
+  animation: backgroundColorChange 1.5s;
+}
+
+@keyframes backgroundColorChange {
+  0% {
+    background-color: transparent;
+  }
+
+  99% {
+    background-color: transparent;
+  }
+  
+  100% {
+    background-color: rgba(150 150 150 /.5);
+  }
+}
+
+@keyframes guessedCard {
+  0% {
+
+  }
+  
+  10% {
+    transform: rotateY(-180deg) rotate(-20deg);
+  }
+
+  25% {
+    transform: rotateY(-180deg) rotate(20deg);
+  }
+
+  50% {
+    transform: rotateY(-180deg) scale(1.1);
+  }
+
+  100% {
+
+  }
+}

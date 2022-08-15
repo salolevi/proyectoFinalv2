@@ -1,0 +1,520 @@
+:root {
+  --incorrect-red: rgb(230, 72, 72);
+  --correct-green: rgb(70, 156, 43);
+  --theme-violet: #ab6ce5;
+  --start-yellow : #e2d734;
+}
+
+@font-face {
+  font-family: 'Mario';
+  src: url(fonts/SuperMario256.ttf);
+}
+
+.game-container, .game-container * {
+  box-sizing: border-box;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+.game-container * {
+  transition: display .4s ease;
+}
+
+.game-container {
+  border: 20px solid goldenrod;
+  position: relative;
+  max-width: 650px;
+  min-height: 650px;
+  background-size: 100% 100%;
+  margin: 80px auto 5% auto;
+  border-radius: 15px;
+  display: flex;
+  background-image: url('../media/media/background_level0.jpg');
+  transition: background-image .2s, background-color .2s;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+  overflow: hidden;
+}
+
+@keyframes backgroundLevel1 {
+  0% {
+    background-image: url('../media/media/background_level0.jpg');
+  }
+
+  25% {
+    background-image: none;
+  }
+
+  50% {
+    background-color: #222;
+  }
+
+  100% {
+    background-image: url('../media/media/background_level1.jpg');
+  }
+}
+
+@keyframes backgroundLevel2 {
+  0% {
+    background-image: url('../media/media/background_level0.jpg');
+  }
+
+  25% {
+    background-image: none;
+  }
+
+  50% {
+    background-color: #222;
+  }
+
+  100% {
+    background-image: url('../media/media/background_level2.png');
+
+  }
+}
+
+.game-info {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 7px 15px 0 0;
+  font-size: 1.2em;
+  font-family: 'Comic Sans MS', sans-serif;
+  color: #00a1e2;
+  opacity: 0;
+  animation-name: optionsandScoresAppear;
+  animation-duration: .6s;
+  animation-fill-mode: forwards;
+  align-self: start;
+}
+
+/* Estilo botones opciones */
+
+.options {
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  position: absolute;
+  bottom: 70px;
+  width: 100%;
+  opacity: 0;
+  animation-name: optionsandScoresAppear;
+  animation-duration: .6s;
+  animation-fill-mode: forwards;
+}
+.options *, .start {
+  cursor: pointer;
+  padding: 10px 20px;
+  font-family: 'Comic Sans MS', sans-serif;
+  font-size: 1.8em;
+  border: 5px solid #2d2bb3;
+  border-radius: 30px;
+}
+
+.options * {
+  flex: 1;
+}
+
+/* Estilo boton Jugar */
+.start {
+  text-align: center;
+  /* background: linear-gradient(0deg, rgba(186,186,186,1) 0%, rgba(163,163,163,1) 47%, rgba(231,192,171,1) 100%); */
+  background: rgb(228, 231, 163);
+  align-self: end;
+  margin: 0 auto 2.5em auto;
+  padding: 20px;
+  font-weight: bolder;
+  font-size: 1.5em;
+  border: 5px solid #EEE;
+  color: #EEE;
+  transition: border .3s ease, color .3s ease;
+  animation-name: hoverStart;
+  animation-duration: .5s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: infinite;
+  animation-play-state:paused;
+  flex: 1;
+  max-width: 250px;
+  /* clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%); */
+}
+
+.start:last-child {
+  animation-name: hoverStart2;
+}
+
+.welcome-msg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(50% - 1em);
+  margin: auto;
+  font-size: 4em;
+  text-align: center;
+  animation-name: messageAnimation;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+
+}
+
+@keyframes messageAnimation {
+  0% {
+    transform: translateY(-120vh);
+    opacity: .8;
+  }
+
+  50% {
+    opacity: .8;
+    transform: translateY(1.5em);
+  }
+
+  75% {
+    opacity: .8;
+    transform: translateY(0);
+  }
+
+  90% {
+    opacity: .8;
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.welcome-msg font {
+  font-family: 'Mario';
+  text-shadow: #444 1px 0 10px;
+}
+
+@keyframes hoverStart {
+  0% {
+    border: 5px solid #FD8C04;
+    color: #FD8C04;
+  }
+  
+  100% {
+    border: 5px solid rgb(199, 25, 69);
+    color: rgb(199, 25, 69);
+  }
+}
+
+@keyframes hoverStart2 {
+  0% {
+    border: 5px solid #FD8C04;
+    color: #FD8C04;
+  }
+  
+  100% {
+    border: 5px solid #5a65d6;
+    color: #5a65d6;
+  }
+}
+
+
+
+@keyframes optionsandScoresAppear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Pantalla de GameOver */
+
+.game-over {
+  font-family: 'Comic Sans MS', sans-serif;
+  text-align: center;
+  font-size: 3em;
+  color: red;
+  width: 100%;
+}
+
+.level-passed {
+  font-family: 'Comic Sans MS', sans-serif;
+  text-align: center;
+  font-size: 3em;
+  color: green;
+  width: 100%;
+}
+
+/* Estilos Puntuacion */
+
+.score {
+  font-family: 'Comic Sans MS', sans-serif;
+  color:rgb(66, 117, 11);
+  font-size: 1.2em;
+}
+
+.record {
+  color: var(--incorrect-red);
+}
+
+/* Botones */
+
+.incorrecto {
+  background-color: var(--incorrect-red);
+  color: #FFF;
+  border: 5px solid var(--incorrect-red);
+}
+
+.correcto {
+  background-color: var(--correct-green);
+  color: #FFF;
+  border: 5px solid var(--correct-green);
+}
+
+/* Boton de reproducir */
+
+.reproduce-btn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: max-content;
+  height: max-content;
+  background-image: url('../media/media/reproductor.png');
+  background-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 120px;
+  height: 120px;
+  border: none;
+  cursor: pointer;
+  transition: transform .6s;
+}
+
+.reproduce-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Estilizando pantalla de siguiente nivel */
+
+.next-level, .try-again {
+  cursor: pointer;
+  padding: 20px 39px;
+  margin: 1.5em 0;
+  border-radius: 25px;
+  border: 2px solid #ffbf00;
+  color: #ffbf00;
+  font-size: 1.3em;
+  background-color: #ddd;
+}
+
+.next-level:hover, .try-again:hover {
+  border: 2px solid orangered;
+  color: orangered;
+  opacity: 1;
+}
+
+.score-levelpassed {
+  margin-bottom: 1.5em;
+}
+
+/* Estilizando pantalla de GameOver */
+
+.info-msg {
+  margin-top: 20px;
+  width: 60%;
+  text-align: center;
+  color: rgba(0,0,0,.6);
+  font-size: 1.2em;
+}
+
+/* Mensaje de new record */
+
+.new-record {
+  opacity: 0;
+}
+
+/* Level 2 */
+
+/* Letras */
+
+.letras {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  position: absolute;
+  bottom: 70px;
+  width: 100%;
+  opacity: 0;
+  animation-name: optionsandScoresAppear;
+  animation-duration: .6s;
+  animation-fill-mode: forwards;
+}
+
+.small-gap {
+  gap: .5em;
+}
+
+.letra {
+  text-align: center;
+  width: 2em;
+  font-size: 1.5em;
+  aspect-ratio: 1;
+  border: 0;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+
+}
+
+.letra[readonly="readonly"] {
+  background-color: #AAA;
+  opacity: .8;
+}
+
+.focus-none {
+  user-select: none;
+}
+
+.focus-none:focus {
+  outline: 0;
+}
+
+.letra-empty {
+  
+  animation-play-state: paused;
+  outline: 0;
+}
+
+.letra-empty:focus {
+  animation-name: letraOutline;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+/* Mensaje incorrecto */
+
+.incor-msg  {
+  color: rgb(182, 12, 20);
+  font-size: 2em;
+  position: absolute;
+  top: 40%;
+  right: 0;
+  left: 0;
+  text-align: center;
+}
+
+@keyframes letraOutline {
+  0% {
+    outline: 4px solid green;
+  }
+
+  75% {
+    outline: 4px solid yellow;
+
+  }
+  100% {
+    outline: 4px solid green;
+  }
+}
+
+/* Imagen de la palabra */
+
+.center-image {
+  position: absolute;
+  max-height: 13em;
+  /* aspect-ratio: 1; */
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/* Estilos game completed */
+
+.gameCompleted-msg {
+  font-size: 3em;
+  color: var(--correct-green);
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.gameCompleted-msg font {
+  font-family: 'Mario', 'Comic Sans MS';
+}
+
+.menu {
+  font-family: 'Mario', 'Comic Sans MS';
+  font-size: 2.5em;
+  /* position: absolute; */
+  align-self: end;
+  margin: auto;
+  margin-bottom: 4.5em;
+  border: 5px solid #fff;
+  outline: 5px solid rgb(255 255 255 / .8);
+  outline-offset: -5px;
+  top: 45%;
+  background-color: rgb(149, 8, 184);
+  color: #fff;
+  padding: .75rem 1.5rem;
+  transition: outline-offset .3s ease, outline-width .3s;
+  cursor: pointer;
+}
+
+.menu:hover {
+  outline-width: 5px;
+  outline-offset: -15px;
+}
+
+/* Estilos modales */
+
+.modal {
+  position: absolute;
+  inset: 0 0 0 0;
+  background-color: #242424;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.appear-modal {
+  animation-name: appearModal;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes appearModal {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.disappear-modal {
+  animation-name: disappear;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@media screen and (max-width:767px) {
+  .game-container {
+    display: none;
+  }
+  .incorrectScreen-message {
+    margin: 35px;
+    text-align: center;
+    font-size: 1.8rem;
+  }
+}

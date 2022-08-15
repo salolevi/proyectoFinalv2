@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block script %}
+{% load static %}
+<script src="{% static 'registration.js' %}" defer></script>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'block-footer.css' %}">
+{% endblock %}
+
+{% block logo %}
+<a href="/" class="logo"><img src="../media/media/brain-logo.png" alt=""></a>
+{% endblock %}
+
+{% block title %}
+<h1 class="title">Registrate!</h1>
+{% endblock %}
+
+{%block content%}
+<section class="content-container" id="createuser-container">
+  <form action="" class="form" method='post' class="form">
+    {% csrf_token %}
+    <div class="form-input">
+      <label for="user_name">Nombre</label>
+      <input type="text" name='user_name' id='user_name' required placeholder="Ingrese su nombre">
+    </div>
+    <div class="form-input">
+      <label for="user_lastn">Apellido</label>
+      <input type="text" name='user_lastn' id='user_lastn' required placeholder="Ingrese su apellido">
+    </div>
+    <div class="form-input">
+      <label for="user_email">Correo Electronico</label>
+      <input type="email" name='user_email' id='user_email' required placeholder="Ingrese su correo electronico">
+    </div>
+    <div class="form-input">
+      <label for="username">Nombre de Usuario</label>
+      <input type="text" name='username' id='username' required placeholder="Ingrese su nombre de usuario">
+    </div>
+    <div class="form-input">
+      <label for="user_password">Clave</label>
+      <input type="password" name='user_password' id='user_password' required placeholder="Ingrese su clave">
+    </div>
+    <div class="form-input">
+      <label for="user_passwordc">Confirme su clave</label>
+      <input type="password" name='user_passwordc' id='user_passwordc' required placeholder="Confirme su clave">
+    </div>
+    <div class="form-input">
+      <input type="text" id="date-textinput" placeholder="Fecha de nacimiento">
+      <span class="datepicker-toggle">
+        <span class="datepicker-togglebtn"></span>
+        <input type="date" name='user_birthday' id='user_birthday' class="datepicker-input" required>
+      </span>
+    </div>
+    <div class="form-input">
+      <input type="checkbox" id="TOS_check" required placeholder="Confirme su clave">
+      <div class="tos__div">Declaro haber creado esta cuenta con el consentimiento de mis padres</div>
+    </div>
+    <div class="form-input">
+      <a href="/" class="back">Back</a href="">
+      <input type="submit" value="Crear Usuario">
+    </div>
+    
+  </form>
+</section>
+
+{% endblock %}

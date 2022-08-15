@@ -1,0 +1,7 @@
+.absolute-footer {
+  display: flex;
+}
+
+.block-footer {
+  display: none;
+}

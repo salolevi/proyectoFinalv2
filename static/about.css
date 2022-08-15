@@ -1,0 +1,82 @@
+.title {
+  font-family: 'Dosis',
+  sans-serif;
+  font-size: 3em;
+}
+
+.content-container  {
+  margin-top: 5rem;
+  font-family: 'Montserrat', sans-serif;
+  display: grid;
+  gap: 1rem;
+  max-width: 45rem;
+  white-space: wrap;
+}
+
+.p-subtitle {
+  margin-bottom: .5em;
+  align-self: end;
+  color: #1e1e1e;
+}
+
+.parragraphs {
+  display: grid;
+  gap: .8em;
+}
+
+.about-p {
+  margin: 0;
+  text-align: justify;
+  color: #222;
+}
+
+
+.grid-section {
+  display: grid;
+}
+
+.responsive-section {
+  display: none;
+}
+
+.gif-container {
+  /* grid-row: span 2; */
+  align-self: end;
+  justify-self: center;
+  /* display: flex; */
+}
+
+.gif {
+  max-width: 220px;
+  float: right;
+  padding: .5em;
+  border-radius: 50%;
+}
+
+
+.about-ul {
+  display: grid;
+  gap: .5em;
+}
+
+@media screen and (max-width:768px) {
+  .content-container {
+    max-width: none;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0;
+    padding: 2rem 1rem;
+  }
+
+  .p-subtitle {
+    text-align: center;
+  }
+
+  .desktop-section {
+    display: none;
+  }
+
+  .responsive-section {
+    display: grid;
+  }
+}

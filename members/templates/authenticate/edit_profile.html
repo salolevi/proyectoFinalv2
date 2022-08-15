@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block script %}
+{% load static %}
+<script src="{% static 'edit.js' %}" defer></script>
+{% endblock %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type='text/css' href="{% static 'edit_profile.css' %}">
+<link rel="stylesheet" href="{% static 'block-footer.css' %}">
+{% endblock %}
+
+{% block logo %}
+<a href="/" class="logo"><img src="../../../media/media/brain-logo.png" alt=""></a>
+{% endblock %}
+
+{% block title %}
+<h1 class="title">Edicion de Perfil</h1>
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <form action="" method='post' enctype='multipart/form-data'>
+    {% csrf_token %}
+    <div class="information__container">
+      <div class="information__container-priminfo">
+        <div class="information__container-profilepic">
+          <img src="{{profile.profile_pic.url}}" alt="" id='editable-img'/>
+          <input type="file" id='file-input' name='user_profilepic'>
+          <div class="hover-img__container"><img src="../../media/media/camara.svg" alt="" id='hover-img'></div>
+        </div>
+      </div>
+      <div class="information__container-secinfo">
+        <div class="form-input">
+          <label for="user_name">Nombre: </label>
+          <input type='text' value='{{request.user.first_name}}' class='profile__input' id='user_name' name='user_name'>
+        </div>
+        <div class="form-input">
+          <label for="user_lastn">Apellido: </label>
+          <input type='text' value='{{request.user.last_name}}' class='profile__input' id='user_lastn' name='user_lastn'>
+        </div>
+        <div class="form-input">
+          <label for="username">Usuario: </label>
+          <input type="text" id='username' name='username' class='profile__input' value="{{request.user.username}}">
+        </div>
+        <div class="information__container-secinfofield"><span>Email: </span>{{request.user.email}}</div>
+        <div class="form-input" id='birthday'>
+          {% if profile.birthday.month < 10 %}
+          <input type="text" id="date-textinput" placeholder="Fecha de nacimiento" class='profile__input' value="{{profile.birthday.year}}-0{{profile.birthday.month}}-{{profile.birthday.day}}">
+          <span class="datepicker-toggle">
+            <span class="datepicker-togglebtn"></span>
+            <input type="date" name='user_birthday' id='user_birthday' class="datepicker-input" value ="{{profile.birthday.year}}-0{{profile.birthday.month}}-{{profile.birthday.day}}" required>
+          </span>
+          {% else %}
+          <input type="text" id="date-textinput" placeholder="Fecha de nacimiento" class='profile__input' value="{{profile.birthday.year}}-{{profile.birthday.month}}-{{profile.birthday.day}}">
+          <span class="datepicker-toggle">
+            <span class="datepicker-togglebtn"></span>
+            <input type="date" name='user_birthday' id='user_birthday' class="datepicker-input" value ="{{profile.birthday.year}}-{{profile.birthday.month}}-{{profile.birthday.day}}" required>
+          </span>
+          {% endif %}
+        </div>
+        <div class="information__container-secinfofield"><span>Edad: </span>{{age}}</div>
+      </div>
+      <div class="bio">
+        <label for="user_bio">Bio: </label>
+        <textarea type="text" id='user_bio' name='user_bio' class='profile__input'>{{profile.bio}}</textarea>
+      </div>
+      <input type="submit" value='Guardar Cambios'>
+    </div>
+  </form>
+  
+</div>
+
+{% endblock %}

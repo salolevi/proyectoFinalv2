@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% block script %}
+{% load static %}
+<script src="{% static 'stats.js' %}" defer></script>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'block-footer.css' %}">
+{% endblock %}
+
+{% block logo %}
+<a href="/" class="logo"><img src="../../../media/media/brain-logo.png" alt=""></a>
+{% endblock %}
+
+{% block title %}
+<h1 class="title">Estadisticas de {{request.user.get_full_name}}</h1>
+{% endblock %}
+
+{% block content %}
+<section class="content-container contentStats-container">
+  <section class="tabs">
+    <button class="tablink dislexia-tab">Dislexia</button>
+    <button class="tablink logica1-tab">Logica - Imagenes</button>
+    <button class="tablink logica2-tab">Logica - Memoria</button>
+  </section>
+  <div class="average-section tab-content" id="dislexia">
+    <section class="gameOneStats-container">
+      <h4 class="stats-title">Juego de Opciones</h4>
+      <div class="average-gameOne grid-gameOne">Promedio de Puntuacion: <span class="average-score">{{averageScoreGameOne}}</span></div>
+      <div class="average-gameOneLastWeek grid-gameOne">Promedio en los ultimos 7 dias: <span class="average-score">{{averageActualWeek1}}</span></div>
+      <div class="average-gameOneLevelOne grid-gameOne">Promedio de Puntacion en el primer nivel: <span class="average-score">{{averageScoreGameOneLevelOne}}</span></div>
+      <div class="average-gameOneLevelTwo grid-gameOne">Promedio de Puntacion en el segundo nivel: <span class="average-score">{{averageScoreGameOneLevelTwo}}</span></div>
+      <div class="average-gameOneLevelThree grid-gameOne">Promedio de Puntacion en el tercer nivel: <span class="average-score">{{averageScoreGameOneLevelThree}}</span></div>
+      <button class="stats-btn btn-1">VER ESTADISTICAS</button>
+    </section>
+    <section class="gameTwoStats-container">
+      <h4 class="stats-title">Juego de Completar</h4>
+      <div class="average-gameTwo grid-gameTwo">Promedio de Puntuacion: <span class="average-score">{{averageScoreGameTwo}}</span></div>
+      <div class="average-gameTwoLastWeek grid-gameTwo">Promedio en los ultimos 7 dias: <span class="average-score">{{averageActualWeek2}}</span></div>
+      <div class="average-gameTwoLevelOne grid-gameTwo">Promedio de Puntacion en el primer nivel:<span class="average-score">  {{averageScoreGameTwoLevelOne}}</span></div>
+      <div class="average-gameTwoLevelTwo grid-gameTwo">Promedio de Puntacion en el segundo nivel: <span class="average-score">{{averageScoreGameTwoLevelTwo}}</span></div>
+      <div class="average-gameTwoLevelThree grid-gameTwo">Promedio de Puntacion en el tercer nivel: <span class="average-score">{{averageScoreGameTwoLevelThree}}</span></div>
+      <button class="stats-btn btn-2">VER ESTADISTICAS</button>
+    </section>
+    <section class="chart-section first-chart">
+      <canvas id="statsGameOneLevelOne"></canvas>
+      <canvas id="statsGameOneLevelTwo"></canvas>
+      <canvas id="statsGameOneLevelThree"></canvas>
+    </section>
+    <section class="chart-section">
+      <canvas id="statsGameTwoLevelOne"></canvas>
+      <canvas id="statsGameTwoLevelTwo"></canvas>
+      <canvas id="statsGameTwoLevelThree"></canvas>
+    </section>
+  </div>
+  <div class="average-section tab-content" id="logica1">
+    <section class="logicGameStats-container">
+      <h4 class="stats-title">ESTADISTICAS GENERALES</h4>
+      <div class="average-gameThree grid-gameThree">Tiempo promedio para resolver una imagen: <span class="average-time-movement">{{averageTimeGameThree}}</span></div>
+      <div class="average-gameThree grid-gameThree">Movimientos promedio para resolver una imagen: <span class="average-time-movement">{{averageMovementsGameThree}}</span></div>
+      <div class="average-gameThree grid-gameThree">
+        Ultimos 7 dias: 
+        <div class="flex">
+          <div>
+            Tiempo promedio -
+            <span class="average-time-movement inline">{{averageTimeGameThreeActualWeek}}</span>   
+          </div>
+          <div>
+            Movimientos promedio -<span class="average-time-movement inline"> {{averageMovementsGameThreeActualWeek}}</span>
+          </div>
+        </div> 
+      </div>
+      <div class="average-gameThree grid-gameThree">
+        Primer nivel:
+        <div class="flex">
+          <div>
+            Tiempo promedio - <span class="average-time-movement inline">{{averageTimeGameThreeLevelOne}}</span>
+          </div>
+          <div>
+            Movimientos promedio - <span class="average-time-movement inline">{{averageMovementsGameThreeLevelOne}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="average-gameThree grid-gameThree">
+        Segundo nivel:
+        <div class="flex">
+          <div>
+            Tiempo promedio - <span class="average-time-movement inline">{{averageTimeGameThreeLevelTwo}}</span>
+          </div>
+          <div>
+            Movimientos promedio - <span class="average-time-movement inline">{{averageMovementsGameThreeLevelTwo}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="average-gameThree grid-gameThree">
+        Tercer nivel:
+        <div class="flex">
+          <div>
+            Tiempo promedio - <span class="average-time-movement inline">{{averageTimeGameThreeLevelThree}}</span>
+          </div>
+          <div>
+            Movimientos promedio - <span class="average-time-movement inline">{{averageMovementsGameThreeLevelThree}}</span>
+          </div>
+        </div>
+      </div>
+      <button class="stats-btn btn-3">VER ESTADISTICAS</button>
+    </section>
+    <section class="chart-section">
+      <canvas id="statsGameThreeLevelOne"></canvas>
+      <canvas id="statsGameThreeLevelTwo"></canvas>
+      <canvas id="statsGameThreeLevelThree"></canvas>
+    </section>
+  </div>
+  <div class="average-section tab-content" id="logica2">
+    <section class="logicGameStats-container">
+      <h4 class="stats-title">ESTADISTICAS GENERALES</h4>
+      <div class="average-gameFour grid-gameFour">Tiempo promedio para superar un nivel: <span class="average-time-movement">{{averageTimeGameFour}}</span></div>
+      <div class="average-gameFour grid-gameFour">Tiempo promedio para superar un nivel en la ultima semana: <span class="average-time-movement">{{averageTimeGameFourActualWeek}}</span></div>
+      <div class="average-gameFour grid-gameFour">Tiempo promedio para superar el primer nivel: <span class="average-time-movement">{{averageTimeGameFourLevelOne}}</span></div>
+      <div class="average-gameFour grid-gameFour">Tiempo promedio para superar el segundo nivel: <span class="average-time-movement">{{averageTimeGameFourLevelTwo}}</span></div>
+      <div class="average-gameFour grid-gameFour">Tiempo promedio para superar el tercer nivel: <span class="average-time-movement">{{averageTimeGameFourLevelThree}}</span></div>
+      <button class="stats-btn btn-4">VER ESTADISTICAS</button>
+    </section>
+    <section class="chart-section">
+      <canvas id="statsGameFourLevelOne"></canvas>
+      <canvas id="statsGameFourLevelTwo"></canvas>
+      <canvas id="statsGameFourLevelThree"></canvas>
+    </section>
+  </div>
+  <div class="show-more">
+    <button class="show-more-btn">Expandir <img src="../../../media/media/down-arrow-svgrepo-com.svg" alt=""></button>
+  </div>
+</section>
+{% endblock %}
