@@ -2,7 +2,6 @@ import json
 import re
 from unicodedata import decimal
 from django.http import HttpResponse, JsonResponse
-from asyncio.windows_events import NULL
 from http.client import HTTPResponse
 from re import L
 from django.shortcuts import render, get_object_or_404
