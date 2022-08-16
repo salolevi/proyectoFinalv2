@@ -33,7 +33,7 @@ class ProfileScore(models.Model):
   gameID = models.ForeignKey(Game, on_delete=models.CASCADE)
   levelID = models.ForeignKey(Level, on_delete=models.CASCADE)
   score = models.SmallIntegerField(default=0)
-  scoreDate = models.DateTimeField(default=timezone.now())
+  scoreDate = models.DateTimeField(default=timezone.now)
   def __str__(self) -> str:
     return '{usern} Game {game}, Level {level}, Score = {score}'.format(usern=self.profileID.user.username,game=self.gameID.id, level=self.levelID.level,score=self.score)
   
@@ -42,7 +42,7 @@ class ProfileScoreLogic(models.Model):
   gameID = models.ForeignKey(Game, on_delete=models.CASCADE)
   levelID = models.ForeignKey(Level, on_delete=models.CASCADE)
   score = models.SmallIntegerField(default=0)
-  scoreDate = models.DateTimeField(default=timezone.now())
+  scoreDate = models.DateTimeField(default=timezone.now)
   avgScoreTime = models.FloatField(default=0)
   avgMomevemts = models.FloatField(default=0)
   def __str__(self) -> str:
