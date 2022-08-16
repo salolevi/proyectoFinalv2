@@ -500,13 +500,8 @@ const displayScoresFirst =  (gameID, levelID) => {
   gameInfoContainer.style.display = 'flex';
   gameContainer.style.flexDirection = 'row';
   gameContainer.style.justifyContent = 'end';
-  gameInfoContainer.innerHTML = `<div class='attempts'>Intentos:${attempts}</div><div class='score'>Puntuacion: ${rightAnswers}</div><div class='record'></div>`;
+  gameInfoContainer.innerHTML = `<div class='${gameID == 1 ? 'attempts' : 'attempts-game2'}'>Intentos:${attempts}</div><div class='score'>Puntuacion: ${rightAnswers}</div>`;
   gameInfoContainer.classList.add('game-info');
-  fetch(`get-data/${gameID}/${levelID}`)
-  .then(response => response.json())
-  .then(data => {
-    document.querySelector('.record').innerHTML = `Record: ${data.highscore}`;
-  });
   gameContainer.appendChild(gameInfoContainer);
   wordsButtonContainer.style.animationPlayState = 'running';
   

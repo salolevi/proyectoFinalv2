@@ -25,10 +25,6 @@ imageContainer.addEventListener('click', (e) => {
   fileInput.click();
 })
 
-fileInput.onchange = (e) => {
-
-}
-
 imageContainer.addEventListener('mouseover', (e) => {
   hoverImage.style.opacity = 0.4;
 })

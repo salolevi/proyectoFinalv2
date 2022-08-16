@@ -89,6 +89,11 @@
   align-self: start;
 }
 
+.attempts-game2 {
+  color: darkblue;
+  font-size: 1.2em;
+}
+
 /* Estilo botones opciones */
 
 .options {
