@@ -80,7 +80,7 @@ class CreateUser(View):
         return redirect('createuser')
     else:
       new_user = User.objects.create_user(username, _email, password, first_name = user_name, last_name = user_lastn)
-      profile = Profile(user=new_user, birthday=birthday, profile_pic='mushroom.png')
+      profile = Profile(user=new_user, birthday=birthday, profile_pic='/profilepics/mushroom.png')
       new_user.is_active = False
       new_user.save()
       profile.save()
@@ -195,9 +195,8 @@ class EditProfile(View):
         profile = Profile.objects.get(user=user)
         profile.bio = self.request.POST.get('user_bio')
         if (len(self.request.FILES)!=0):
-          if(len(profile.profile_pic)>0):
-            os.remove(profile.profile_pic.path)
-            profile.profile_pic = self.request.FILES['user_profilepic']
+          # os.remove(profile.profile_pic.path)
+          profile.profile_pic = self.request.FILES['user_profilepic']
         profile.birthday = self.request.POST.get('user_birthday')
         user.save()
         profile.save()
