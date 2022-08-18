@@ -46,21 +46,66 @@ function shuffle(array) {
 
 
 let words_game1_level1 = [
-  ['plan', 'pan', 'dan'],
-  ['zato', 'zapato', 'zatapo'],
-  ['omigo', 'amigo', 'amibo'],
-  ['mesa', 'meza', 'nesa'],
-  ['raton', 'naton', 'ralon'],
-  ['peso', 'qeso', 'sepo'],
-  ['dala', 'pala', 'papala'],
-  ['saqo', 'sapo', 'sato'],
-  ['cielo', 'ciolo', 'mielo'],
-  ['labron', 'ladron', 'badron'],
-  ['gato', 'bato', 'gatato'],
-  ['buzo', 'duzo', 'buco'],
-  ['linbo', 'dilon', 'lindo'],
-  ['nanta', 'manta', 'mamanta'],
-  ['arbol', 'armol', 'ardol']
+  {
+    words: ['plan', 'pan', 'dan'],
+    correct_word: 'plan',
+  },
+  {
+    words: ['zato', 'zapato', 'zatapo'],
+    correct_word: 'zapato',
+  },
+  {
+    words: ['omigo', 'amigo', 'amibo'],
+    correct_word: 'amigo'
+  },
+  {
+    words: ['mesa', 'meza', 'nesa'],
+    correct_word: 'mesa',
+  },
+  {
+    words: ['raton', 'naton', 'ralon'],
+    correct_word: 'raton'
+  },
+  {
+    words: ['peso', 'qeso', 'sepo'],
+    correct_word: 'peso',
+  },
+  {
+    words: ['dala', 'pala', 'papala'],
+    correct_word: 'pala',
+  },
+  {
+    words: ['saqo', 'sapo', 'sato'],
+    correct_word: 'sapo'
+  },
+  {
+    words: ['cielo', 'ciolo', 'mielo'],
+    correct_word: 'cielo'
+  },
+  {
+    words:['labron', 'ladron', 'badron'],
+    correct_word: 'ladron',
+  },
+  {
+    words: ['gato', 'bato', 'gatato'],
+    correct_word: 'gato'
+  },
+  {
+    words:['buzo', 'duzo', 'buco'],
+    correct_word: 'buzo'
+  },
+  {
+    words: ['linbo', 'dilon', 'lindo'],
+    correct_word: 'lindo'
+  },
+  {
+    words: ['nanta', 'manta', 'mamanta'],
+    correct_word: 'manta',
+  },
+  {
+    words: ['arbol', 'armol', 'ardol'],
+    correct_word: 'arbol'
+  }
 ]
 
 const CORRECT_WORDS1 = [
@@ -197,7 +242,7 @@ let words_game2_level3 = [
 
 //Mezclo las palabras
 words_game1_level1.shuffle();
-words_game1_level1.forEach(elem => {elem.shuffle()});
+words_game1_level1.forEach(obj => {obj.words.shuffle()});
 
 words_game1_level2.shuffle();
 words_game1_level2.forEach(elem => {elem.shuffle()});
@@ -221,7 +266,6 @@ const games = [
     words_1 : words_game1_level1,
     words_2: words_game1_level2,
     words_3: words_game1_level3,
-    correctWords1: CORRECT_WORDS1,
     correctWords2: CORRECT_WORDS2,
     correctWords3: CORRECT_WORDS3
   },
@@ -266,17 +310,7 @@ const getWords = difficulty => {
 const getCorrectWord = (level, set) => {
   const words = getWords(level);
   let correctWords;
-  if (level == 1) correctWords = games[actualGame].correctWords1
-  else if (level == 2) correctWords = games[actualGame].correctWords2
-  else correctWords = games[actualGame].correctWords3
-  for (word of correctWords) {
-    for (arrayWords of words[set]) {
-      if (arrayWords.includes(word)) {
-        return word;
-      }
-    }
-  }
-  
+  return getWords(level)[set].correct_word;
 }
 
 const getAudio = (word) => {
@@ -532,7 +566,7 @@ const checkOptionsSize = () => {
 // Funcion que actualiza los botones
 const displayOptions = (level, index) => {
   wordsButtonContainer.innerHTML = ``;
-  words = getWords(level)[index];
+  words = getWords(level)[index].words;
     words.forEach(word => {
     wordsButtonContainer.innerHTML+=`<button class="option">${word}</button>`;
   });
