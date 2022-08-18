@@ -421,9 +421,10 @@ const assignEvents = () => {
 
 const assignKeyEvents = () => {
   assignedKeyEvents = true;
-  document.body.addEventListener('keyup', (ev) => {
+  document.body.addEventListener('keydown', (ev) => {
     let actual = ev.target;
     let isLetter = /^[a-zA-Z]/.test(ev.key);
+
     if (actual.classList.contains('letra-empty') && isLetter){
       let emptyLettersCount = document.querySelectorAll('.letra-empty').length;
       if (actual.value.length === Number(actual.getAttribute('maxlength'))) {
