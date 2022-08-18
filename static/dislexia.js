@@ -107,96 +107,131 @@ let words_game1_level1 = [
     correct_word: 'arbol'
   }
 ]
-
-const CORRECT_WORDS1 = [
-  'plan',
-  'zapato',
-  'amigo',
-  'mesa',
-  'raton',
-  'peso',
-  'pala',
-  'sapo',
-  'cielo',
-  'ladron',
-  'gato',
-  'buzo',
-  'lindo',
-  'manta',
-  'arbol'
-];
-
 let words_game1_level2 = [
-  ['dificil', 'dififil', 'dificicil'],
-  ['tamén', 'tamdién', 'también'],
-  ['tanque', 'tante', 'tanpue'],
-  ['abuela', 'atuela', 'aduela'],
-  ['maranja', 'naranja', 'naranga'],
-  ['cormina', 'corbina', 'cortina'],
-  ['coramon', 'corazon', 'corarazon'],
-  ['alante', 'adelante', 'amelante'],
-  ['estuela', 'ascuela', 'escuela'],
-  ['malamar', 'camalar', 'calamar'],
-  ['juguete', 'jubete', 'jujete'],
-  ['colegio', 'cogelio', 'coleqio'],
-  ['tuerto', 'tuerco', 'turto'],
-  ['ciego', 'siego', 'gieco'],
-  ['cocido', 'tocido', 'codido']
-];
-
-const CORRECT_WORDS2 = [
-  'dificil',
-  'también',
-  'tanque',
-  'abuela',
-  'naranja',
-  'cortina',
-  'corazon',
-  'adelante',
-  'escuela',
-  'calamar',
-  'juguete',
-  'colegio',
-  'tuerto',
-  'ciego',
-  'cocido'
+  {
+    words: ['dificil', 'dififil', 'dificicil'],
+    correct_word: 'dificil',
+  },
+  {
+    words: ['tamén', 'tamdién', 'también'],
+    correct_word: 'también',
+  },
+  {
+    words: ['tanque', 'tante', 'tanpue'],
+    correct_word: 'tanque',
+  },
+  {
+    words: ['abuela', 'atuela', 'aduela'],
+    correct_word: 'abuela',
+  },
+  {
+    words: ['maranja', 'naranja', 'naranga'],
+    correct_word: 'naranja',
+  },
+  {
+    words: ['cormina', 'corbina', 'cortina'],
+    correct_word: 'cortina',
+  },
+  {
+    words: ['coramon', 'corazon', 'corarazon'],
+    correct_word: 'corazon',
+  },
+  {
+    words: ['alante', 'adelante', 'amelante'],
+    correct_word: 'adelante',
+  },
+  {
+    words: ['estuela', 'ascuela', 'escuela'],
+    correct_word: 'escuela',
+  },
+  {
+    words: ['malamar', 'camalar', 'calamar'],
+    correct_word: 'calamar',
+  },
+  {
+    words: ['juguete', 'jubete', 'jujete'],
+    correct_word: 'juguete',
+  },
+  {
+    words: ['colegio', 'cogelio', 'coleqio'],
+    correct_word: 'colegio',
+  },
+  {
+    words: ['tuerto', 'tuerco', 'turto'],
+    correct_word: 'tuerto',
+  },
+  {
+    words: ['ciego', 'siego', 'gieco'],
+    correct_word: 'ciego',
+  },
+  {
+    words: ['cocido', 'tocido', 'codido'],
+    correct_word: 'cocido',
+  }
 ];
 
 let words_game1_level3 = [
-  ['cabalaza', 'calabaza', 'calaza'],
-  ['botadillo', 'bocadilillo', 'bocadillo'],
-  ['ordenamor', 'ordenadodor','ordenador'],
-  ['cocodrilo', 'trotodrilo', 'crocodilo'],
-  ['boligrafo', 'goligrafo', 'boliligrafo'],
-  ['avioneta', 'avioteta', 'avioneneta'],
-  ['encendedor', 'endencedor', 'encendededor'],
-  ['desodorante', 'besoborante', 'dedosorante'],
-  ['cavalera', 'cavalelera', 'calavera'],
-  ['musculosa', 'nusculosa', 'cusmulosa'],
-  ['cargador', 'carqador', 'carbador'],
-  ['ternotanbe', 'termotanque', 'tertanque'],
-  ['buitarra', 'guirra', 'guitarra'],
-  ['magueta', 'maqueta', 'tamueqa'],
-  ['cobrili', 'colilibri', 'colibri']
+  {
+    words: ['cabalaza', 'calabaza', 'calaza'],
+    correct_word: 'calabaza',
+  },
+  {
+    words: ['botadillo', 'bocadilillo', 'bocadillo'],
+    correct_word: 'bocadillo',
+  },
+  {
+    words: ['ordenamor', 'ordenadodor','ordenador'],
+    correct_word: 'ordenador',
+  },
+  {
+    words: ['cocodrilo', 'trotodrilo', 'crocodilo'],
+    correct_word: 'cocodrilo',
+  },
+  {
+    words: ['boligrafo', 'goligrafo', 'boliligrafo'],
+    correct_word: 'boligrafo',
+  },
+  {
+    words: ['avioneta', 'avioteta', 'avioneneta'],
+    correct_word: 'avioneta',
+  },
+  {
+    words: ['encendedor', 'endencedor', 'encendededor'],
+    correct_word: 'encendedor',
+  },
+  {
+    words: ['desodorante', 'besoborante', 'dedosorante'],
+    correct_word: 'desodorante',
+  },
+  {
+    words: ['cavalera', 'cavalelera', 'calavera'],
+    correct_word: 'calavera',
+  },
+  {
+    words: ['musculosa', 'nusculosa', 'cusmulosa'],
+    correct_word: 'musculosa',
+  },
+  {
+    words: ['cargador', 'carqador', 'carbador'],
+    correct_word: 'cargador',
+  },
+  {
+    words: ['ternotanbe', 'termotanque', 'tertanque'],
+    correct_word: 'termotanque',
+  },
+  {
+    words: ['buitarra', 'guirra', 'guitarra'],
+    correct_word: 'guitarra',
+  },
+  {
+    words: ['magueta', 'maqueta', 'tamueqa'],
+    correct_word: 'maqueta',
+  },
+  {
+    words: ['cobrili', 'colilibri', 'colibri'],
+    correct_word: 'colibri',
+  }
 ]
-
-const CORRECT_WORDS3 = [
-  'calabaza',
-  'bocadillo',
-  'ordenador',
-  'cocodrilo',
-  'boligrafo',
-  'avioneta',
-  'encendedor',
-  'desodorante',
-  'calavera',
-  'musculosa',
-  'cargador',
-  'termotanque',
-  'guitarra',
-  'maqueta',
-  'colibri'
-];
 
 let words_game2_level1 = [
   // 'bombero',
@@ -245,10 +280,10 @@ words_game1_level1.shuffle();
 words_game1_level1.forEach(obj => {obj.words.shuffle()});
 
 words_game1_level2.shuffle();
-words_game1_level2.forEach(elem => {elem.shuffle()});
+words_game1_level2.forEach(obj => {obj.words.shuffle()});
 
 words_game1_level3.shuffle();
-words_game1_level3.forEach(elem => {elem.shuffle()});
+words_game1_level3.forEach(obj => {obj.words.shuffle()});;
 
 
 words_game2_level1.shuffle();
@@ -266,8 +301,6 @@ const games = [
     words_1 : words_game1_level1,
     words_2: words_game1_level2,
     words_3: words_game1_level3,
-    correctWords2: CORRECT_WORDS2,
-    correctWords3: CORRECT_WORDS3
   },
   {
     game : 2,
@@ -733,7 +766,7 @@ const startGame = () => {
     gameContainer.removeChild(startButtonTwo);
     gameContainer.removeChild(welcomeContainer);
     setTimeout(() => {
-      renderGameOne(1);
+      renderGameOne(2);
     }, 1050)
   });
   startButtonTwo.addEventListener('click', (ev) => {
