@@ -5,6 +5,10 @@
   --start-yellow : #e2d734;
 }
 
+canvas {
+  width: 100%;
+}
+
 @font-face {
   font-family: 'Mario';
   src: url(fonts/SuperMario256.ttf);
@@ -518,8 +522,14 @@
     display: none;
   }
   .incorrectScreen-message {
-    margin: 35px;
+    font-family: 'Comic Sans MS', sans-serif;
+    position: absolute;
+    width: 80%;
+    height: max-content;
+    inset: 0 0 0 0;
+    margin: auto;
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
+    color:#ab6ce5;
   }
 }

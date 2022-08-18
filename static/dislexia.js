@@ -64,7 +64,7 @@ let words_game1_level1 = [
 ]
 
 const CORRECT_WORDS1 = [
-  'pan',
+  'plan',
   'zapato',
   'amigo',
   'mesa',
@@ -280,7 +280,7 @@ const getCorrectWord = (level, set) => {
 }
 
 const getAudio = (word) => {
-  return new Audio(`../media/audio/${word.replace('é', 'e')}_audio.wav`);
+  return new Audio(`../media/audio/${word.replace('é', 'e')}_audio.mp3`);
 }
 
 const displayGameCompleted = () => {
@@ -798,14 +798,9 @@ const checkSize = () => {
     document.querySelector('.block-footer').style.display = 'none';
     document.querySelector('.absolute-footer').style.display = 'flex';
   } else {
+    document.querySelector('.block-footer').style.display = 'flex';
+    document.querySelector('.absolute-footer').style.display = 'none';
     if (document.querySelector('.incorrectScreen-message') !== null) document.body.removeChild(document.querySelector('.incorrectScreen-message')); 
-    if (window.innerWidth < window.innerHeight) {
-      document.querySelector('.block-footer').style.display = 'none';
-      document.querySelector('.absolute-footer').style.display = 'flex';
-    } else {
-      document.querySelector('.block-footer').style.display = 'flex';
-      document.querySelector('.absolute-footer').style.display = 'none';
-    }
     if (!gameStarted) {
       startGame();
       gameStarted = true;

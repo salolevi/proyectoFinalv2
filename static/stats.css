@@ -1,0 +1,12 @@
+@media screen and (max-width: 768px) {
+  .content-container {
+    box-sizing: border-box;
+    margin-inline: 0;
+    width: 100%;
+    max-width: unset;
+  }
+
+  .gameOneStats-container, .gameTwoStats-container {
+    place-content: center;
+  }
+}

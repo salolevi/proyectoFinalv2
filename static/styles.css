@@ -941,6 +941,11 @@ box-shadow: 0px 9px 0px -3px rgba(83,53,7,1);
   .menu-container {
     width: unset;
     margin-top: 3rem;
+    padding-inline: .5rem;
+  }
+
+  .game-section {
+    font-size: 2em;
   }
 
   .information__container {
@@ -971,6 +976,11 @@ box-shadow: 0px 9px 0px -3px rgba(83,53,7,1);
   .form-input {
     margin: 20px 0;
   }
+
+  /* Estilos estadisticas */
+  .gameOneStats-container, .gameTwoStats-container {
+    grid-column: span 2;
+  }
 }
 
 @media screen and (max-width: 440px) {
@@ -985,6 +995,6 @@ box-shadow: 0px 9px 0px -3px rgba(83,53,7,1);
 
 @media (hover: hover) {
   .game-section:hover {
-    transform: scale(1.25);
+    transform: scale(1.1);
   }
 }

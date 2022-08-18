@@ -24,7 +24,8 @@ fetch('../../get-scores/1/1')
                     beginAtZero: true
                 }
             }]
-        }
+        },
+        responsive: true,
     }
     })
 });
@@ -370,6 +371,10 @@ tabButtons.forEach(btn => {
     };
     if (document.querySelector('.active')) document.querySelector('.active').classList.toggle('active');
     btn.classList.toggle('active');
+    if (!checkIfExpanded()) {
+      document.querySelector('.absolute-footer').style.display = 'flex';
+      document.querySelector('.block-footer').style.display = 'none';
+    }
   })
 })
 
@@ -424,6 +429,10 @@ buttonFour.addEventListener('click', e => {
   document.querySelectorAll('.grid-gameFour').forEach(elem => {elem.style.opacity = '1'});
 })
 
+const checkIfExpanded = () => {
+  return document.querySelector('.content-container').classList.contains('expanded') ? true : false;
+}
+
 const showMoreBtn = document.querySelector('.show-more-btn');
 showMoreBtn.addEventListener('mouseenter', () => {
   showMoreBtn.style.animationPlayState = 'running'
@@ -439,6 +448,13 @@ showMoreBtn.addEventListener('mouseleave', () => {
 showMoreBtn.addEventListener('click', () => {
   showMoreBtn.style.display = 'none';
   document.querySelector('.contentStats-container').classList.add('expanded');
+  document.querySelector('.absolute-footer').style.display = 'none';
+  document.querySelector('.block-footer').style.display = 'flex';
 })
 
 dislexiaTabButton.click();
+
+if (!checkIfExpanded()) {
+  document.querySelector('.absolute-footer').style.display = 'flex';
+  document.querySelector('.block-footer').style.display = 'none';
+}
