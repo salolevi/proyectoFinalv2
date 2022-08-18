@@ -981,6 +981,12 @@ box-shadow: 0px 9px 0px -3px rgba(83,53,7,1);
   .gameOneStats-container, .gameTwoStats-container {
     grid-column: span 2;
   }
+
+  .top-right-btns {
+    right: 0;
+    left: 0;
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 440px) {
@@ -989,6 +995,23 @@ box-shadow: 0px 9px 0px -3px rgba(83,53,7,1);
     height: 100%;
     min-width: 120px;
     min-height: 120px;
+  }
+
+  a.btn {
+    text-align: center;
+    font-size: .9em;
+  }
+
+  .tablink {
+    font-size: .9em;
+  }
+
+  .absolute-footer {
+    display: none;
+  }
+
+  .block-footer {
+    display: flex;
   }
 }
 
