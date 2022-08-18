@@ -551,7 +551,7 @@ const displayNextOptions = () => {
     assignEvents();
     } else if (setOfWords>=15){
       //de no se ser el caso, se pasa al siguiente nivel
-      sendAndCheckScore(15 /*Deberia de ser el length, hasta que tenga el tercer set sera hardocdeado */, rightAnswers, wrongAnswers);
+      sendAndCheckScore(15, rightAnswers, wrongAnswers);
       setOfWords = 0;
     }
   }, 1000)

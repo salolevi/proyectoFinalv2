@@ -1,0 +1,10 @@
+Hacer landing page
+
+Reubicar boton de menu y puntuaciones
+
+Mejorar estadisticas (Hacer reutilizable los dos primeros juegos)
+
+Realizar linea de tendencia de los dos jugadores
+
+
+
