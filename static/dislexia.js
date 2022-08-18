@@ -424,9 +424,7 @@ const assignKeyEvents = () => {
   document.body.addEventListener('keyup', (ev) => {
     let actual = ev.target;
     let isLetter = /^[a-zA-Z]$/.test(ev.key);
-    console.log(ev.key);
-    console.log(isLetter);
-    if (actual.classList.contains('letra-empty') && isLetter){
+    if (actual.classList.contains('letra-empty') && isLetter) {
       let emptyLettersCount = document.querySelectorAll('.letra-empty').length;
       if (actual.value.length === Number(actual.getAttribute('maxlength'))) {
         let actualClass = [...actual.classList[actual.classList.length - 1]];
@@ -446,7 +444,6 @@ const assignKeyEvents = () => {
         }
       }
     } else if (ev.key == 'ArrowLeft') {
-      console.log('hola');
       let actualClass = [...actual.classList[actual.classList.length - 1]];
       let actualIndex = Number(actualClass[actualClass.length -1]);
       if (actualIndex !== 1) {
