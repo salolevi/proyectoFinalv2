@@ -105,8 +105,91 @@ let words_game1_level1 = [
   {
     words: ['arbol', 'armol', 'ardol'],
     correct_word: 'arbol'
+  },
+  {
+    words: ['marmol', 'mamarmol', 'narnol'],
+    correct_word: 'marmol',
+  },
+  {
+    words: ['tren', 'trenen', 'ten'],
+    correct_word: 'tren',
+  },
+  {
+    words: ['meta', 'neta', 'mata'],
+    correct_word: 'meta',
+  },
+  {
+    words: ['reto', 'neto', 'teto'],
+    correct_word: 'reto',
+  },
+  {
+    words: ['gafas', 'fagas', 'qafas'],
+    correct_word: 'gafas',
+  },
+  {
+    words: ['azucar', 'acucar', 'azuzar'],
+    correct_word: 'azucar',
+  },
+  {
+    words: ['pata', 'pala', 'papa'],
+    correct_word: 'pata',
+  },
+  {
+    words: ['letra', 'ketra', 'telra'],
+    correct_word: 'letra',
+  },
+  {
+    words: ['asado', 'asaso', 'adaso'],
+    correct_word: 'asado',
+  },
+  {
+    words: ['mozo', 'zomo', 'momo'],
+    correct_word: 'mozo',
+  },
+  {
+    words: ['pelea', 'palea', 'polea'],
+    correct_word: 'pelea',
+  },
+  {
+    words: ['guante', 'quante', 'gante'],
+    correct_word: 'guante'
+  },
+  {
+    words: ['daga', 'gada', 'dada'],
+    corect_word: 'daga',
+  },
+  {
+    words: ['lobo', 'lobo', 'lolo'],
+    correct_word: 'lobo',
+  },
+  {
+    words: ['piedra', 'diepra', 'pira'],
+    correct_word: 'piedra',
+  },
+  {
+    words: ['deseo', 'sedeo', 'dedeo'],
+    correct_word: 'deseo',
+  },
+  {
+    words: ['campera', 'cambera', 'camperera'],
+    correct_word: 'campera',
+  },
+  {
+    words: ['alcohol', 'alcol', 'ahocol'],
+    correct_word: 'alcohol'
+  },
+  {
+    words: ['saludo', 'salubo', 'salodu'],
+    correct_word: 'saludo'
+  },
+  {
+    words: ['codigo', 'cobigo', 'codo'],
+    correct_word: 'codigo'
   }
 ]
+
+console.log(words_game1_level1.length);
+
 let words_game1_level2 = [
   {
     words: ['dificil', 'dififil', 'dificicil'],
