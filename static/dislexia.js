@@ -543,13 +543,13 @@ const displayNextOptions = () => {
 
   setTimeout(() => {
     setOfWords++; //Paso a la siguiente tanda de palabras
-    if (setOfWords < 15) { //Mientras que sigan habiendo mas tandas...
+    if (setOfWords < getWords(actualLevel).length) { //Mientras que sigan habiendo mas tandas...
     displayOptions(actualLevel, setOfWords);
     checkOptionsSize();
     correctWord = getCorrectWord(actualLevel, setOfWords);
     AUDIO_WORD = getAudio(correctWord); // Defino la palabra correcta del nivel
     assignEvents();
-    } else if (setOfWords>=15){
+    } else if (setOfWords >= getWords(actualLevel).length) {
       //de no se ser el caso, se pasa al siguiente nivel
       sendAndCheckScore(15, rightAnswers, wrongAnswers);
       setOfWords = 0;
