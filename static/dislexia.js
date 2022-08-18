@@ -283,8 +283,11 @@ words_game1_level2.shuffle();
 words_game1_level2.forEach(obj => {obj.words.shuffle()});
 
 words_game1_level3.shuffle();
-words_game1_level3.forEach(obj => {obj.words.shuffle()});;
+words_game1_level3.forEach(obj => {obj.words.shuffle()});
 
+words_game1_level1.length = 10;
+words_game1_level2.length = 10;
+words_game1_level3.length = 10;
 
 words_game2_level1.shuffle();
 words_game2_level2.shuffle();
@@ -766,7 +769,7 @@ const startGame = () => {
     gameContainer.removeChild(startButtonTwo);
     gameContainer.removeChild(welcomeContainer);
     setTimeout(() => {
-      renderGameOne(2);
+      renderGameOne(1);
     }, 1050)
   });
   startButtonTwo.addEventListener('click', (ev) => {
