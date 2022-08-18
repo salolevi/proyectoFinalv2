@@ -500,7 +500,7 @@ const displayScoresFirst =  (gameID, levelID) => {
   gameInfoContainer.style.display = 'flex';
   gameContainer.style.flexDirection = 'row';
   gameContainer.style.justifyContent = 'end';
-  gameInfoContainer.innerHTML = `<div class='${gameID == 1 ? 'attempts' : 'attempts-game2'}'>Intentos:${attempts}</div><div class='score'>Puntuacion: ${rightAnswers}</div>`;
+  gameInfoContainer.innerHTML = `<div class='attempts ${gameID == 1 ? '' : 'attempts-game2'}'>Intentos:${attempts}</div><div class='score'>Puntuacion: ${rightAnswers}</div>`;
   gameInfoContainer.classList.add('game-info');
   gameContainer.appendChild(gameInfoContainer);
   wordsButtonContainer.style.animationPlayState = 'running';
@@ -613,7 +613,6 @@ const displayUncompleteWord = (index) => {
       })
     }
   }
-  console.log(randomIndexes);
   let i = 0;
   
   // Creacion de las letras a adivinar y no adivinadas
