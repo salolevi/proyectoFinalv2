@@ -63,8 +63,8 @@ let words_game1_level1 = [
     correct_word: 'mesa',
   },
   {
-    words: ['raton', 'naton', 'ralon'],
-    correct_word: 'raton'
+    words: ['ratón', 'natón', 'ralón'],
+    correct_word: 'ratón'  
   },
   {
     words: ['peso', 'qeso', 'sepo'],
@@ -83,8 +83,8 @@ let words_game1_level1 = [
     correct_word: 'cielo'
   },
   {
-    words:['labron', 'ladron', 'badron'],
-    correct_word: 'ladron',
+    words:['labrón', 'ladrón', 'badrón'],
+    correct_word: 'ladrón',
   },
   {
     words: ['gato', 'bato', 'gatato'],
@@ -103,12 +103,12 @@ let words_game1_level1 = [
     correct_word: 'manta',
   },
   {
-    words: ['arbol', 'armol', 'ardol'],
-    correct_word: 'arbol'
+    words: ['árbol', 'ármol', 'árdol'],
+    correct_word: 'árbol'
   },
   {
-    words: ['marmol', 'mamarmol', 'narnol'],
-    correct_word: 'marmol',
+    words: ['mármol', 'mámarmol', 'nárnol'],
+    correct_word: 'mármol',
   },
   {
     words: ['tren', 'trenen', 'ten'],
@@ -127,8 +127,8 @@ let words_game1_level1 = [
     correct_word: 'gafas',
   },
   {
-    words: ['azucar', 'acucar', 'azuzar'],
-    correct_word: 'azucar',
+    words: ['azúcar', 'acúcar', 'azúzar'],
+    correct_word: 'azúcar',
   },
   {
     words: ['pata', 'pala', 'papa'],
@@ -183,8 +183,8 @@ let words_game1_level1 = [
     correct_word: 'saludo'
   },
   {
-    words: ['codigo', 'cobigo', 'codo'],
-    correct_word: 'codigo'
+    words: ['código', 'cóbigo', 'códo'],
+    correct_word: 'código'
   }
 ]
 
@@ -427,13 +427,18 @@ const getWords = difficulty => {
 }
 
 const getCorrectWord = (level, set) => {
+  if (actualGame !== 1) return;
   const words = getWords(level);
   let correctWords;
   return getWords(level)[set].correct_word;
 }
 
-const getAudio = (word) => {
-  return new Audio(`../media/audio/${word.replace('é', 'e')}_audio.mp3`);
+const replaceAccents = word => {
+  return word.replace('á', 'a').replace('é', 'e').replace('ó', 'o').replace('í', 'i').replace('ú','u');
+}
+
+const getAudio = word => {
+  return new Audio(`../media/audio/${replaceAccents(word)}_audio.mp3`);
 }
 
 const displayGameCompleted = () => {
