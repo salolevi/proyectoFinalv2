@@ -156,10 +156,10 @@ let words_game1_level1 = [
   },
   {
     words: ['daga', 'gada', 'dada'],
-    corect_word: 'daga',
+    correct_word: 'daga',
   },
   {
-    words: ['lobo', 'lobo', 'lolo'],
+    words: ['lobo', 'bolo', 'lolo'],
     correct_word: 'lobo',
   },
   {
@@ -196,7 +196,7 @@ let words_game1_level1 = [
   },
   {
     words: ['especial', 'esqecial', 'espepecial'],
-    corect_word: 'especial',
+    correct_word: 'especial',
   },
   {
     words: ['conocer', 'comocer', 'cocecer'],
@@ -764,7 +764,7 @@ const displayNextOptions = () => {
     assignEvents();
     } else if (setOfWords >= getWords(actualLevel).length) {
       //de no se ser el caso, se pasa al siguiente nivel
-      sendAndCheckScore(15, rightAnswers, wrongAnswers);
+      sendAndCheckScore(getWords(actualLevel).length, rightAnswers, wrongAnswers);
       setOfWords = 0;
     }
   }, 1000)
