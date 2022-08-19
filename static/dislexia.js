@@ -175,8 +175,8 @@ let words_game1_level1 = [
     correct_word: 'campera',
   },
   {
-    words: ['alcohol', 'alcol', 'ahocol'],
-    correct_word: 'alcohol'
+    words: ['bikini', 'biniki', 'binikini'],
+    correct_word: 'bikini'
   },
   {
     words: ['saludo', 'salubo', 'salodu'],
