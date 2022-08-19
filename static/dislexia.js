@@ -44,7 +44,6 @@ function shuffle(array) {
   return array;
 }
 
-
 let words_game1_level1 = [
   {
     words: ['plan', 'pan', 'dan'],
@@ -106,6 +105,7 @@ let words_game1_level1 = [
     words: ['árbol', 'ármol', 'árdol'],
     correct_word: 'árbol'
   },
+  //hasta aca hay audios
   {
     words: ['mármol', 'mámarmol', 'nárnol'],
     correct_word: 'mármol',
@@ -185,6 +185,66 @@ let words_game1_level1 = [
   {
     words: ['código', 'cóbigo', 'códo'],
     correct_word: 'código'
+  },
+  {
+    words: ['madre', 'damre', 'nadre'],
+    correct_word: 'madre'
+  },
+  {
+    words: ['botón', 'dotón', 'bón'],
+    correct_word: 'botón'
+  },
+  {
+    words: ['especial', 'esqecial', 'espepecial'],
+    corect_word: 'especial',
+  },
+  {
+    words: ['conocer', 'comocer', 'cocecer'],
+    correct_word: 'conocer'
+  },
+  {
+    words: ['verdad', 'verbad', 'bervad'],
+    correct_word: 'verdad'
+  },
+  {
+    words: ['trabajo', 'tradajo', 'trababajo'],
+    correct_word: 'trabajo'
+  },
+  {
+    words: ['empresa', 'emqresa', 'emrepsa'],
+    correct_word: 'empresa'
+  },
+  {
+    words: ['bebida', 'dedida', 'bebibida'],
+    correct_word: 'bebida',
+  },
+  {
+    words: ['cuchillo', 'chucillo', 'cillo'],
+    correct_word: 'cuchillo'
+  },
+  {
+    words: ['cable', 'cadle', 'bacle'],
+    correct_word: 'cable'
+  },
+  {
+    words: ['avatar', 'atavar', 'avavar'],
+    correct_word: 'avatar'
+  },
+  {
+    words: ['pintura', 'tintura', 'tinpura'],
+    correct_word: 'pintura',
+  },
+  {
+    words: ['corona', 'rocona', 'cororona'],
+    correct_word: 'corona',
+  },
+  {
+    words: ['cómico', 'cócimo', 'cómimo'],
+    correct_word: 'cómico'
+  },
+  {
+    words: ['receta', 'reteca', 'cereta'],
+    correct_word: 'receta'
   }
 ]
 
@@ -360,17 +420,17 @@ let words_game2_level3 = [
 
 //Mezclo las palabras
 words_game1_level1.shuffle();
+words_game1_level1.length = 10;
 words_game1_level1.forEach(obj => {obj.words.shuffle()});
 
 words_game1_level2.shuffle();
+words_game1_level2.length = 10;
 words_game1_level2.forEach(obj => {obj.words.shuffle()});
 
 words_game1_level3.shuffle();
+words_game1_level3.length = 10;
 words_game1_level3.forEach(obj => {obj.words.shuffle()});
 
-words_game1_level1.length = 10;
-words_game1_level2.length = 10;
-words_game1_level3.length = 10;
 
 words_game2_level1.shuffle();
 words_game2_level2.shuffle();
@@ -546,11 +606,6 @@ const gameTwoPassed = (totalSets, rAnswers, wAnswers) => {
 
 const validAttempts = (numAttempts) => {
   return numAttempts > 0 ? true : false;
-}
-
-const getHighScore = async (gameID, levelID) => {
-  let response = await fetch(`get-data/${gameID}/${levelID}`);
-  return response.json();
 }
 
 const assignEvents = () => {
