@@ -44,6 +44,17 @@ function shuffle(array) {
   return array;
 }
 
+const getWrongObjs = arr => {
+  objects = [];
+  arr.forEach(obj => {
+    Object.keys(obj).forEach(key => {
+      if (!(key == 'words' || key=='correct_word')) objects.push(obj);
+    })
+  })
+
+  return objects.length > 0 ? objects : 0;
+}
+
 let words_game1_level1 = [
   {
     words: ['plan', 'pan', 'dan'],
@@ -246,9 +257,7 @@ let words_game1_level1 = [
     words: ['receta', 'reteca', 'cereta'],
     correct_word: 'receta'
   }
-]
-
-console.log(words_game1_level1.length);
+];
 
 let words_game1_level2 = [
   {
@@ -310,7 +319,149 @@ let words_game1_level2 = [
   {
     words: ['cocido', 'tocido', 'codido'],
     correct_word: 'cocido',
-  }
+  },
+  // audios hasta aca
+  {
+    words: ['rodeada', 'robeada', 'rodedeada'],
+    correct_word: 'rodeada',
+  },
+  {
+    words: ['turbante', 'burtante', 'turdante'],
+    correct_word: 'turbante',
+  },
+  {
+    words: ['témpano', 'témqano', 'téno'],
+    correct_word: 'témpano'
+  },
+  {
+    words: ['graciosa', 'qraciosa', 'gracisosa'],
+    correct_word: 'graciosa'
+  },
+  {
+    words: ['cicatriz', 'cicaciz', 'tricaciz'],
+    correct_word: 'cicatriz',
+  },
+  {
+    words: ['fracasar', 'crafasar', 'frafazar'],
+    correct_word: 'fracasar',
+  },
+  {
+    words: ['escenario', 'enario', 'escenenario'],
+    correct_word: 'escenario'
+  },
+  {
+    words: ['reprobar', 'rebrobar', 'reprodar'],
+    correct_word: 'reprobar',
+  },
+  {
+    words: ['dureza', 'bureza', 'rudeza'],
+    correct_word: 'dureza',
+  },
+  {
+    words: ['barrotes', 'rabotes', 'darrotes'],
+    correct_word: 'barrotes',
+  },
+  {
+    words: ['sociedad', 'sodiedad', 'cosiedad'],
+    correct_word: 'sociedad',
+  },
+  {
+    words: ['erupción', 'eprución', 'eruqción'],
+    correct_word: 'erupción',
+  },
+  {
+    words: ['tótem', 'tótotem', 'mótem'],
+    correct_word: 'tótem',
+  },
+  {
+    words: ['lazarillo', 'larazillo', 'lararillo'],
+    correct_word: 'lazarillo',
+  },
+  {
+    words: ['agitado', 'aqitado', 'atigado'],
+    correct_word: 'agitado',
+  },
+  {
+    words: ['patata', 'patatata', 'tapata'],
+    correct_word: 'patata',
+  },
+  {
+    words: ['minero', 'nimero', 'mimero'],
+    correct_word: 'minero',
+  },
+  {
+    words: ['tabaco', 'tacabo', 'tadaco'],
+    correct_word: 'tabaco'
+  },
+  {
+    words: ['etapas', 'epatas', 'etapatas'],
+    correct_word: 'etapas'
+  },
+  {
+    words: ['monólogo', 'nómologo', 'mónogolo'],
+    correct_word: 'mónologo'
+  },
+  {
+    words: ['baraja', 'bajara', 'barajara'],
+    correct_word: 'baraja'
+  },
+  {
+    words: ['pájaro', 'párajo', 'jarapo'],
+    correct_word: 'pájaro'
+  },
+  {
+    words: ['lámina', 'lánima', 'nálima'],
+    correct_word: 'lámina'
+  },
+  {
+    words: ['aspirina', 'arispina', 'aspina'],
+    correct_word: 'aspirina'
+  },
+  {
+    words: ['fogata', 'gofata', 'fotaga'],
+    correct_word: 'fogata'
+  },
+  {
+    words: ['cacao', 'cocoa', 'cocao'],
+    correct_word: 'cacao'
+  },
+  {
+    words: ['preparar', 'peprarar', 'reprapar'],
+    correct_word: 'preparar'
+  },
+  {
+    words: ['sangrar', 'sarangar', 'sanqrar'],
+    correct_word: 'sangrar'
+  },
+  {
+    words: ['piloto', 'tilopo', 'lipoto'],
+    correct_word: 'piloto'
+  },
+  {
+    words: ['aparato', 'arapato', 'apato'],
+    correct_word: 'aparato'
+  },
+  {
+    words: ['invertir', 'intervir', 'tirenvir'],
+    correct_word: 'invertir'
+  },
+  {
+    words: ['rabino', 'barino', 'radino'],
+    correct_word: 'rabino'
+  },
+  {
+    words: ['fugarse', 'gufarse', 'fugagarse'],
+    correct_word: 'fugarse'
+  },
+  {
+    words: ['deporte', 'deqorte', 'pedorte'],
+    correct_word: 'deporte',
+  },
+  {
+    words: ['traducir', 'tracudir', 'trabucir'],
+    correct_word: 'traducir'
+  },
+  
 ];
 
 let words_game1_level3 = [
@@ -373,8 +524,26 @@ let words_game1_level3 = [
   {
     words: ['cobrili', 'colilibri', 'colibri'],
     correct_word: 'colibri',
+  },
+  // audios hasta aca
+  {
+    words: ['escenario', 'enario', 'escenenario'],
+    correct_word: 'escenario'
+  },
+  {
+    words: ['inodoro', 'idonoro', 'inodonoro'],
+    correct_word: 'inodoro'
+  },
+  {
+    words: ['tapizado', 'tazipado', 'tadizado'],
+    correct_word: 'tapizado'
+  },
+  {
+    words: ['']
   }
-]
+];
+
+console.log(`Nivel 3: ${words_game1_level3.length}`);
 
 let words_game2_level1 = [
   // 'bombero',
@@ -417,6 +586,10 @@ let words_game2_level3 = [
   'esquimal',
   'caramelo'
 ];
+
+console.table(`${getWrongObjs(words_game1_level1) === 0 ? 'Ningun error' : getWrongObjs(words_game1_level1)}`);
+console.table(`${getWrongObjs(words_game1_level2) === 0 ? 'Ningun error' : getWrongObjs(words_game1_level2)}`);
+console.table(`${getWrongObjs(words_game1_level3) === 0 ? 'Ningun error' : getWrongObjs(words_game1_level3)}`);
 
 //Mezclo las palabras
 words_game1_level1.shuffle();
