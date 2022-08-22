@@ -8,25 +8,16 @@ fetch('../../get-scores/1/1')
       datasets: [{
         label: 'Juego de Opciones (Nivel 1)',
         data: dataGame.scores,
-        backgroundColor : 'rgba(255,0,0, .3)',
-        borderColor: 'rgba(255,0,0,1)',
-        borderWidth: 1
+        fill: false,
+        borderColor: 'rgba(255,0,0, .5)',
+        tension: 0.1,
       }]
     };
     const ctx = document.getElementById('statsGameOneLevelOne');
     const chartGameOne = new Chart(ctx, {
-      type: 'bar',
+      type: 'line',
       data: info,
-      options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        },
-        responsive: true,
-    }
+      responsive: true
     })
 });
 
@@ -40,24 +31,16 @@ fetch('../../get-scores/1/2')
       datasets: [{
         label: 'Juego de Opciones (Nivel 2)',
         data: dataGame.scores,
-        backgroundColor : 'rgba(0,0,255, .3)',
-        borderColor: 'rgba(0,0,255,1)',
-        borderWidth: 1
+        fill: false,
+        borderColor: 'rgba(0,0,255, .5)',
+        tension: 0.1,
       }]
     };
     const ctx = document.getElementById('statsGameOneLevelTwo');
     const chartGameOne = new Chart(ctx, {
-      type: 'bar',
+      type: 'line',
       data: info,
-      options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
+      responsive: true,
     })
   });
 
@@ -71,24 +54,16 @@ fetch('../../get-scores/1/2')
       datasets: [{
         label: 'Juego de Opciones (Nivel 3)',
         data: dataGame.scores,
-        backgroundColor : 'rgba(0,255,0, .3)',
-        borderColor: 'rgba(0,255,0,1)',
-        borderWidth: 1
+        fill: false,
+        borderColor: 'rgba(0,255,0, .5)',
+        tension: 0.1,
       }]
     };
     const ctx = document.getElementById('statsGameOneLevelThree');
     const chartGameOne = new Chart(ctx, {
-      type: 'bar',
+      type: 'line',
       data: info,
-      options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
+      responsive: true,
     })
 })
 
@@ -103,24 +78,16 @@ fetch('../../get-scores/2/1')
       datasets: [{
         label: 'Juego de Completar (Nivel 1)',
         data: dataGame.scores,
-        backgroundColor : 'rgba(255,0,255, .3)',
-        borderColor: 'rgba(255,0,255,1)',
-        borderWidth: 1
+        fill: false,
+        borderColor: 'rgba(255,0,255, .5)',
+        tension: 0.1,
       }]
     };
     const ctx = document.getElementById('statsGameTwoLevelOne');
     const chartGameOne = new Chart(ctx, {
-      type: 'bar',
+      type: 'line',
       data: info,
-      options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
+      responsive: true,
     })
 });
 
@@ -134,24 +101,16 @@ fetch('../../get-scores/2/2')
       datasets: [{
         label: 'Juego de Completar (Nivel 2)',
         data: dataGame.scores,
-        backgroundColor : 'rgba(0,255,255, .3)',
-        borderColor: 'rgba(0,255,255,1)',
-        borderWidth: 1
+        fill: false,
+        borderColor: 'rgba(0,255,255, .5)',
+        tension: 0.1,
       }]
     };
     const ctx = document.getElementById('statsGameTwoLevelTwo');
     const chartGameOne = new Chart(ctx, {
-      type: 'bar',
+      type: 'line',
       data: info,
-      options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
+      responsive: true,
     })
   });
 
@@ -165,24 +124,16 @@ fetch('../../get-scores/2/2')
       datasets: [{
         label: 'Juego de Completar (Nivel 3)',
         data: dataGame.scores,
-        backgroundColor : 'rgba(255,255, 0, .3)',
-        borderColor: 'rgba(255,255, 0,1)',
-        borderWidth: 1
+        fill: false,
+        borderColor: 'rgba(255,128, 20, .5)',
+        tension: 0.1,
       }]
     };
     const ctx = document.getElementById('statsGameTwoLevelThree');
     const chartGameOne = new Chart(ctx, {
-      type: 'bar',
+      type: 'line',
       data: info,
-      options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
+      responsive: true,
     })
   })
 
@@ -333,7 +284,7 @@ fetch('../../get-scores/4/1')
         label: 'Segundos',
         data: dataGame.times,
         fill: false,
-        borderColor: 'rgba(255 0 255 / .5)',
+        borderColor: 'rgba(255 126 42 / .5)',
         tension: 0.1,
       }]
     }
