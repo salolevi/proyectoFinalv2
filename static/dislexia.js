@@ -539,11 +539,134 @@ let words_game1_level3 = [
     correct_word: 'tapizado'
   },
   {
-    words: ['']
+    words: ['alambre', 'amalbre', 'amaldre'],
+    correct_word: 'alambre'
+  },
+  {
+    words: ['asegurar', 'asequrar', 'agesurar'],
+    correct_word: 'asegurar'
+  },
+  {
+    words: ['faraón', 'feraón', 'foraón'],
+    correct_word: 'faraón'
+  },
+  {
+    words: ['locomotora', 'lomocotora', 'locotora'],
+    correct_word: 'locomotora'
+  },
+  {
+    words: ['ingrediente', 'ingrebiente', 'indregiente'],
+    correct_word: 'ingrediente'
+  },
+  {
+    words: ['encantador', 'entancador', 'encanlador'],
+    correct_word: 'encantador'
+  },
+  {
+    words: ['desgracia', 'desbracia', 'desacia'],
+    correct_word: 'desgracia'
+  },
+  {
+    words: ['tempestad', 'temqestad', 'testempad'],
+    correct_word: 'tempestad'
+  },
+  {
+    words: ['divorciado', 'dicorviado', 'diverciado'],
+    correct_word: 'divorciado'
+  },
+  {
+    words: ['sacacorchos', 'sachacorcos', 'sacorchos'],
+    correct_word: 'sacacorchos'
+  },
+  {
+    words: ['gobierno', 'godierno', 'goberno'],
+    correct_word: 'gobierno'
+  },
+  {
+    words: ['singular', 'signular', 'sinqular'],
+    correct_word: 'singular'
+  },
+  {
+    words: ['separado', 'serapado', 'sepado'],
+    correct_word: 'separado'
+  },
+  {
+    words: ['internar', 'inretnar', 'iterar'],
+    correct_word: 'internar'
+  },
+  {
+    words: ['tijeras', 'tirejas', 'tejiras'],
+    correct_word: 'tijeras'
+  },
+  {
+    words: ['lagartija', 'latargija', 'laqartija'],
+    correct_word: 'lagartija'
+  },
+  {
+    words: ['interruptor', 'inperruntor', 'interror'],
+    correct_word: 'interruptor'
+  },
+  {
+    words: ['proverbio', 'prevorbio', 'provierbo'],
+    correct_word: 'proverbio'
+  },
+  {
+    words: ['empaquetar', 'emtaquepar', 'empatar'],
+    correct_word: 'empaquetar'
+  },
+  {
+    words: ['zambullir', 'zamdullir', 'zillumbar'],
+    correct_word: 'zambullir'
+  },
+  {
+    words: ['bombear', 'bomdear', 'dombear'],
+    correct_word: 'bombear'
+  },
+  {
+    words: ['delantero', 'ledantero', 'delanero'],
+    correct_word: 'delantero'
+  },
+  {
+    words: ['superhéroe', 'superhóroe', 'suqerhéroe'],
+    correct_word: 'superhéroe'
+  },
+  {
+    words: ['seguridad', 'sequridad', 'sugeridad'],
+    correct_word: 'seguridad'
+  },
+  {
+    words: ['camarote', 'caramote', 'camate'],
+    correct_word: 'camarote'
+  },
+  {
+    words: ['panaderia', 'padaneria', 'qanaderia'],
+    correct_word: 'panaderia'
+  },
+  {
+    words: ['golosina', 'logosina', 'gilosina'],
+    correct_word: 'golosina'
+  },
+  {
+    words: ['animales', 'aminales', 'amimales'],
+    correct_word: 'animales'
+  },
+  {
+    words: ['bochorno', 'dochorno', 'borno'],
+    correct_word: 'bochorno'
+  },
+  {
+    words: ['elegante', 'egelante', 'elagante'],
+    correct_word: 'elegante'
+  },
+  {
+    words: ['embudo', 'emdubo', 'bemudo'],
+    correct_word: 'embudo'
+  },
+  {
+    words: ['inesperado', 'inesrepado', 'imesperabo'],
+    correct_word: 'inesperado'
   }
 ];
-
-console.log(`Nivel 3: ${words_game1_level3.length}`);
 
 let words_game2_level1 = [
   // 'bombero',
