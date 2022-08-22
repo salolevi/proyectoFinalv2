@@ -346,8 +346,8 @@ let words_game1_level2 = [
     correct_word: 'fracasar',
   },
   {
-    words: ['escenario', 'enario', 'escenenario'],
-    correct_word: 'escenario'
+    words: ['pesada', 'pedasa', 'qesada'],
+    correct_word: 'pesada'
   },
   {
     words: ['reprobar', 'rebrobar', 'reprodar'],
