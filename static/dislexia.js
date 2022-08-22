@@ -399,7 +399,7 @@ let words_game1_level2 = [
   },
   {
     words: ['monólogo', 'nómologo', 'mónogolo'],
-    correct_word: 'mónologo'
+    correct_word: 'monólogo'
   },
   {
     words: ['baraja', 'bajara', 'barajara'],
