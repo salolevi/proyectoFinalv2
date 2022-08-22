@@ -34,7 +34,7 @@
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   animation-play-state: paused;
-  overflow: hidden;
+  /* overflow: hidden; */
   user-select: none;
 }
 
@@ -79,11 +79,11 @@
 @keyframes messageAnimation {
   0% {
     transform: translateY(-120vh);
-    opacity: .8;
+    opacity: 0;
   }
 
   50% {
-    opacity: .8;
+    opacity: 0.8;
     transform: translateY(1.5em);
   }
 
@@ -225,16 +225,22 @@
   position: absolute;
   font-family: 'Mario', 'Comic Sans MS', sans-serif;
   top: 0;
-  right: 0;
+  left: calc(100% + 1.5rem);
   padding: .8em .8em 0 0;
   z-index: 10;
   pointer-events: none;
+  width: max-content;
+  font-size: 1.2em;
 }
 
 .scores-container * {
   font-family: 'Mario', 'Comic Sans MS', sans-serif;
   color: magenta;
   user-select: none;
+}
+
+.score {
+  color: #00a1e2;
 }
 
 /* Estilos timer */
@@ -363,8 +369,8 @@
   border: 5px solid #B58B00;
   color: #B58B00;
   position: absolute;
-  top: .5rem;
-  left: .5rem
+  top: 4.5rem;
+  left: calc(100% + 1.5rem);
 }
 
 .menu-btn:hover {

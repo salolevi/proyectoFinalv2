@@ -793,6 +793,28 @@ const getAudio = word => {
   return new Audio(`../media/audio/${replaceAccents(word)}_audio.mp3`);
 }
 
+const addMenuButton = () => {
+  const menuButton = document.createElement('button');
+  menuButton.classList.add('game-btn');
+  menuButton.classList.add('menu-btn');
+  menuButton.innerHTML = 'MENU';
+
+  gameContainer.appendChild(menuButton);
+
+  menuButton.addEventListener('click', e => {
+    gameContainer.innerHTML = '';
+    gameContainer.style.animation = 'none';
+      setTimeout(() => {
+        gameContainer.style.webkitAnimation = '';
+      }, 10);
+      gameContainer.style.display = 'flex';
+      resetScores();
+      gameStarted = false;
+      startGame(); 
+      addButtonAnimations();
+  });
+}
+
 const displayGameCompleted = () => {
   gameContainer.innerHTML = '';
   const gameCompletedDiv = document.createElement('DIV');
@@ -1083,6 +1105,7 @@ const displayUncompleteWord = (index) => {
   if (document.querySelector('.center-image')!== null) gameContainer.removeChild(document.querySelector('.center-image'));
   wordsButtonContainer.innerHTML = '';
   wordsButtonContainer.classList.add('letras');
+  wordsButtonContainer.classList.remove('options');
 
 
   // Selecciono la palabra que le pasamos por parametro
@@ -1240,6 +1263,7 @@ const renderGameOne = (level) => {
       AUDIO_WORD.play();
   })
   assignEvents();
+  addMenuButton();
 }
 let gameStarted = false;
 
@@ -1296,6 +1320,7 @@ const renderGameTwo = (level) => {
   displayScoresFirst(actualGame, level);
   //Agregado el evento que se desencadena cuando se apreta una letra
   if (!assignedKeyEvents) assignKeyEvents();
+  addMenuButton();
 }
 
 const checkSize = () => {

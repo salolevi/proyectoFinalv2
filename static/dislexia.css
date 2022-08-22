@@ -38,7 +38,7 @@ canvas {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-play-state: paused;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 @keyframes backgroundLevel1 {
@@ -81,7 +81,7 @@ canvas {
 .game-info {
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: start;
   padding: 7px 15px 0 0;
   font-size: 1.2em;
   font-family: 'Comic Sans MS', sans-serif;
@@ -90,12 +90,21 @@ canvas {
   animation-name: optionsandScoresAppear;
   animation-duration: .6s;
   animation-fill-mode: forwards;
-  align-self: start;
+  position: absolute;
+  top: 0;
+  left: calc(100% + 1.5rem);
+  /* align-self: start; */
+  width: max-content;
+  font-family: 'Mario', 'Comic Sans MS', sans-serif;
+}
+
+.game-info * {
+  font-family: 'Mario', 'Comic Sans MS', sans-serif;
 }
 
 .attempts-game2 {
   color: darkblue;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 /* Estilo botones opciones */
@@ -253,12 +262,33 @@ canvas {
   width: 100%;
 }
 
+.game-btn {
+  font-size: 1em;
+  padding: .5em .8em;
+  font-family: 'Mario', sans-serif;
+  cursor: pointer;
+  background-color: #222;
+}
+
+.menu-btn {
+  font-size: .8em;
+  border: 5px solid #B58B00;
+  color: #B58B00;
+  position: absolute;
+  top: 4.5rem;
+  left: calc(100% + 1.5rem);
+}
+
+.menu-btn:hover {
+  background-color: #B58B00;
+  color: #222;
+}
+
 /* Estilos Puntuacion */
 
 .score {
-  font-family: 'Comic Sans MS', sans-serif;
   color:rgb(66, 117, 11);
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .record {
