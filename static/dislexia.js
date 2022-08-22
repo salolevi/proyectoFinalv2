@@ -710,10 +710,6 @@ let words_game2_level3 = [
   'caramelo'
 ];
 
-console.table(`${getWrongObjs(words_game1_level1) === 0 ? 'Ningun error' : getWrongObjs(words_game1_level1)}`);
-console.table(`${getWrongObjs(words_game1_level2) === 0 ? 'Ningun error' : getWrongObjs(words_game1_level2)}`);
-console.table(`${getWrongObjs(words_game1_level3) === 0 ? 'Ningun error' : getWrongObjs(words_game1_level3)}`);
-
 //Mezclo las palabras
 words_game1_level1.shuffle();
 words_game1_level1.length = 10;
