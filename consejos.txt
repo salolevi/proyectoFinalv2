@@ -1,8 +1,8 @@
 Hacer landing page
 
-Reubicar boton de menu y puntuaciones
+Reubicar boton de menu y puntuaciones / hecho
 
-Mejorar estadisticas (Hacer reutilizable los dos primeros juegos)
+Agregar contenido game1 y game2 (Hacer reutilizable los dos primeros juegos)
 
 Realizar linea de tendencia de los dos jugadores
 

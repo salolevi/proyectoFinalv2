@@ -474,7 +474,7 @@ const addMenuButton = () => {
   const menuButton = document.createElement('button');
   menuButton.classList.add('game-btn');
   menuButton.classList.add('menu-btn');
-  menuButton.innerHTML = 'MENU';
+  menuButton.innerHTML = 'VOLVER AL INICIO';
 
   gameContainer.appendChild(menuButton);
 

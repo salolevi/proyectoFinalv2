@@ -681,7 +681,29 @@ let words_game2_level1 = [
   'caja',
   'lapiz',
   'botas',
-  'taza'
+  'taza',
+  // Imagenes hasta aca
+  'pala',
+  'carta',
+  'leche',
+  'choza',
+  'peine',
+  'oreja',
+  'tacho',
+  'morsa',
+  'piraña',
+  'cabra',
+  'niño',
+  'avion',
+  'cactus',
+  'mano',
+  'queso',
+  'barro',
+  'jaula',
+  'pollo',
+  'lobo',
+  'iman',
+  'novia',
 ];
 
 let words_game2_level2 = [
@@ -797,7 +819,7 @@ const addMenuButton = () => {
   const menuButton = document.createElement('button');
   menuButton.classList.add('game-btn');
   menuButton.classList.add('menu-btn');
-  menuButton.innerHTML = 'MENU';
+  menuButton.innerHTML = 'VOLVER AL INICIO';
 
   gameContainer.appendChild(menuButton);
 

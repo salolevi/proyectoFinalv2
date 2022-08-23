@@ -272,16 +272,18 @@ canvas {
 
 .menu-btn {
   font-size: .8em;
-  border: 5px solid #B58B00;
-  color: #B58B00;
+  border: 5px solid #ab6ce5;
+  color: #ab6ce5;
   position: absolute;
   top: 4.5rem;
   left: calc(100% + 1.5rem);
+  background-color: darkblue;
+  width: max-content;
 }
 
 .menu-btn:hover {
-  background-color: #B58B00;
-  color: #222;
+  background-color: #ab6ce5;
+  color: darkblue;
 }
 
 /* Estilos Puntuacion */
