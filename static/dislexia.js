@@ -704,7 +704,27 @@ let words_game2_level1 = [
   'lobo',
   'iman',
   'novia',
+  'barco',
+  'mozo',
+  'trofeo',
+  'pecera',
+  'noche',
+  'guantes',
+  'remera',
+  'playa',
+  'lago',
+  'actor',
+  'guerra',
+  'flor',
+  'ojota',
+  'monje',
+  'guardia',
+  'reina',
+  'vaso',
+  'papel'
 ];
+
+console.log(`Nivel 1: ${words_game2_level1.length}`);
 
 let words_game2_level2 = [
   'bombero',
