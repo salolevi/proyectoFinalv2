@@ -682,15 +682,15 @@ let words_game2_level1 = [
   'lapiz',
   'botas',
   'taza',
-  // Imagenes hasta aca
   'pala',
   'carta',
   'leche',
-  'choza',
+  'hongo',
   'peine',
-  'oreja',
+  'nariz',
   'tacho',
   'morsa',
+  // Imagenes hasta aca
   'piraña',
   'cabra',
   'niño',
@@ -698,9 +698,9 @@ let words_game2_level1 = [
   'cactus',
   'mano',
   'queso',
-  'barro',
+  'cerdo',
   'jaula',
-  'pollo',
+  'gallo',
   'lobo',
   'iman',
   'novia',
@@ -721,7 +721,8 @@ let words_game2_level1 = [
   'guardia',
   'reina',
   'vaso',
-  'papel'
+  'papel',
+  'bebe'
 ];
 
 console.log(`Nivel 1: ${words_game2_level1.length}`);
@@ -767,6 +768,7 @@ words_game1_level3.forEach(obj => {obj.words.shuffle()});
 
 
 words_game2_level1.shuffle();
+words_game2_level1.length = 10;
 words_game2_level2.shuffle();
 words_game2_level3.shuffle();
 
