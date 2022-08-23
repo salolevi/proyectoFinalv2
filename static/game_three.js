@@ -513,7 +513,7 @@ const fillImage = (level,index) => {
     rows: +imageObject.type.split('x')[0],
     columns: +imageObject.type.split('x')[1]
   }
-  let gameStyles = gameContainer.getAttribute('style');
+  let gameStyles = 'opacity: 1; animation-name: backgroundLevel1; animation-play-state: running;';
   // console.log(splitedImages);
   gameStyles += 'display: grid; align-items: unset; grid-template-columns:';
   for (let i = 0; i<dimensions.columns; i++) {
