@@ -669,9 +669,6 @@ let words_game1_level3 = [
 ];
 
 let words_game2_level1 = [
-  // 'bombero',
-  // 'canasta',
-  // 'arcoiris',
   'mapa',
   'luna',
   'regla',
@@ -768,17 +765,16 @@ let words_game2_level2 = [
   'montaña',
   'flecha',
   'trebol',
-  'detective',
+  'pirata',
   'numeros',
   'reprobar',
   'semilla',
   'satelite',
-  'discoteca',
+  'moneda',
   'mañana',
   'corbata',
 ];
 
-console.log(`Nivel 2: ${words_game2_level2.length}`);
 
 let words_game2_level3 = [
   'arcoiris',
@@ -793,8 +789,48 @@ let words_game2_level3 = [
   'caramelo',
   'television',
   'fotografia',
+  // Imagenes hasta aca
+  'cuadrado',
+  'parlante',
+  'tractor',
+  'bisonte',
+  'cienpies',
+  'villano',
+  'cigarrillo',
+  'cerveza',
+  'moneda',
+  'discoteca',
+  'bañera',
+  'salvavidas',
+  'circuito',
+  'carrera',
+  'corporacion',
+  'restaurante',
+  'estadio',
+  'evolucion',
+  'hechicero',
+  'edificio',
+  'operacion',
+  'bancarrota',
+  'triangulo',
+  'travieso',
+  'guillotina',
+  'detective',
+  'caballero',
+  'barbacoa',
+  'microbio',
+  'continente',
+  'galaxia',
+  'ejercito',
+  'psicologo',
+  'imperio',
+  'explorador',
+  'primavera',
+  'ventanal',
+  'presidente'
 ];
 
+console.log(`Nivel 3: ${words_game2_level3.length}`);
 //Mezclo las palabras
 words_game1_level1.shuffle();
 words_game1_level1.length = 10;
