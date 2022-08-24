@@ -801,8 +801,7 @@ let words_game2_level3 = [
   'discoteca',
   'bañera',
   'salvavidas',
-  // Imagenes hasta aca
-  'circuito',
+  'auricular',
   'carrera',
   'corporacion',
   'restaurante',
@@ -813,6 +812,7 @@ let words_game2_level3 = [
   'operacion',
   'bancarrota',
   'triangulo',
+  // Imagenes hasta aca
   'travieso',
   'guillotina',
   'detective',
