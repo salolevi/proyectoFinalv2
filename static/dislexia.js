@@ -719,13 +719,11 @@ let words_game2_level1 = [
   'monje',
   'guardia',
   'reina',
-  // Imagenes hasta aca
   'vaso',
   'papel',
   'bebe'
 ];
 
-console.log(`Nivel 1: ${words_game2_level1.length}`);
 
 let words_game2_level2 = [
   'bombero',
@@ -737,8 +735,21 @@ let words_game2_level2 = [
   'helado',
   'enchufe',
   'igloo',
-  'caballo'
-]
+  'caballo',
+  // Imagenes hasta aca
+  'ducha',
+  'azucar',
+  'infusion',
+  'almohada',
+  'marcador',
+  'batman',
+  'tarjeta',
+  'bronce',
+  'estatua',
+  'plumas'
+];
+
+console.log(`Nivel 2: ${words_game2_level2.length}`);
 
 let words_game2_level3 = [
   'arcoiris',
@@ -750,7 +761,7 @@ let words_game2_level3 = [
   'millonario',
   'mochila',
   'esquimal',
-  'caramelo'
+  'caramelo',
 ];
 
 //Mezclo las palabras
@@ -767,29 +778,29 @@ words_game1_level3.length = 10;
 words_game1_level3.forEach(obj => {obj.words.shuffle()});
 
 
-// words_game2_level1.shuffle();
-// words_game2_level1.length = 10;
+words_game2_level1.shuffle();
+words_game2_level1.length = 10;
 words_game2_level2.shuffle();
 words_game2_level3.shuffle();
 
 // Testing button
 
-const testButton = document.createElement('button');
-testButton.innerHTML = 'Test';
+// const testButton = document.createElement('button');
+// testButton.innerHTML = 'Test';
 
-document.body.appendChild(testButton);
+// document.body.appendChild(testButton);
 
-testButton.addEventListener('click', () => {
-  setOfWords++;
-    if (setOfWords < getWords(actualLevel).length) { // Si hay mas palabras, se muesyta la siguiente
-      displayUncompleteWord(setOfWords);
-      document.querySelector('.empty1').focus();
-      displayScores(actualGame, actualLevel);
-      displayImage(setOfWords);
-    } else { // De no ser el caso, se envia la puntuacion y se chequea si se cumplen las condiciones para pasar de nivel
-      sendAndCheckScore(getWords(actualLevel).length, rightAnswers, wrongAnswers);
-    }
-})
+// testButton.addEventListener('click', () => {
+//   setOfWords++;
+//     if (setOfWords < getWords(actualLevel).length) { // Si hay mas palabras, se muesyta la siguiente
+//       displayUncompleteWord(setOfWords);
+//       document.querySelector('.empty1').focus();
+//       displayScores(actualGame, actualLevel);
+//       displayImage(setOfWords);
+//     } else { // De no ser el caso, se envia la puntuacion y se chequea si se cumplen las condiciones para pasar de nivel
+//       sendAndCheckScore(getWords(actualLevel).length, rightAnswers, wrongAnswers);
+//     }
+// });
 
 const games = [
   {
