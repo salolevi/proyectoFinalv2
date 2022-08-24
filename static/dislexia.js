@@ -746,7 +746,38 @@ let words_game2_level2 = [
   'tarjeta',
   'bronce',
   'estatua',
-  'plumas'
+  'plumas',
+  'iglesia',
+  'tristeza',
+  'musical',
+  'dragon',
+  'jirafa',
+  'hormiga',
+  'invierno',
+  'calculo',
+  'vikingo',
+  'danzar',
+  'estrella',
+  'tormenta',
+  'mariposa',
+  'alumno',
+  'ciencia',
+  'volcan',
+  'manguera',
+  'revista',
+  'vegetales',
+  'montaña',
+  'flecha',
+  'trebol',
+  'arañas',
+  'numeros',
+  'reprobar',
+  'semilla',
+  'satelite',
+  'discoteca',
+  'mañana',
+  'corbata',
+  
 ];
 
 console.log(`Nivel 2: ${words_game2_level2.length}`);
@@ -762,6 +793,8 @@ let words_game2_level3 = [
   'mochila',
   'esquimal',
   'caramelo',
+  'television',
+  'fotografia',
 ];
 
 //Mezclo las palabras
