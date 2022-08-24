@@ -763,7 +763,6 @@ let words_game2_level2 = [
   'ciencia',
   'volcan',
   'manguera',
-  // Imagenes hasta aca
   'revista',
   'vegetales',
   'montaña',
@@ -813,6 +812,7 @@ words_game1_level3.forEach(obj => {obj.words.shuffle()});
 words_game2_level1.shuffle();
 words_game2_level1.length = 10;
 words_game2_level2.shuffle();
+words_game2_level2.length = 10;
 words_game2_level3.shuffle();
 
 // Testing button
@@ -1347,7 +1347,7 @@ const startGame = () => {
     gameContainer.removeChild(startButtonOne);
     gameContainer.removeChild(welcomeContainer);
     setTimeout(() => {
-      renderGameTwo(1);
+      renderGameTwo(2);
     }, 1050)
   })
 }
