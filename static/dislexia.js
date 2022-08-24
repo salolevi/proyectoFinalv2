@@ -767,10 +767,29 @@ words_game1_level3.length = 10;
 words_game1_level3.forEach(obj => {obj.words.shuffle()});
 
 
-words_game2_level1.shuffle();
-words_game2_level1.length = 10;
+// words_game2_level1.shuffle();
+// words_game2_level1.length = 10;
 words_game2_level2.shuffle();
 words_game2_level3.shuffle();
+
+// Testing button
+
+const testButton = document.createElement('button');
+testButton.innerHTML = 'Test';
+
+document.body.appendChild(testButton);
+
+testButton.addEventListener('click', () => {
+  setOfWords++;
+    if (setOfWords < getWords(actualLevel).length) { // Si hay mas palabras, se muesyta la siguiente
+      displayUncompleteWord(setOfWords);
+      document.querySelector('.empty1').focus();
+      displayScores(actualGame, actualLevel);
+      displayImage(setOfWords);
+    } else { // De no ser el caso, se envia la puntuacion y se chequea si se cumplen las condiciones para pasar de nivel
+      sendAndCheckScore(getWords(actualLevel).length, rightAnswers, wrongAnswers);
+    }
+})
 
 const games = [
   {
@@ -1316,7 +1335,8 @@ let gameStarted = false;
 
 //Funcion que renderiza imagenes
 const displayImage = (index) => {
-  let word = getWords(actualLevel)[index]
+  let word = getWords(actualLevel)[index];
+  word = word.replace('ñ', 'n');
   let image = document.createElement('IMG');
   image.setAttribute('src', `../../media/media/${word}.png`);
   image.classList.add('center-image');
