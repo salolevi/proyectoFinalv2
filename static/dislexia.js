@@ -789,7 +789,6 @@ let words_game2_level3 = [
   'caramelo',
   'television',
   'fotografia',
-  // Imagenes hasta aca
   'cuadrado',
   'parlante',
   'tractor',
@@ -802,6 +801,7 @@ let words_game2_level3 = [
   'discoteca',
   'bañera',
   'salvavidas',
+  // Imagenes hasta aca
   'circuito',
   'carrera',
   'corporacion',
