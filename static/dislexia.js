@@ -736,8 +736,7 @@ let words_game2_level2 = [
   'enchufe',
   'igloo',
   'caballo',
-  // Imagenes hasta aca
-  'ducha',
+  'arañas',
   'azucar',
   'infusion',
   'almohada',
@@ -749,7 +748,8 @@ let words_game2_level2 = [
   'plumas',
   'iglesia',
   'tristeza',
-  'musical',
+  'prision',
+  // Imagenes hasta aca
   'dragon',
   'jirafa',
   'hormiga',
@@ -777,7 +777,6 @@ let words_game2_level2 = [
   'discoteca',
   'mañana',
   'corbata',
-  
 ];
 
 console.log(`Nivel 2: ${words_game2_level2.length}`);
