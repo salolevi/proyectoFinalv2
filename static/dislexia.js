@@ -690,7 +690,6 @@ let words_game2_level1 = [
   'nariz',
   'tacho',
   'morsa',
-  // Imagenes hasta aca
   'piraña',
   'cabra',
   'niño',
@@ -708,18 +707,19 @@ let words_game2_level1 = [
   'mozo',
   'trofeo',
   'pecera',
-  'noche',
+  'taxi',
   'guantes',
   'remera',
   'playa',
   'lago',
-  'actor',
+  'maestra',
   'guerra',
   'flor',
-  'ojota',
+  'ojotas',
   'monje',
   'guardia',
   'reina',
+  // Imagenes hasta aca
   'vaso',
   'papel',
   'bebe'
@@ -1248,6 +1248,9 @@ const colorWord = (word) => {
 }
 
 const startGame = () => {
+
+  if (gameStarted) return;
+  gameStarted = true;
   const welcomeWord = '¡A JUGAR!';
   resetScores();
   const welcomeContainer = document.createElement('DIV');
