@@ -769,7 +769,7 @@ let words_game2_level2 = [
   'montaña',
   'flecha',
   'trebol',
-  'arañas',
+  'detective',
   'numeros',
   'reprobar',
   'semilla',
