@@ -749,7 +749,6 @@ let words_game2_level2 = [
   'iglesia',
   'tristeza',
   'prision',
-  // Imagenes hasta aca
   'dragon',
   'jirafa',
   'hormiga',
@@ -764,6 +763,7 @@ let words_game2_level2 = [
   'ciencia',
   'volcan',
   'manguera',
+  // Imagenes hasta aca
   'revista',
   'vegetales',
   'montaña',
