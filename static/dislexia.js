@@ -669,9 +669,6 @@ let words_game1_level3 = [
 ];
 
 let words_game2_level1 = [
-  // 'bombero',
-  // 'canasta',
-  // 'arcoiris',
   'mapa',
   'luna',
   'regla',
@@ -682,13 +679,12 @@ let words_game2_level1 = [
   'lapiz',
   'botas',
   'taza',
-  // Imagenes hasta aca
   'pala',
   'carta',
   'leche',
-  'choza',
+  'hongo',
   'peine',
-  'oreja',
+  'nariz',
   'tacho',
   'morsa',
   'piraña',
@@ -698,9 +694,9 @@ let words_game2_level1 = [
   'cactus',
   'mano',
   'queso',
-  'barro',
+  'cerdo',
   'jaula',
-  'pollo',
+  'gallo',
   'lobo',
   'iman',
   'novia',
@@ -708,23 +704,23 @@ let words_game2_level1 = [
   'mozo',
   'trofeo',
   'pecera',
-  'noche',
+  'taxi',
   'guantes',
   'remera',
   'playa',
   'lago',
-  'actor',
+  'maestra',
   'guerra',
   'flor',
-  'ojota',
+  'ojotas',
   'monje',
   'guardia',
   'reina',
   'vaso',
-  'papel'
+  'papel',
+  'bebe'
 ];
 
-console.log(`Nivel 1: ${words_game2_level1.length}`);
 
 let words_game2_level2 = [
   'bombero',
@@ -736,8 +732,49 @@ let words_game2_level2 = [
   'helado',
   'enchufe',
   'igloo',
-  'caballo'
-]
+  'caballo',
+  'arañas',
+  'azucar',
+  'infusion',
+  'almohada',
+  'marcador',
+  'batman',
+  'tarjeta',
+  'bronce',
+  'estatua',
+  'plumas',
+  'iglesia',
+  'tristeza',
+  'prision',
+  'dragon',
+  'jirafa',
+  'hormiga',
+  'invierno',
+  'calculo',
+  'vikingo',
+  'danzar',
+  'estrella',
+  'tormenta',
+  'mariposa',
+  'alumno',
+  'ciencia',
+  'volcan',
+  'manguera',
+  'revista',
+  'vegetales',
+  'montaña',
+  'flecha',
+  'trebol',
+  'pirata',
+  'numeros',
+  'reprobar',
+  'semilla',
+  'satelite',
+  'moneda',
+  'mañana',
+  'corbata',
+];
+
 
 let words_game2_level3 = [
   'arcoiris',
@@ -749,9 +786,51 @@ let words_game2_level3 = [
   'millonario',
   'mochila',
   'esquimal',
-  'caramelo'
+  'caramelo',
+  'television',
+  'fotografia',
+  'cuadrado',
+  'parlante',
+  'tractor',
+  'bisonte',
+  'cienpies',
+  'villano',
+  'cigarrillo',
+  'cerveza',
+  'moneda',
+  'discoteca',
+  'bañera',
+  'salvavidas',
+  'auricular',
+  'carrera',
+  'corporacion',
+  'restaurante',
+  'estadio',
+  'evolucion',
+  'hechicero',
+  'edificio',
+  'operacion',
+  'bancarrota',
+  'triangulo',
+  'travieso',
+  'microfono',
+  'detective',
+  'caballero',
+  'barbacoa',
+  'microbio',
+  'continente',
+  'galaxia',
+  // Imagenes hasta aca
+  'ejercito',
+  'planeta',
+  'emperador',
+  'explorador',
+  'primavera',
+  'paquete',
+  'presidente'
 ];
 
+console.log(`Nivel 3: ${words_game2_level3.length}`);
 //Mezclo las palabras
 words_game1_level1.shuffle();
 words_game1_level1.length = 10;
@@ -767,8 +846,31 @@ words_game1_level3.forEach(obj => {obj.words.shuffle()});
 
 
 words_game2_level1.shuffle();
+words_game2_level1.length = 10;
 words_game2_level2.shuffle();
+words_game2_level2.length = 10;
 words_game2_level3.shuffle();
+words_game2_level3.length = 10;
+
+
+// Testing button
+
+const testButton = document.createElement('button');
+testButton.innerHTML = 'Test';
+
+document.body.appendChild(testButton);
+
+testButton.addEventListener('click', () => {
+  setOfWords++;
+    if (setOfWords < getWords(actualLevel).length) { // Si hay mas palabras, se muesyta la siguiente
+      displayUncompleteWord(setOfWords);
+      document.querySelector('.empty1').focus();
+      displayScores(actualGame, actualLevel);
+      displayImage(setOfWords);
+    } else { // De no ser el caso, se envia la puntuacion y se chequea si se cumplen las condiciones para pasar de nivel
+      sendAndCheckScore(getWords(actualLevel).length, rightAnswers, wrongAnswers);
+    }
+});
 
 const games = [
   {
@@ -1246,6 +1348,9 @@ const colorWord = (word) => {
 }
 
 const startGame = () => {
+
+  if (gameStarted) return;
+  gameStarted = true;
   const welcomeWord = '¡A JUGAR!';
   resetScores();
   const welcomeContainer = document.createElement('DIV');
@@ -1311,7 +1416,8 @@ let gameStarted = false;
 
 //Funcion que renderiza imagenes
 const displayImage = (index) => {
-  let word = getWords(actualLevel)[index]
+  let word = getWords(actualLevel)[index];
+  word = word.replace('ñ', 'n');
   let image = document.createElement('IMG');
   image.setAttribute('src', `../../media/media/${word}.png`);
   image.classList.add('center-image');
