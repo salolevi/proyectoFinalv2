@@ -855,22 +855,22 @@ words_game2_level3.length = 10;
 
 // Testing button
 
-const testButton = document.createElement('button');
-testButton.innerHTML = 'Test';
+// const testButton = document.createElement('button');
+// testButton.innerHTML = 'Test';
 
-document.body.appendChild(testButton);
+// document.body.appendChild(testButton);
 
-testButton.addEventListener('click', () => {
-  setOfWords++;
-    if (setOfWords < getWords(actualLevel).length) { // Si hay mas palabras, se muesyta la siguiente
-      displayUncompleteWord(setOfWords);
-      document.querySelector('.empty1').focus();
-      displayScores(actualGame, actualLevel);
-      displayImage(setOfWords);
-    } else { // De no ser el caso, se envia la puntuacion y se chequea si se cumplen las condiciones para pasar de nivel
-      sendAndCheckScore(getWords(actualLevel).length, rightAnswers, wrongAnswers);
-    }
-});
+// testButton.addEventListener('click', () => {
+//   setOfWords++;
+//     if (setOfWords < getWords(actualLevel).length) { // Si hay mas palabras, se muesyta la siguiente
+//       displayUncompleteWord(setOfWords);
+//       document.querySelector('.empty1').focus();
+//       displayScores(actualGame, actualLevel);
+//       displayImage(setOfWords);
+//     } else { // De no ser el caso, se envia la puntuacion y se chequea si se cumplen las condiciones para pasar de nivel
+//       sendAndCheckScore(getWords(actualLevel).length, rightAnswers, wrongAnswers);
+//     }
+// });
 
 const games = [
   {
