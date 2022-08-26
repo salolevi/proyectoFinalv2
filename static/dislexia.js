@@ -812,21 +812,21 @@ let words_game2_level3 = [
   'operacion',
   'bancarrota',
   'triangulo',
-  // Imagenes hasta aca
   'travieso',
-  'guillotina',
+  'microfono',
   'detective',
   'caballero',
   'barbacoa',
   'microbio',
   'continente',
   'galaxia',
+  // Imagenes hasta aca
   'ejercito',
-  'psicologo',
-  'imperio',
+  'planeta',
+  'emperador',
   'explorador',
   'primavera',
-  'ventanal',
+  'paquete',
   'presidente'
 ];
 
@@ -850,25 +850,27 @@ words_game2_level1.length = 10;
 words_game2_level2.shuffle();
 words_game2_level2.length = 10;
 words_game2_level3.shuffle();
+words_game2_level3.length = 10;
+
 
 // Testing button
 
-// const testButton = document.createElement('button');
-// testButton.innerHTML = 'Test';
+const testButton = document.createElement('button');
+testButton.innerHTML = 'Test';
 
-// document.body.appendChild(testButton);
+document.body.appendChild(testButton);
 
-// testButton.addEventListener('click', () => {
-//   setOfWords++;
-//     if (setOfWords < getWords(actualLevel).length) { // Si hay mas palabras, se muesyta la siguiente
-//       displayUncompleteWord(setOfWords);
-//       document.querySelector('.empty1').focus();
-//       displayScores(actualGame, actualLevel);
-//       displayImage(setOfWords);
-//     } else { // De no ser el caso, se envia la puntuacion y se chequea si se cumplen las condiciones para pasar de nivel
-//       sendAndCheckScore(getWords(actualLevel).length, rightAnswers, wrongAnswers);
-//     }
-// });
+testButton.addEventListener('click', () => {
+  setOfWords++;
+    if (setOfWords < getWords(actualLevel).length) { // Si hay mas palabras, se muesyta la siguiente
+      displayUncompleteWord(setOfWords);
+      document.querySelector('.empty1').focus();
+      displayScores(actualGame, actualLevel);
+      displayImage(setOfWords);
+    } else { // De no ser el caso, se envia la puntuacion y se chequea si se cumplen las condiciones para pasar de nivel
+      sendAndCheckScore(getWords(actualLevel).length, rightAnswers, wrongAnswers);
+    }
+});
 
 const games = [
   {
@@ -1383,7 +1385,7 @@ const startGame = () => {
     gameContainer.removeChild(startButtonOne);
     gameContainer.removeChild(welcomeContainer);
     setTimeout(() => {
-      renderGameTwo(2);
+      renderGameTwo(1);
     }, 1050)
   })
 }
