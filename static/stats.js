@@ -11,7 +11,16 @@ fetch('../../get-scores/1/1')
         fill: false,
         borderColor: 'rgba(255,0,0, .5)',
         tension: 0.1,
-      }]
+      },
+      {
+        label: 'Promedio General',
+        data: dataGame.scoresAll,
+        fill: false,
+        borderColor: 'rgba(120 120 120 / .7)',
+        pointStyle: 'line',
+        tension: 0.1
+      }
+    ]
     };
     const ctx = document.getElementById('statsGameOneLevelOne');
     const chartGameOne = new Chart(ctx, {

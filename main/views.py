@@ -16,7 +16,29 @@ from datetime import datetime, timezone
 
 # Create your views here.
 
+def averageScore(set):
+  average = 0
+  if len(set) == 0:
+    return 0
+  for instance in set:
+    average += instance.score
+  return round(average/len(set), 2)
 
+def averageTime(set):
+  average = 0
+  if len(set) == 0:
+    return 0
+  for instance in set:
+    average += instance.avgScoreTime
+  return round(average/len(set), 2)
+
+def averageMovements(set):
+  average = 0
+  if len(set) == 0:
+    return 0
+  for instance in set:
+    average += instance.avgMomevemts
+  return round(average/len(set), 2)
 
 class IndexView(View):
   template_name = "index.html"
@@ -106,14 +128,20 @@ def getScores(request, gameID, levelID):
     
     if int(gameID) == 1 or int(gameID) == 2: 
       profileScoresGame = ProfileScore.objects.filter(profileID = _profile, gameID = _game, levelID = _level)
+      profileScoreNoUser = ProfileScore.objects.filter(gameID = _game, levelID = _level)
       dates = []
       scores = []
+      scoresAll = []
+      generalAvg = averageScore(profileScoreNoUser)
+      for score in profileScoreNoUser:
+        scoresAll.append(generalAvg)
       for score in profileScoresGame:
         dates.append(str(datetime.date(score.scoreDate))[5:])
         scores.append(score.score)
       scoresAndDates = {
         'dates': dates,
-        'scores': scores
+        'scores': scores,
+        'scoresAll' : scoresAll
       }
       return JsonResponse(scoresAndDates)
     elif int(gameID) == 3:

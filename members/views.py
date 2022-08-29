@@ -296,7 +296,6 @@ def StatPage(request, username):
       context['averageTimeGameFourLevelTwo'] = averageTime(profileScoresGameFourLevelTwo)
       context['averageTimeGameFourLevelThree'] = averageTime(profileScoresGameFourLevelThree)
     
-    context['test'] = len(profileScoresGameThree)
     context['flagGameOne'] = flag1
     context['flagGameTwo'] = flag2
     context['flagGameThree'] = flag3
