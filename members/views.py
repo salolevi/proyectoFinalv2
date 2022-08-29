@@ -221,7 +221,7 @@ def StatPage(request, username):
     profileScoresGameOne = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 1))
     actualDate = datetime.now() + timedelta(days=1)
     lastWeek = actualDate - timedelta(days=8)
-    flag1 = len(profileScoresGameOne) > 5
+    flag1 = len(profileScoresGameOne) > 10
     if (flag1):
       #Puntuaciones totales del primer juego en la ultima semana
       profileScoresGameOneActualWeek = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 1), scoreDate__range=(datetime.date(lastWeek) ,datetime.date(actualDate)))
@@ -240,7 +240,7 @@ def StatPage(request, username):
     
     # Puntuaciones jugando al segundo juego, sin importar niveles
     profileScoresGameTwo = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 2))
-    flag2 = len(profileScoresGameTwo) > 5
+    flag2 = len(profileScoresGameTwo) > 10
     if (flag2):
       profileScoresGameTwoActualWeek = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 2), scoreDate__range=(lastWeek ,actualDate))
       #Puntuaciones segundo juego, primer nivel
@@ -257,7 +257,7 @@ def StatPage(request, username):
     
     #Puntuaciones jugando al tercer juego, sin importar niveles
     profileScoresGameThree = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 3))
-    flag3 = len(profileScoresGameThree) > 5
+    flag3 = len(profileScoresGameThree) > 10
     if (flag3):
     #Puntuaciones totales jugando al tercer juego en la ultima semana
       profileScoresGameThreeActualWeek = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 3), scoreDate__range = (lastWeek, actualDate))
@@ -280,7 +280,7 @@ def StatPage(request, username):
     
     #Puntiaciones jugando al cuarto juego, sin importar niveles
     profileScoresGameFour = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 4))
-    flag4 = len(profileScoresGameFour) > 5
+    flag4 = len(profileScoresGameFour) > 10
     if (flag4):
     #Puntuaciones totales jugando al tercer juego en la ultima semana
       profileScoresGameFourActualWeek = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 4), scoreDate__range = (lastWeek, actualDate))
@@ -296,6 +296,7 @@ def StatPage(request, username):
       context['averageTimeGameFourLevelTwo'] = averageTime(profileScoresGameFourLevelTwo)
       context['averageTimeGameFourLevelThree'] = averageTime(profileScoresGameFourLevelThree)
     
+    context['test'] = len(profileScoresGameThree)
     context['flagGameOne'] = flag1
     context['flagGameTwo'] = flag2
     context['flagGameThree'] = flag3
