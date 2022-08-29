@@ -74,12 +74,21 @@
     </section>
     <section class="chart-section">
       <div class="chart-container">
+        {% if flagGameTwo == False %}
+        <div class="no-stats-chart"><span class="rotate-text">Sigue jugando para visualizar tu progreso!</span></div>
+        {% endif %}
         <canvas id="statsGameTwoLevelOne"></canvas>
       </div>
       <div class="chart-container">
+        {% if flagGameTwo == False %}
+        <div class="no-stats-chart"><span class="rotate-text">Sigue jugando para visualizar tu progreso!</span></div>
+        {% endif %}
         <canvas id="statsGameTwoLevelTwo"></canvas>
       </div>
       <div class="chart-container">
+        {% if flagGameTwo == False %}
+        <div class="no-stats-chart"><span class="rotate-text">Sigue jugando para visualizar tu progreso!</span></div>
+        {% endif %}
         <canvas id="statsGameTwoLevelThree"></canvas>
       </div>
     </section>
@@ -177,12 +186,21 @@
     </section>
     <section class="chart-section">
       <div class="chart-container">
+        {% if flagGameFour == False%}
+        <div class="no-stats-chart"><span class="rotate-text">Sigue jugando para visualizar tu progreso!</span></div>
+        {% endif %}
         <canvas id="statsGameFourLevelOne"></canvas>
       </div>
       <div class="chart-container">
+        {% if flagGameFour == False%}
+        <div class="no-stats-chart"><span class="rotate-text">Sigue jugando para visualizar tu progreso!</span></div>
+        {% endif %}
         <canvas id="statsGameFourLevelTwo"></canvas>
       </div>
       <div class="chart-container">
+        {% if flagGameFour == False%}
+        <div class="no-stats-chart"><span class="rotate-text">Sigue jugando para visualizar tu progreso!</span></div>
+        {% endif %}
         <canvas id="statsGameFourLevelThree"></canvas>
       </div>
     </section>
