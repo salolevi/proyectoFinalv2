@@ -221,76 +221,83 @@ def StatPage(request, username):
     profileScoresGameOne = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 1))
     actualDate = datetime.now() + timedelta(days=1)
     lastWeek = actualDate - timedelta(days=8)
-    #Puntuaciones totales del primer juego en la ultima semana
-    profileScoresGameOneActualWeek = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 1), scoreDate__range=(datetime.date(lastWeek) ,datetime.date(actualDate)))
-    #Puntuaciones primer juego, primer nivel
-    profileScoresGameOneLevelOne = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 1), levelID = Level.objects.get(gameID = Game.objects.get(id = 1) ,level = 1))
-    #Puntuaciones primer juego, segundo nivel
-    profileScoresGameOneLevelTwo = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 1), levelID = Level.objects.get(gameID = Game.objects.get(id = 1),level = 2))
-    #Puntuaciones primer juego, tercer nivel
-    profileScoresGameOneLevelThree = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 1), levelID = Level.objects.get(gameID = Game.objects.get(id = 1),level = 3))
+    flag1 = len(profileScoresGameOne) > 5
+    if (flag1):
+      #Puntuaciones totales del primer juego en la ultima semana
+      profileScoresGameOneActualWeek = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 1), scoreDate__range=(datetime.date(lastWeek) ,datetime.date(actualDate)))
+      #Puntuaciones primer juego, primer nivel
+      profileScoresGameOneLevelOne = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 1), levelID = Level.objects.get(gameID = Game.objects.get(id = 1) ,level = 1))
+      #Puntuaciones primer juego, segundo nivel
+      profileScoresGameOneLevelTwo = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 1), levelID = Level.objects.get(gameID = Game.objects.get(id = 1),level = 2))
+      #Puntuaciones primer juego, tercer nivel
+      profileScoresGameOneLevelThree = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 1), levelID = Level.objects.get(gameID = Game.objects.get(id = 1),level = 3))
+      
+      context['averageScoreGameOne'] = averageScore(profileScoresGameOne)
+      context['averageActualWeek1'] = averageScore(profileScoresGameOneActualWeek)
+      context['averageScoreGameOneLevelOne'] = averageScore(profileScoresGameOneLevelOne)
+      context['averageScoreGameOneLevelTwo'] = averageScore(profileScoresGameOneLevelTwo)
+      context['averageScoreGameOneLevelThree'] = averageScore(profileScoresGameOneLevelThree)
     
     # Puntuaciones jugando al segundo juego, sin importar niveles
     profileScoresGameTwo = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 2))
-    profileScoresGameTwoActualWeek = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 2), scoreDate__range=(lastWeek ,actualDate))
-    #Puntuaciones segundo juego, primer nivel
-    profileScoresGameTwoLevelOne = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 2), levelID = Level.objects.get(gameID = Game.objects.get(id = 2), level = 1))
-    #Puntuaciones segundo juego, segundo nivel
-    profileScoresGameTwoLevelTwo = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 2), levelID = Level.objects.get(gameID = Game.objects.get(id = 2), level = 2))
-    #Puntuaciones segundo juego, tercer nivel
-    profileScoresGameTwoLevelThree = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 2), levelID = Level.objects.get(gameID = Game.objects.get(id = 2), level = 3))
+    flag2 = len(profileScoresGameTwo) > 5
+    if (flag2):
+      profileScoresGameTwoActualWeek = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 2), scoreDate__range=(lastWeek ,actualDate))
+      #Puntuaciones segundo juego, primer nivel
+      profileScoresGameTwoLevelOne = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 2), levelID = Level.objects.get(gameID = Game.objects.get(id = 2), level = 1))
+      #Puntuaciones segundo juego, segundo nivel
+      profileScoresGameTwoLevelTwo = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 2), levelID = Level.objects.get(gameID = Game.objects.get(id = 2), level = 2))
+      #Puntuaciones segundo juego, tercer nivel
+      profileScoresGameTwoLevelThree = ProfileScore.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 2), levelID = Level.objects.get(gameID = Game.objects.get(id = 2), level = 3))
+      context['averageScoreGameTwo'] = averageScore(profileScoresGameTwo)
+      context['averageActualWeek2'] = averageScore(profileScoresGameTwoActualWeek)
+      context['averageScoreGameTwoLevelOne'] = averageScore(profileScoresGameTwoLevelOne)
+      context['averageScoreGameTwoLevelTwo'] = averageScore(profileScoresGameTwoLevelTwo)
+      context['averageScoreGameTwoLevelThree'] = averageScore(profileScoresGameTwoLevelThree)
     
     #Puntuaciones jugando al tercer juego, sin importar niveles
     profileScoresGameThree = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 3))
+    flag3 = len(profileScoresGameThree) > 5
+    if (flag3):
     #Puntuaciones totales jugando al tercer juego en la ultima semana
-    profileScoresGameThreeActualWeek = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 3), scoreDate__range = (lastWeek, actualDate))
-    #Puntuaciones jugando al tercer juego, primer nivel
-    profileScoresGameThreeLevelOne = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 3), levelID = Level.objects.get(gameID = Game.objects.get(id = 3), level = 1))
-    #Puntuaciones jugando al tercer juego, segundo nivel
-    profileScoresGameThreeLevelTwo = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 3), levelID = Level.objects.get(gameID = Game.objects.get(id = 3), level = 2))
-    #Puntuaciones jugando al tercer juego, tercer nivel
-    profileScoresGameThreeLevelThree = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 3), levelID = Level.objects.get(gameID = Game.objects.get(id = 3), level = 3))
+      profileScoresGameThreeActualWeek = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 3), scoreDate__range = (lastWeek, actualDate))
+      #Puntuaciones jugando al tercer juego, primer nivel
+      profileScoresGameThreeLevelOne = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 3), levelID = Level.objects.get(gameID = Game.objects.get(id = 3), level = 1))
+      #Puntuaciones jugando al tercer juego, segundo nivel
+      profileScoresGameThreeLevelTwo = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 3), levelID = Level.objects.get(gameID = Game.objects.get(id = 3), level = 2))
+      #Puntuaciones jugando al tercer juego, tercer nivel
+      profileScoresGameThreeLevelThree = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 3), levelID = Level.objects.get(gameID = Game.objects.get(id = 3), level = 3))
+      context['averageTimeGameThree'] = averageTime(profileScoresGameThree)
+      context['averageMovementsGameThree'] = averageMovements(profileScoresGameThree)
+      context['averageTimeGameThreeActualWeek'] = averageTime(profileScoresGameThreeActualWeek)
+      context['averageMovementsGameThreeActualWeek'] = averageMovements(profileScoresGameThreeActualWeek)
+      context['averageTimeGameThreeLevelOne'] = averageTime(profileScoresGameThreeLevelOne)
+      context['averageMovementsGameThreeLevelOne'] = averageMovements(profileScoresGameThreeLevelOne)
+      context['averageTimeGameThreeLevelTwo'] = averageTime(profileScoresGameThreeLevelTwo)
+      context['averageMovementsGameThreeLevelTwo'] = averageMovements(profileScoresGameThreeLevelTwo)
+      context['averageTimeGameThreeLevelThree'] = averageTime(profileScoresGameThreeLevelThree)
+      context['averageMovementsGameThreeLevelThree'] = averageMovements(profileScoresGameThreeLevelThree)
     
     #Puntiaciones jugando al cuarto juego, sin importar niveles
     profileScoresGameFour = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 4))
+    flag4 = len(profileScoresGameFour) > 5
+    if (flag4):
     #Puntuaciones totales jugando al tercer juego en la ultima semana
-    profileScoresGameFourActualWeek = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 4), scoreDate__range = (lastWeek, actualDate))
-    #Puntuaciones jugando al tercer juego, primer nivel
-    profileScoresGameFourLevelOne = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 4), levelID = Level.objects.get(gameID = Game.objects.get(id = 4), level = 1))
-    #Puntuaciones jugando al tercer juego, segundo nivel
-    profileScoresGameFourLevelTwo = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 4), levelID = Level.objects.get(gameID = Game.objects.get(id = 4), level = 2))
-    #Puntuaciones jugando al tercer juego, tercer nivel
-    profileScoresGameFourLevelThree = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 4), levelID = Level.objects.get(gameID = Game.objects.get(id = 4), level = 3))
+      profileScoresGameFourActualWeek = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 4), scoreDate__range = (lastWeek, actualDate))
+      #Puntuaciones jugando al tercer juego, primer nivel
+      profileScoresGameFourLevelOne = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 4), levelID = Level.objects.get(gameID = Game.objects.get(id = 4), level = 1))
+      #Puntuaciones jugando al tercer juego, segundo nivel
+      profileScoresGameFourLevelTwo = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 4), levelID = Level.objects.get(gameID = Game.objects.get(id = 4), level = 2))
+      #Puntuaciones jugando al tercer juego, tercer nivel
+      profileScoresGameFourLevelThree = ProfileScoreLogic.objects.filter(profileID = Profile.objects.get(user=actualUser), gameID = Game.objects.get(id = 4), levelID = Level.objects.get(gameID = Game.objects.get(id = 4), level = 3))
+      context['averageTimeGameFour'] = averageTime(profileScoresGameFour)
+      context['averageTimeGameFourActualWeek'] = averageTime(profileScoresGameFourActualWeek)
+      context['averageTimeGameFourLevelOne'] = averageTime(profileScoresGameFourLevelOne)
+      context['averageTimeGameFourLevelTwo'] = averageTime(profileScoresGameFourLevelTwo)
+      context['averageTimeGameFourLevelThree'] = averageTime(profileScoresGameFourLevelThree)
     
-    context['averageScore'] = averageScore(profileScores)
-    context['averageScoreGameOne'] = averageScore(profileScoresGameOne)
-    context['averageActualWeek1'] = averageScore(profileScoresGameOneActualWeek)
-    context['averageScoreGameOneLevelOne'] = averageScore(profileScoresGameOneLevelOne)
-    context['averageScoreGameOneLevelTwo'] = averageScore(profileScoresGameOneLevelTwo)
-    context['averageScoreGameOneLevelThree'] = averageScore(profileScoresGameOneLevelThree)
-    
-    context['averageScoreGameTwo'] = averageScore(profileScoresGameTwo)
-    context['averageActualWeek2'] = averageScore(profileScoresGameTwoActualWeek)
-    context['averageScoreGameTwoLevelOne'] = averageScore(profileScoresGameTwoLevelOne)
-    context['averageScoreGameTwoLevelTwo'] = averageScore(profileScoresGameTwoLevelTwo)
-    context['averageScoreGameTwoLevelThree'] = averageScore(profileScoresGameTwoLevelThree)
-    
-    context['averageTimeGameThree'] = averageTime(profileScoresGameThree)
-    context['averageMovementsGameThree'] = averageMovements(profileScoresGameThree)
-    context['averageTimeGameThreeActualWeek'] = averageTime(profileScoresGameThreeActualWeek)
-    context['averageMovementsGameThreeActualWeek'] = averageMovements(profileScoresGameThreeActualWeek)
-    context['averageTimeGameThreeLevelOne'] = averageTime(profileScoresGameThreeLevelOne)
-    context['averageMovementsGameThreeLevelOne'] = averageMovements(profileScoresGameThreeLevelOne)
-    context['averageTimeGameThreeLevelTwo'] = averageTime(profileScoresGameThreeLevelTwo)
-    context['averageMovementsGameThreeLevelTwo'] = averageMovements(profileScoresGameThreeLevelTwo)
-    context['averageTimeGameThreeLevelThree'] = averageTime(profileScoresGameThreeLevelThree)
-    context['averageMovementsGameThreeLevelThree'] = averageMovements(profileScoresGameThreeLevelThree)
-    
-    context['averageTimeGameFour'] = averageTime(profileScoresGameFour)
-    context['averageTimeGameFourActualWeek'] = averageTime(profileScoresGameFourActualWeek)
-    context['averageTimeGameFourLevelOne'] = averageTime(profileScoresGameFourLevelOne)
-    context['averageTimeGameFourLevelTwo'] = averageTime(profileScoresGameFourLevelTwo)
-    context['averageTimeGameFourLevelThree'] = averageTime(profileScoresGameFourLevelThree)
-    
-    
+    context['flagGameOne'] = flag1
+    context['flagGameTwo'] = flag2
+    context['flagGameThree'] = flag3
+    context['flagGameFour'] = flag4
     return render(request, template_name, context)

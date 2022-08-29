@@ -1,3 +1,10 @@
+.no-stats {
+  text-align: center;
+  color: darkred;
+  font-size: 1.2em;
+}
+
+
 @media screen and (max-width: 768px) {
   .content-container {
     box-sizing: border-box;

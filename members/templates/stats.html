@@ -28,31 +28,51 @@
   <div class="average-section tab-content" id="dislexia">
     <section class="gameOneStats-container">
       <h4 class="stats-title">Juego de Opciones</h4>
-      <div class="average-gameOne grid-gameOne">Promedio de Puntuacion: <span class="average-score">{{averageScoreGameOne}}</span></div>
-      <div class="average-gameOneLastWeek grid-gameOne">Promedio en los ultimos 7 dias: <span class="average-score">{{averageActualWeek1}}</span></div>
-      <div class="average-gameOneLevelOne grid-gameOne">Promedio de Puntacion en el primer nivel: <span class="average-score">{{averageScoreGameOneLevelOne}}</span></div>
-      <div class="average-gameOneLevelTwo grid-gameOne">Promedio de Puntacion en el segundo nivel: <span class="average-score">{{averageScoreGameOneLevelTwo}}</span></div>
-      <div class="average-gameOneLevelThree grid-gameOne">Promedio de Puntacion en el tercer nivel: <span class="average-score">{{averageScoreGameOneLevelThree}}</span></div>
-      <button class="stats-btn btn-1">VER ESTADISTICAS</button>
+      {% if flagGameOne == 'True' %}
+        <div class="average-gameOne grid-gameOne">Promedio de Puntuacion: <span class="average-score">{{averageScoreGameOne}}</span></div>
+        <div class="average-gameOneLastWeek grid-gameOne">Promedio en los ultimos 7 dias: <span class="average-score">{{averageActualWeek1}}</span></div>
+        <div class="average-gameOneLevelOne grid-gameOne">Promedio de Puntacion en el primer nivel: <span class="average-score">{{averageScoreGameOneLevelOne}}</span></div>
+        <div class="average-gameOneLevelTwo grid-gameOne">Promedio de Puntacion en el segundo nivel: <span class="average-score">{{averageScoreGameOneLevelTwo}}</span></div>
+        <div class="average-gameOneLevelThree grid-gameOne">Promedio de Puntacion en el tercer nivel: <span class="average-score">{{averageScoreGameOneLevelThree}}</span></div>
+        {% else %}
+        <div class="no-stats grid-gameOne">Juega mas veces para desbloquear las Estadisticas!</div>
+        {% endif %}
+        <button class="stats-btn btn-1">VER ESTADISTICAS</button>
     </section>
     <section class="gameTwoStats-container">
       <h4 class="stats-title">Juego de Completar</h4>
+      {% if flagGameTwo == 'True' %}
       <div class="average-gameTwo grid-gameTwo">Promedio de Puntuacion: <span class="average-score">{{averageScoreGameTwo}}</span></div>
       <div class="average-gameTwoLastWeek grid-gameTwo">Promedio en los ultimos 7 dias: <span class="average-score">{{averageActualWeek2}}</span></div>
       <div class="average-gameTwoLevelOne grid-gameTwo">Promedio de Puntacion en el primer nivel:<span class="average-score">  {{averageScoreGameTwoLevelOne}}</span></div>
       <div class="average-gameTwoLevelTwo grid-gameTwo">Promedio de Puntacion en el segundo nivel: <span class="average-score">{{averageScoreGameTwoLevelTwo}}</span></div>
       <div class="average-gameTwoLevelThree grid-gameTwo">Promedio de Puntacion en el tercer nivel: <span class="average-score">{{averageScoreGameTwoLevelThree}}</span></div>
+      {% else %}
+      <div class="no-stats grid-gameTwo">Juega mas veces para desbloquear las Estadisticas!</div>
+      {% endif %}
       <button class="stats-btn btn-2">VER ESTADISTICAS</button>
     </section>
     <section class="chart-section first-chart">
-      <canvas id="statsGameOneLevelOne"></canvas>
-      <canvas id="statsGameOneLevelTwo"></canvas>
-      <canvas id="statsGameOneLevelThree"></canvas>
+      <div class="chart-container">
+        <canvas id="statsGameOneLevelOne"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="statsGameOneLevelTwo"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="statsGameOneLevelThree"></canvas>
+      </div>
     </section>
     <section class="chart-section">
-      <canvas id="statsGameTwoLevelOne"></canvas>
-      <canvas id="statsGameTwoLevelTwo"></canvas>
-      <canvas id="statsGameTwoLevelThree"></canvas>
+      <div class="chart-container">
+        <canvas id="statsGameTwoLevelOne"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="statsGameTwoLevelTwo"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="statsGameTwoLevelThree"></canvas>
+      </div>
     </section>
   </div>
   <div class="average-section tab-content" id="logica1">
@@ -108,9 +128,15 @@
       <button class="stats-btn btn-3">VER ESTADISTICAS</button>
     </section>
     <section class="chart-section">
-      <canvas id="statsGameThreeLevelOne"></canvas>
-      <canvas id="statsGameThreeLevelTwo"></canvas>
-      <canvas id="statsGameThreeLevelThree"></canvas>
+      <div class="chart-container">
+        <canvas id="statsGameThreeLevelOne"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="statsGameThreeLevelTwo"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="statsGameThreeLevelThree"></canvas>
+      </div>
     </section>
   </div>
   <div class="average-section tab-content" id="logica2">
@@ -124,13 +150,20 @@
       <button class="stats-btn btn-4">VER ESTADISTICAS</button>
     </section>
     <section class="chart-section">
-      <canvas id="statsGameFourLevelOne"></canvas>
-      <canvas id="statsGameFourLevelTwo"></canvas>
-      <canvas id="statsGameFourLevelThree"></canvas>
+      <div class="chart-container">
+        <canvas id="statsGameFourLevelOne"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="statsGameFourLevelTwo"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="statsGameFourLevelThree"></canvas>
+      </div>
     </section>
   </div>
   <div class="show-more">
     <button class="show-more-btn">Expandir <img src="../../../media/media/down-arrow-svgrepo-com.svg" alt=""></button>
   </div>
 </section>
+{{flagGameOne}}, {{flagGameTwo}}, {{flagGameThree}}, {{flagGameFour}}
 {% endblock %}
