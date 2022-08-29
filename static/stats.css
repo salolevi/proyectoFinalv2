@@ -11,10 +11,16 @@
 .no-stats-chart {
   position: absolute;
   inset: 0;
-  background-color: rgba(30, 19, 99, 0.8);
+  background-color: rgba(30, 19, 99 , 0.8);
   display: grid;
   place-content: center;
   overflow: hidden;
+}
+
+@supports (backdrop-filter: blur(3px)) {
+  .no-stats-chart {
+    backdrop-filter: blur(3px);
+  }
 }
 
 .rotate-text {
