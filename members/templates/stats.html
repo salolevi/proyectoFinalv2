@@ -28,7 +28,7 @@
   <div class="average-section tab-content" id="dislexia">
     <section class="gameOneStats-container">
       <h4 class="stats-title">Juego de Opciones</h4>
-      {% if flagGameOne == 'True' %}
+      {% if flagGameOne == True %}
         <div class="average-gameOne grid-gameOne">Promedio de Puntuacion: <span class="average-score">{{averageScoreGameOne}}</span></div>
         <div class="average-gameOneLastWeek grid-gameOne">Promedio en los ultimos 7 dias: <span class="average-score">{{averageActualWeek1}}</span></div>
         <div class="average-gameOneLevelOne grid-gameOne">Promedio de Puntacion en el primer nivel: <span class="average-score">{{averageScoreGameOneLevelOne}}</span></div>
@@ -41,7 +41,7 @@
     </section>
     <section class="gameTwoStats-container">
       <h4 class="stats-title">Juego de Completar</h4>
-      {% if flagGameTwo == 'True' %}
+      {% if flagGameTwo == True %}
       <div class="average-gameTwo grid-gameTwo">Promedio de Puntuacion: <span class="average-score">{{averageScoreGameTwo}}</span></div>
       <div class="average-gameTwoLastWeek grid-gameTwo">Promedio en los ultimos 7 dias: <span class="average-score">{{averageActualWeek2}}</span></div>
       <div class="average-gameTwoLevelOne grid-gameTwo">Promedio de Puntacion en el primer nivel:<span class="average-score">  {{averageScoreGameTwoLevelOne}}</span></div>
@@ -77,6 +77,7 @@
   </div>
   <div class="average-section tab-content" id="logica1">
     <section class="logicGameStats-container">
+      {% if flagGameThree == True %}
       <h4 class="stats-title">ESTADISTICAS GENERALES</h4>
       <div class="average-gameThree grid-gameThree">Tiempo promedio para resolver una imagen: <span class="average-time-movement">{{averageTimeGameThree}}</span></div>
       <div class="average-gameThree grid-gameThree">Movimientos promedio para resolver una imagen: <span class="average-time-movement">{{averageMovementsGameThree}}</span></div>
@@ -125,16 +126,28 @@
           </div>
         </div>
       </div>
+      {% else %}
+      <div class="no-stats grid-gameThree">Juega mas veces para desbloquear las Estadisticas!</div>
+      {% endif %}
       <button class="stats-btn btn-3">VER ESTADISTICAS</button>
     </section>
     <section class="chart-section">
       <div class="chart-container">
+        {% if flagGameThree == False %}
+        <div class="no-stats-chart">Sigue jugando para visualizar tu progreso!</div>
+        {% endif %}
         <canvas id="statsGameThreeLevelOne"></canvas>
       </div>
       <div class="chart-container">
+        {% if flagGameThree == False %}
+        <div class="no-stats-chart">Sigue jugando para visualizar tu progreso!</div>
+        {% endif %}
         <canvas id="statsGameThreeLevelTwo"></canvas>
       </div>
       <div class="chart-container">
+        {% if flagGameThree == False %}
+        <div class="no-stats-chart">Sigue jugando para visualizar tu progreso!</div>
+        {% endif %}
         <canvas id="statsGameThreeLevelThree"></canvas>
       </div>
     </section>
@@ -142,11 +155,15 @@
   <div class="average-section tab-content" id="logica2">
     <section class="logicGameStats-container">
       <h4 class="stats-title">ESTADISTICAS GENERALES</h4>
+      {% if flagGameFour == True %}
       <div class="average-gameFour grid-gameFour">Tiempo promedio para superar un nivel: <span class="average-time-movement">{{averageTimeGameFour}}</span></div>
       <div class="average-gameFour grid-gameFour">Tiempo promedio para superar un nivel en la ultima semana: <span class="average-time-movement">{{averageTimeGameFourActualWeek}}</span></div>
       <div class="average-gameFour grid-gameFour">Tiempo promedio para superar el primer nivel: <span class="average-time-movement">{{averageTimeGameFourLevelOne}}</span></div>
       <div class="average-gameFour grid-gameFour">Tiempo promedio para superar el segundo nivel: <span class="average-time-movement">{{averageTimeGameFourLevelTwo}}</span></div>
       <div class="average-gameFour grid-gameFour">Tiempo promedio para superar el tercer nivel: <span class="average-time-movement">{{averageTimeGameFourLevelThree}}</span></div>
+      {% else %}
+      <div class="no-stats grid-gameFour">Juega mas veces para desbloquear las Estadisticas!</div>
+      {% endif %}
       <button class="stats-btn btn-4">VER ESTADISTICAS</button>
     </section>
     <section class="chart-section">
