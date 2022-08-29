@@ -668,6 +668,8 @@ a {
 /* Grilla de Primer Juego */
 .chart-section {
   grid-column: span 2;
+  display: grid;
+  gap: 2em;
 }
 
 .first-chart {

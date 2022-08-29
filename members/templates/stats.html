@@ -54,12 +54,21 @@
     </section>
     <section class="chart-section first-chart">
       <div class="chart-container">
+        {% if flagGameOne == False %}
+        <div class="no-stats-chart"><span class="rotate-text">Sigue jugando para visualizar tu progreso!</span></div>
+        {% endif %}
         <canvas id="statsGameOneLevelOne"></canvas>
       </div>
       <div class="chart-container">
+        {% if flagGameOne == False %}
+        <div class="no-stats-chart"><span class="rotate-text">Sigue jugando para visualizar tu progreso!</span></div>
+        {% endif %}
         <canvas id="statsGameOneLevelTwo"></canvas>
       </div>
       <div class="chart-container">
+        {% if flagGameOne == False %}
+        <div class="no-stats-chart"><span class="rotate-text">Sigue jugando para visualizar tu progreso!</span></div>
+        {% endif %}
         <canvas id="statsGameOneLevelThree"></canvas>
       </div>
     </section>
@@ -134,19 +143,19 @@
     <section class="chart-section">
       <div class="chart-container">
         {% if flagGameThree == False %}
-        <div class="no-stats-chart">Sigue jugando para visualizar tu progreso!</div>
+        <div class="no-stats-chart"><span class="rotate-text">Sigue jugando para visualizar tu progreso!</span></div>
         {% endif %}
         <canvas id="statsGameThreeLevelOne"></canvas>
       </div>
       <div class="chart-container">
         {% if flagGameThree == False %}
-        <div class="no-stats-chart">Sigue jugando para visualizar tu progreso!</div>
+        <div class="no-stats-chart"><span class="rotate-text">Sigue jugando para visualizar tu progreso!</span></div>
         {% endif %}
         <canvas id="statsGameThreeLevelTwo"></canvas>
       </div>
       <div class="chart-container">
         {% if flagGameThree == False %}
-        <div class="no-stats-chart">Sigue jugando para visualizar tu progreso!</div>
+        <div class="no-stats-chart"><span class="rotate-text">Sigue jugando para visualizar tu progreso!</span></div>
         {% endif %}
         <canvas id="statsGameThreeLevelThree"></canvas>
       </div>

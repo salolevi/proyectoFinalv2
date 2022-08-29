@@ -4,6 +4,27 @@
   font-size: 1.2em;
 }
 
+.chart-container {
+  position: relative;
+}
+
+.no-stats-chart {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(30, 19, 99, 0.8);
+  display: grid;
+  place-content: center;
+  overflow: hidden;
+}
+
+.rotate-text {
+  text-transform: uppercase;
+  color: #eee;
+  font-size: 1.2em;
+  transform: rotate(20deg);
+  font-family: 'Mario', 'Comic Sans MS', sans-serif;
+}
+
 
 @media screen and (max-width: 768px) {
   .content-container {
