@@ -17,6 +17,7 @@ fetch('../../get-scores/1/1')
         data: dataGame.scoresAll,
         fill: false,
         borderColor: 'rgba(120 120 120 / .7)',
+        borderDash: [4, 3],
         pointStyle: 'line',
         tension: 0.1
       }
@@ -49,6 +50,7 @@ fetch('../../get-scores/1/2')
         data: dataGame.scoresAll,
         fill: false,
         borderColor: 'rgba(120 120 120 / .7)',
+        borderDash: [4, 3],
         pointStyle: 'line',
         tension: 0.1
       }
@@ -81,6 +83,7 @@ fetch('../../get-scores/1/2')
         data: dataGame.scoresAll,
         fill: false,
         borderColor: 'rgba(120 120 120 / .7)',
+        borderDash: [4, 3],
         pointStyle: 'line',
         tension: 0.1
       }
@@ -114,6 +117,7 @@ fetch('../../get-scores/2/1')
         data: dataGame.scoresAll,
         fill: false,
         borderColor: 'rgba(120 120 120 / .7)',
+        borderDash: [4, 3],
         pointStyle: 'line',
         tension: 0.1
       }
@@ -146,6 +150,7 @@ fetch('../../get-scores/2/2')
         data: dataGame.scoresAll,
         fill: false,
         borderColor: 'rgba(120 120 120 / .7)',
+        borderDash: [4, 3],
         pointStyle: 'line',
         tension: 0.1
       }
@@ -178,6 +183,7 @@ fetch('../../get-scores/2/2')
         data: dataGame.scoresAll,
         fill: false,
         borderColor: 'rgba(120 120 120 / .7)',
+        borderDash: [4, 3],
         pointStyle: 'line',
         tension: 0.1
       }
@@ -211,6 +217,24 @@ fetch('../../get-scores/2/2')
         fill: false,
         borderColor: 'rgba(255 0 0 / .5)',
         tension: 0.1,
+      },
+      {
+        label: 'Promedio General de Tiempo',
+        data: dataGame.timesAll,
+        fill: false,
+        borderColor: 'rgba(128 128 128 / .5)',
+        borderDash: [4, 3],
+        pointStyle: 'line',
+        tension: 0.1,
+      },
+      {
+        label: 'Promedio General de Movimientos',
+        data: dataGame.movementsAll,
+        fill: false,
+        borderColor: 'rgba(40 40 40 / .5)',
+        borderDash: [4, 3],
+        pointStyle: 'line',
+        tension: 0.1,
       }
     ]
     }
@@ -240,6 +264,24 @@ fetch('../../get-scores/2/2')
         data: dataGame.movements,
         fill: false,
         borderColor: 'rgba(255 0 255 / .5)',
+        tension: 0.1,
+      },
+      {
+        label: 'Promedio General de Tiempo',
+        data: dataGame.timesAll,
+        fill: false,
+        borderColor: 'rgba(128 128 128 / .5)',
+        borderDash: [4, 3],
+        pointStyle: 'line',
+        tension: 0.1,
+      },
+      {
+        label: 'Promedio General de Movimientos',
+        data: dataGame.movementsAll,
+        fill: false,
+        borderColor: 'rgba(40 40 40 / .5)',
+        borderDash: [4, 3],
+        pointStyle: 'line',
         tension: 0.1,
       }
     ]
@@ -271,6 +313,24 @@ fetch('../../get-scores/2/2')
         fill: false,
         borderColor: 'rgb(49 8 123 /.5)',
         tension: 0.1,
+      },
+      {
+        label: 'Promedio General de Tiempo',
+        data: dataGame.timesAll,
+        fill: false,
+        borderColor: 'rgba(128 128 128 / .5)',
+        borderDash: [4, 3],
+        pointStyle: 'line',
+        tension: 0.1,
+      },
+      {
+        label: 'Promedio General de Movimientos',
+        data: dataGame.movementsAll,
+        fill: false,
+        borderColor: 'rgba(40 40 40 / .5)',
+        borderDash: [4, 3],
+        pointStyle: 'line',
+        tension: 0.1,
       }
     ]
     }
@@ -294,7 +354,17 @@ fetch('../../get-scores/4/1')
         fill: false,
         borderColor: 'rgba(250 47 181 / .5)',
         tension: 0.1, 
-      }]
+      },
+      {
+        label: 'Promedio General de Tiempo',
+        data: dataGame.timesAll,
+        fill: false,
+        borderColor: 'rgba(128 128 128 / .5)',
+        borderDash: [4, 3],
+        pointStyle: 'line',
+        tension: 0.1,
+      },
+    ]
     }
 
     const ctx = document.getElementById('statsGameFourLevelOne');
@@ -317,7 +387,17 @@ fetch('../../get-scores/4/1')
         fill: false,
         borderColor: 'rgb(49 8 123 /.5)',
         tension: 0.1,
-      }]
+      },
+      {
+        label: 'Promedio General de Tiempo',
+        data: dataGame.timesAll,
+        fill: false,
+        borderColor: 'rgba(128 128 128 / .5)',
+        borderDash: [4, 3],
+        pointStyle: 'line',
+        tension: 0.1,
+      },
+    ]
     }
 
     const ctx = document.getElementById('statsGameFourLevelTwo');
@@ -340,7 +420,17 @@ fetch('../../get-scores/4/1')
         fill: false,
         borderColor: 'rgba(255 126 42 / .5)',
         tension: 0.1,
-      }]
+      },
+      {
+        label: 'Promedio General de Tiempo',
+        data: dataGame.timesAll,
+        fill: false,
+        borderColor: 'rgba(128 128 128 / .5)',
+        borderDash: [4, 3],
+        pointStyle: 'line',
+        tension: 0.1,
+      },
+    ]
     }
 
     const ctx = document.getElementById('statsGameFourLevelThree');

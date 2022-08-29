@@ -145,29 +145,43 @@ def getScores(request, gameID, levelID):
       return JsonResponse(scoresAndDates)
     elif int(gameID) == 3:
       profileScoresLogicGame = ProfileScoreLogic.objects.filter(profileID = _profile, gameID = _game, levelID = _level)
+      profileScoresNoUser = ProfileScoreLogic.objects.filter(gameID = _game, levelID = _level)
       dates = []
       times = []
       movements = []
+      generalAvgSeconds = averageTime(profileScoresNoUser)
+      generalAvgMovements = averageMovements(profileScoresNoUser)
+      timesAll = []
+      movementsAll = []
       for score in profileScoresLogicGame:
         dates.append(str(datetime.date(score.scoreDate))[5:])
         times.append(score.avgScoreTime)
         movements.append(score.avgMomevemts)
+        timesAll.append(generalAvgSeconds)
+        movementsAll.append(generalAvgMovements)
       scoresAndTimes = {
         'dates': dates,
         'times': times,
-        'movements': movements
+        'movements': movements,
+        'timesAll': timesAll,
+        'movementsAll': movementsAll
       }
       return JsonResponse(scoresAndTimes)
     elif int(gameID) == 4:
       profileScoresLogicGame = ProfileScoreLogic.objects.filter(profileID = _profile, gameID = _game, levelID = _level)
+      profileScoresNoUser = ProfileScoreLogic.objects.filter(gameID = _game, levelID = _level)
       dates = []
       times = []
+      generalAvgSeconds = averageTime(profileScoresNoUser)
+      timesAll = []
       for score in profileScoresLogicGame:
         dates.append(str(datetime.date(score.scoreDate))[5:])
         times.append(score.avgScoreTime)
+        timesAll.append(generalAvgSeconds)
       scoresAndTimes = {
         'dates': dates,
         'times': times,
+        'timesAll': timesAll
       }
       return JsonResponse(scoresAndTimes)
     
