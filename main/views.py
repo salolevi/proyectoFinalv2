@@ -133,11 +133,10 @@ def getScores(request, gameID, levelID):
       scores = []
       scoresAll = []
       generalAvg = averageScore(profileScoreNoUser)
-      for score in profileScoreNoUser:
-        scoresAll.append(generalAvg)
       for score in profileScoresGame:
         dates.append(str(datetime.date(score.scoreDate))[5:])
         scores.append(score.score)
+        scoresAll.append(generalAvg)
       scoresAndDates = {
         'dates': dates,
         'scores': scores,

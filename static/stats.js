@@ -43,7 +43,16 @@ fetch('../../get-scores/1/2')
         fill: false,
         borderColor: 'rgba(0,0,255, .5)',
         tension: 0.1,
-      }]
+      },
+      {
+        label: 'Promedio General',
+        data: dataGame.scoresAll,
+        fill: false,
+        borderColor: 'rgba(120 120 120 / .7)',
+        pointStyle: 'line',
+        tension: 0.1
+      }
+    ]
     };
     const ctx = document.getElementById('statsGameOneLevelTwo');
     const chartGameOne = new Chart(ctx, {
@@ -66,7 +75,16 @@ fetch('../../get-scores/1/2')
         fill: false,
         borderColor: 'rgba(0,255,0, .5)',
         tension: 0.1,
-      }]
+      },
+      {
+        label: 'Promedio General',
+        data: dataGame.scoresAll,
+        fill: false,
+        borderColor: 'rgba(120 120 120 / .7)',
+        pointStyle: 'line',
+        tension: 0.1
+      }
+    ]
     };
     const ctx = document.getElementById('statsGameOneLevelThree');
     const chartGameOne = new Chart(ctx, {
@@ -90,7 +108,16 @@ fetch('../../get-scores/2/1')
         fill: false,
         borderColor: 'rgba(255,0,255, .5)',
         tension: 0.1,
-      }]
+      },
+      {
+        label: 'Promedio General',
+        data: dataGame.scoresAll,
+        fill: false,
+        borderColor: 'rgba(120 120 120 / .7)',
+        pointStyle: 'line',
+        tension: 0.1
+      }
+    ]
     };
     const ctx = document.getElementById('statsGameTwoLevelOne');
     const chartGameOne = new Chart(ctx, {
@@ -113,7 +140,16 @@ fetch('../../get-scores/2/2')
         fill: false,
         borderColor: 'rgba(0,255,255, .5)',
         tension: 0.1,
-      }]
+      },
+      {
+        label: 'Promedio General',
+        data: dataGame.scoresAll,
+        fill: false,
+        borderColor: 'rgba(120 120 120 / .7)',
+        pointStyle: 'line',
+        tension: 0.1
+      }
+    ]
     };
     const ctx = document.getElementById('statsGameTwoLevelTwo');
     const chartGameOne = new Chart(ctx, {
@@ -136,7 +172,16 @@ fetch('../../get-scores/2/2')
         fill: false,
         borderColor: 'rgba(255,128, 20, .5)',
         tension: 0.1,
-      }]
+      },
+      {
+        label: 'Promedio General',
+        data: dataGame.scoresAll,
+        fill: false,
+        borderColor: 'rgba(120 120 120 / .7)',
+        pointStyle: 'line',
+        tension: 0.1
+      }
+    ]
     };
     const ctx = document.getElementById('statsGameTwoLevelThree');
     const chartGameOne = new Chart(ctx, {
