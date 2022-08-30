@@ -12,6 +12,30 @@ main * {
   text-align: center;
 }
 
+.play-btn {
+  padding: .75em 1.5em;
+  display: inline-block;
+  background-color: #963de9;
+  font-family: 'Mario', 'Comic Sans MS', monospace;
+  align-self: center;
+  border-radius: 10px;
+  color: goldenrod;
+  border: 5px solid goldenrod;
+  transition: all .3s;
+}
+
+.play-btn:hover {
+  background-color: goldenrod;
+  color: #eee;
+  /* border: 5px solid #eee; */
+}
+
+.get-playing {
+  display: flex;
+  justify-content: end;
+  gap: 2em;
+}
+
 .sub-title-right {
   text-align: right;
 }
@@ -35,10 +59,10 @@ main * {
 
 .info-p {
   margin: 1rem 0;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Dosis', sans-serif;
   color: rgba(51 51 51 /.85);
   text-align: justify;
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
 .index-link {
@@ -67,6 +91,26 @@ main * {
   max-width: 1000px;
   width: 80%;
   min-width: unset;
+  display: grid;
+  gap: 2rem;
+}
+
+.faqs li {
+  font-family: 'Dosis', sans-serif;
+  margin: 1rem 0;
+}
+
+.question {
+  color: rgba(150 61 233 / .8);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.answer {
+  color: rgba(51 51 51 /.85);
+  font-size: 1.2em;
+  list-style: square;
+  margin-left: 4rem !important;
 }
 
 @media screen and (max-width: 768px) {

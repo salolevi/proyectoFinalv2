@@ -19,6 +19,12 @@
 
 {% block content %}
 <main class="content-container">
+  {% if request.user.is_authenticated %}
+  <section class="get-playing">
+    <p class="info-p">¡Vemos que ya has iniciado sesion!</p>
+    <a href="{% url 'games' %}" class="play-btn">A JUGAR!</a>
+  </section>
+  {% endif %} 
   <section class="grid we-are">
     <div class="grid-child">
       <h2 class="sub-title sub-title-right">¿Qué es CogniCises! ?</h2>
@@ -51,6 +57,19 @@
         ¿Ya tienes una cuenta? ¡Fabuloso! Haz click <a href="{% url 'login' %}" class="index-link">aquí</a> para iniciar sesion.
       </p>
     </div>
+  </section>
+  <section class="fAQ">
+    <h2 class="sub-title">Algunas preguntas frecuentes</h2>
+    <ul class="faqs">
+      <li class="question">¿Qué necesito para poder jugar?</li>
+      <li class="answer">Con una cuenta y conexion a internet, tienes todo lo que necesitas.</li>
+      <li class="question">¿Cuánto debo pagar para poder jugar?</li>
+      <li class="answer">La política de CogniCises! es poder brindarle a todos los chicos una oportunidad para mejorar. ¡Puedes jugar todo lo que quieras totalmente gratis!</li>
+      <li class="question">¿Puedo jugar aunque no tenga ninguna condición o problemática?</li>
+      <li class="answer">¡Por supuesto! Los juegos estan diseñados para mejorar habilidades cognitivas para niños sin importar su condición. Son seleccionados como herramientas para mejorar algunas cuestiones o dificultades en particular, ¡pero siguen siendo juegos cuyo objetivo principal es la diversión!</li>
+      <li class="question">¿Qué necesito para crearme una cuenta?</li>
+      <li class="answer">Lo primero que necesitas es la autorizacion de tus padres o tutor para poder crearte una cuenta. Asegurate de preguntarselo antes de hacerlo. Por último, ¡solo necesitas una cuenta de correo electrónico valida para poder verificar tu cuenta!</li>
+    </ul>
   </section>
 </main>
 {% endblock %}
