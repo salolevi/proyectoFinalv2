@@ -2,9 +2,11 @@ Hacer landing page
 
 Reubicar boton de menu y puntuaciones / hecho
 
-Agregar contenido game1 y game2 (Hacer reutilizable los dos primeros juegos) /Hecho G1
+Agregar contenido game1 y game2 (Hacer reutilizable los dos primeros juegos) /Hecho G1 / Hecho G2
 
-Realizar linea de tendencia de los dos jugadores
+Mejorar estadisticas / hecho
+
+Realizar linea de tendencia de los dos jugadores / Posible?
 
 
 
