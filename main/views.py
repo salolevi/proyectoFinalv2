@@ -132,7 +132,9 @@ def getScores(request, gameID, levelID):
       dates = []
       scores = []
       scoresAll = []
+      userAvg = averageScore(profileScoresGame)
       generalAvg = averageScore(profileScoreNoUser)
+      userPerformance = userAvg >= generalAvg
       for score in profileScoresGame:
         dates.append(str(datetime.date(score.scoreDate))[5:])
         scores.append(score.score)
@@ -140,7 +142,8 @@ def getScores(request, gameID, levelID):
       scoresAndDates = {
         'dates': dates,
         'scores': scores,
-        'scoresAll' : scoresAll
+        'scoresAll' : scoresAll,
+        'performance': userPerformance
       }
       return JsonResponse(scoresAndDates)
     elif int(gameID) == 3:
@@ -149,8 +152,12 @@ def getScores(request, gameID, levelID):
       dates = []
       times = []
       movements = []
+      userAvgSeconds = averageTime(profileScoresLogicGame)
+      userAvgMovements = averageMovements(profileScoresLogicGame)
       generalAvgSeconds = averageTime(profileScoresNoUser)
       generalAvgMovements = averageMovements(profileScoresNoUser)
+      userPerformanceSeconds = userAvgSeconds >= generalAvgSeconds
+      userPerformanceMovements = userAvgMovements >= generalAvgMovements
       timesAll = []
       movementsAll = []
       for score in profileScoresLogicGame:
@@ -164,7 +171,9 @@ def getScores(request, gameID, levelID):
         'times': times,
         'movements': movements,
         'timesAll': timesAll,
-        'movementsAll': movementsAll
+        'movementsAll': movementsAll,
+        'performanceSeconds': userPerformanceSeconds,
+        'performanceMovements': userPerformanceMovements
       }
       return JsonResponse(scoresAndTimes)
     elif int(gameID) == 4:
@@ -172,7 +181,9 @@ def getScores(request, gameID, levelID):
       profileScoresNoUser = ProfileScoreLogic.objects.filter(gameID = _game, levelID = _level)
       dates = []
       times = []
+      userAvgSeconds = averageTime(profileScoresLogicGame)
       generalAvgSeconds = averageTime(profileScoresNoUser)
+      userPerformanceSeconds = userAvgSeconds >= generalAvgSeconds
       timesAll = []
       for score in profileScoresLogicGame:
         dates.append(str(datetime.date(score.scoreDate))[5:])
@@ -181,7 +192,8 @@ def getScores(request, gameID, levelID):
       scoresAndTimes = {
         'dates': dates,
         'times': times,
-        'timesAll': timesAll
+        'timesAll': timesAll,
+        'performanceSeconds': userPerformanceSeconds
       }
       return JsonResponse(scoresAndTimes)
     
