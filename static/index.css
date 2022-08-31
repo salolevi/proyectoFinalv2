@@ -49,6 +49,10 @@ main * {
   gap: 1.2rem;
 }
 
+.flex {
+  display: flex;
+}
+
 .we-are {
   grid-template-columns: 2fr 1fr;
 }
@@ -87,6 +91,12 @@ main * {
   border-radius: 5px;
 }
 
+.li-img {
+  margin: .8em 0;
+  max-width: 15em;
+  border-radius: 5px;
+}
+
 .content-container {
   max-width: 1000px;
   width: 80%;
@@ -111,6 +121,14 @@ main * {
   font-size: 1.2em;
   list-style: square;
   margin-left: 4rem !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.container {
+  align-content: start;
 }
 
 @media screen and (max-width: 768px) {
