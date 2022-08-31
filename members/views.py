@@ -54,7 +54,7 @@ class login_user(View):
     user = authenticate(self.request, username=username, password=password)
     if user is not None:
         login(self.request, user)
-        return redirect('main-index')
+        return redirect('games')
         # Redirect to a success page.   
     else:
       messages.success(self.request, ('El nombre de ususario o contrasena es incorrecto'))
