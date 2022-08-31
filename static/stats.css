@@ -27,6 +27,12 @@
   font-family: 'Mario', 'Comic Sans MS', sans-serif;
 }
 
+.performance-div {
+  color: rgb(10, 105, 10);
+  font-family: 'Mario', 'Comic Sans MS', sans-serif;
+  text-align: center;
+}
+
 
 @media screen and (max-width: 768px) {
   .content-container {
