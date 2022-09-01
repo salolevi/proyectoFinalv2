@@ -413,7 +413,20 @@ fetch('../../get-scores/2/2')
     const chartGameThree = new Chart(ctx, {
       type: 'line',
       data: info,
-    })
+    });
+    const container = document.getElementById('chartg3l3');
+    const performanceDiv = document.createElement('DIV');
+    performanceDiv.classList.add('performance-div');
+    const { performanceSeconds, performanceMovements } = data;
+    
+    
+    if ((performanceSeconds || performanceMovements) && !container.contains(document.querySelector(`#${container.getAttribute('id')} .no-stats-chart`))) {
+      if (performanceSeconds && performanceMovements) performanceDiv.textContent = `Superas al resto de los jugadores en tiempo y movimientos para superar el juego!`
+      else {
+        performanceDiv.textContent = `Superas al resto de jugadores en ${performanceSeconds ? 'tiempo' : ''}${performanceMovements ? 'movimientos' : ''}`;
+      }
+    } 
+    container.appendChild(performanceDiv);
   })
 
 fetch('../../get-scores/4/1')
