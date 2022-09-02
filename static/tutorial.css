@@ -25,12 +25,17 @@
   font-size: 1.2em;
 }
 
+.info-p-center {
+  text-align: center;
+}
+
 .img-container {
   text-align: center;
 }
 
 .tutorial-img {
   max-width: 10rem;
+  border-radius: 10px;
 }
 
 .opciones-img {

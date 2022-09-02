@@ -1,4 +1,3 @@
-
 const footer = document.querySelector('footer');
 
 const burgerContainer = document.querySelector('.burger-container');
