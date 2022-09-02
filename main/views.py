@@ -40,13 +40,17 @@ def averageMovements(set):
     average += instance.avgMomevemts
   return round(average/len(set), 2)
 
-class IndexView(View):
-  template_name = "index.html"
-  
-  def get(self, *args, **kwargs):
+def IndexView(request):
+  template_name = 'index.html'
+  if request.method == 'GET':
     for _user in User.objects.all():
       remove_user_time(_user)
-      
+    return render(request, template_name)
+
+class GamesView(View):
+  template_name = "games.html"
+  
+  def get(self, *args, **kwargs):   
     return render(self.request, self.template_name)
   
 class ErrorView(View):

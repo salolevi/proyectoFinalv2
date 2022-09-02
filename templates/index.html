@@ -1,43 +1,82 @@
-{% extends "base.html"%}
+{% extends 'base.html' %}
 
 {% block script %}
-{% load static %}
-<script src="{% static 'index.js' %}" defer></script>
 {% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'abs-footer.css' %}">
-{% endblock%}
+{% load static %}
+<link rel="stylesheet" href="{% static 'index.css' %}">
+<link rel="stylesheet" href="{% static 'block-footer.css' %}">
+{% endblock %}
 
 {% block logo %}
 <a href="/" class="logo"><img src="{% static 'logo/brain-logo.png' %}" alt=""></a>
 {% endblock %}
 
 {% block title %}
-<h1 class="title">Bienvenidos a CogniCices!</h1>
+<h1 class="title">Bienvenido a CogniCises!</h1>
 {% endblock %}
 
 {% block content %}
-{% if messages %}
-{% for message in messages%}
-{{message}}
-
-{%endfor%}
-{% endif %}
-<div class="menu-container">
-  <div class="menuItem-container">
-    <a href="/dislexia" class="game-section" id='dislexia'>Dislexia</a>
-    <div class="about-section">
-      <a href="{% url 'about-dislexia' %}" class="about-btn">?</a>
-      <p class="about-text">¿Qué es la dislexia?</p>
+<main class="content-container">
+  {% if request.user.is_authenticated %}
+  <section class="get-playing">
+    <p class="info-p">¡Vemos que ya has iniciado sesion!</p>
+    <a href="{% url 'games' %}" class="play-btn">A JUGAR!</a>
+  </section>
+  {% endif %} 
+  <section class="grid we-are">
+    <div class="grid-child">
+      <h2 class="sub-title sub-title-right">¿Qué es CogniCises! ?</h2>
+      <p class="info-p">
+        CogniCises! Es una plataforma diseñada para servir como lugar en común para que niños con distintas problematicas puedan relajarse, divertirse, jugar y aprender. Contamos con juegos que permiten mejorar las habilidades cognitivas de los niños según la problematica a la que esten asociados.
+      </p>
+      <p class="info-p">
+        El objetivo de CogniCises! es proveer a los niños con herramientas para que puedan aprender, mejorar y divertirse todo al alcance de un sólo click. 
+      </p>
     </div>
-  </div>
-  <div class="menuItem-container">
-    <a href="{% url 'logic' %}" class="game-section">Juegos de Logica</a>
-    <div class="about-section">
-      <a href="" class="about-btn">?</a>
-      <p class="about-text">¿Por qué jugarlos?</p>
+    <div class="grid-child girlimg-container">
+      <img src="../media/media/girl-playing.webp" alt="Niña jugando" class="index-img">
     </div>
-  </div>
-</div>
+  </section>
+  <section class="grid registering">
+    <div class="grid-child">
+      <img src="../media/media/registering.jpg" alt="Padre ayudando a niño en la computadora" class="index-img">
+    </div>
+    <div class="grid-child">
+      <h2 class="sub-title sub-title-left">
+        Cómo puedo jugar?
+      </h2>
+      <p class="info-p">
+        ¡Empezar es muy facil! Si no tienes una cuenta, puedes hacer click <a href="{% url 'createuser' %}" class="index-link">aquí</a> o dirigirte desde la barra de navegacion en la parte superior para acceder al enlace. Allí podras crearte una cuenta rellenando el formulario con tus datos. Si no sabes como hacerlo, ¡pídele ayuda a tus padres o a tu tutor para hacerlo!
+      </p>
+      <p class="info-p">
+        Una vez tengas tu cuenta, ya podras acceder a los juegos de la plataforma y jugar sin restricción!
+      </p>
+      <p class="info-p">
+        ¿Ya tienes una cuenta? ¡Fabuloso! Haz click <a href="{% url 'login' %}" class="index-link">aquí</a> para iniciar sesion.
+      </p>
+    </div>
+  </section>
+  <section class="fAQ">
+    <h2 class="sub-title">Algunas preguntas frecuentes</h2>
+    <ul class="faqs">
+      <li class="question">¿Qué necesito para poder jugar?</li>
+      <li class="answer">Con una cuenta y conexion a internet, tienes todo lo que necesitas.</li>
+      <section class="question-and-img flex">
+        <div class="container grid">
+          <li class="question no-margin">¿Cuánto debo pagar para poder jugar?</li>
+          <li class="answer"><span>La política de CogniCises! es poder brindarle a todos los chicos una oportunidad para mejorar. ¡Puedes jugar todo lo que quieras totalmente gratis!</span></li>
+        </div>
+        <img src="../media/media/not-money.jpg" alt="No aceptar dinero" class="li-img">
+      </section>
+      <li class="question">¿Puedo jugar aunque no tenga ninguna condición o problemática?</li>
+      <li class="answer">¡Por supuesto! Los juegos estan diseñados para mejorar habilidades cognitivas para niños sin importar su condición. Son seleccionados como herramientas para mejorar algunas cuestiones o dificultades en particular, ¡pero siguen siendo juegos cuyo objetivo principal es la diversión!</li>
+      <li class="question">¿Qué necesito para crearme una cuenta?</li>
+      <li class="answer">Lo primero que necesitas es la autorizacion de tus padres o tutor para poder crearte una cuenta. Asegurate de preguntarselo antes de hacerlo. Por último, ¡solo necesitas una cuenta de correo electrónico valida para poder verificar tu cuenta!</li>
+      <li class="question">¿Puedo jugar sin tener una cuenta?</li>
+      <li class="answer">Lamentablemente necesitas una cuenta verificada en CogniCises! para poder jugar. Esto es necesario ya que la plataforma recolecta la información de tus partidas en cada juego para mostrarte tu progreso.</li>
+    </ul>
+  </section>
+</main>
 {% endblock %}

@@ -8,5 +8,4 @@ Mejorar estadisticas / hecho
 
 Realizar linea de tendencia de los dos jugadores / Posible?
 
-
-
+Hacer modales para explicar como jugar al juego

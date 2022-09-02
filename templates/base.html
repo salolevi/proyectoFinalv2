@@ -17,7 +17,7 @@
   {% endblock %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;400&family=Montserrat&family=Roboto&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;400&family=Montserrat&family=Roboto&family=Nunito:wght@300&display=swap" rel="stylesheet"> 
 </head>
 <body>
   <header>
@@ -25,8 +25,8 @@
     {% endblock %}
     <nav class='nav' id="barra-nav">
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/admin">Acerca De</a></li>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="{% url 'games' %}">Juegos</a></li>
         {% if request.user.is_authenticated %}
         <li><a href="{% url 'profile' request.user.username %}">{{request.user.get_username}}</a></li>
         <li><a href="{% url 'logout' %}">Cerrar Sesion</a></li>
@@ -43,7 +43,7 @@
       <div class="dropdown-menu">
         <ul>
           <li class="dropdown_list-item"><a href="/">Home</a></li>
-          <li class="dropdown_list-item"><a href="/admin">Acerca De</a></li>
+          <li class="dropdown_list-item"><a href="{% url 'games' %}">Juegos</a></li>
           {% if request.user.is_authenticated %}
           <li class="dropdown_list-item"><a href="{% url 'profile' request.user.username %}">{{request.user.get_username}}</a></li>
           <li class="dropdown_list-item"><a href="{% url 'logout' %}">Cerrar Sesion</a></li>

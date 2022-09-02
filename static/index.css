@@ -1,0 +1,148 @@
+main * {
+  box-sizing: border-box;
+}
+
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+.sub-title {
+  font-family: 'Magic Owl', sans-serif;
+  color: rgba(150, 61, 233, 1);
+  text-align: center;
+}
+
+.play-btn {
+  padding: .75em 1.5em;
+  display: inline-block;
+  background-color: #963de9;
+  font-family: 'Mario', 'Comic Sans MS', monospace;
+  align-self: center;
+  border-radius: 10px;
+  color: goldenrod;
+  border: 5px solid goldenrod;
+  transition: all .3s;
+}
+
+.play-btn:hover {
+  background-color: goldenrod;
+  color: #eee;
+  /* border: 5px solid #eee; */
+}
+
+.get-playing {
+  display: flex;
+  justify-content: end;
+  gap: 2em;
+}
+
+.sub-title-right {
+  text-align: right;
+}
+
+.sub-title-left {
+  text-align: left;
+}
+
+.grid {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.we-are {
+  grid-template-columns: 2fr 1fr;
+}
+
+.registering {
+  grid-template-columns: 1fr 2fr;
+}
+
+.info-p {
+  margin: 1rem 0;
+  font-family: 'Dosis', sans-serif;
+  color: rgba(51 51 51 /.85);
+  text-align: justify;
+  font-size: 1.2em;
+}
+
+.index-link {
+  color:rgb(158, 66, 243);
+  font-weight: bold;
+}
+
+.index-link:hover {
+  text-decoration: underline;
+}
+
+.girlimg-container {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+
+.index-img {
+  margin: 4em auto 0 auto;
+  max-width: 15em;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.li-img {
+  margin: .8em 0;
+  max-width: 15em;
+  border-radius: 5px;
+}
+
+.content-container {
+  max-width: 1000px;
+  width: 80%;
+  min-width: unset;
+  display: grid;
+  gap: 2rem;
+}
+
+.faqs li {
+  font-family: 'Dosis', sans-serif;
+  margin: 1rem 0;
+}
+
+.question {
+  color: rgba(150 61 233 / .8);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.answer {
+  color: rgba(51 51 51 /.85);
+  font-size: 1.2em;
+  list-style: square;
+  margin-left: 4rem !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.container {
+  align-content: start;
+}
+
+@media screen and (max-width: 768px) {
+  .content-container {
+    margin-inline: 0;
+    width: auto;
+    border-radius: 15px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .content-container {
+    margin-inline: 0;
+    width: auto;
+    border-radius: 0;
+  }
+}
