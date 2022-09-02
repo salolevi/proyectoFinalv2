@@ -16,7 +16,9 @@
 .p-subtitle {
   margin-bottom: .5em;
   align-self: end;
-  color: #1e1e1e;
+  font-family: 'Magic Owl', sans-serif;
+  color: rgba(150, 61, 233, 1);
+  font-size: 1.5em;
 }
 
 .parragraphs {

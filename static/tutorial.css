@@ -1,0 +1,48 @@
+.sub-title {
+  font-family: 'Magic Owl', sans-serif;
+  color: rgba(150, 61, 233, 1);
+  text-align: center;
+}
+.sub-title-right {
+  text-align: right;
+}
+
+.sub-title-left {
+  text-align: left;
+}
+
+.game-title {
+  font-family: 'Magic Owl', sans-serif;
+  color: rgba(150, 61, 233, .8);
+  text-align: left;
+}
+
+.info-p {
+  margin: 1rem 0;
+  font-family: 'Dosis', sans-serif;
+  color: rgba(51 51 51 /.85);
+  text-align: justify;
+  font-size: 1.2em;
+}
+
+.img-container {
+  text-align: center;
+}
+
+.tutorial-img {
+  max-width: 10rem;
+}
+
+.opciones-img {
+  width: 75%;
+  max-width: unset;
+  min-width: 250px;
+}
+
+@media screen and (max-width: 768px) {
+  .content-container {
+    width: auto;
+    border-radius: 15px;
+    padding: 10px;
+  }
+}

@@ -2,6 +2,7 @@
 
 {% block css %}
 {% load static %}
+<link rel="stylesheet" href="{% static 'tutorial.css' %}">
 <link rel="stylesheet" href="{% static 'block-footer.css' %}">
 {% endblock %}
 
@@ -14,5 +15,23 @@
 {% endblock %}
 
 {% block content %}
-Xds
+<main class="content-container">
+  <section class="game-tutorial-section">
+  <h2 class="sub-title">Juegos de Dislexia</h2>
+  <h3 class="game-title">Juego de Completar</h3>
+  <p class="info-p">Descripcion: <br>En este juego, se visualizaran opciones de distintas palabras. Dos de ellas tienen errores mientras que una es la correcta.
+    <br>
+    Apretando el boton que aparece en el centro del juego:
+  </p>
+  <div class="img-container"><img class="tutorial-img" src="../media/media/reproductor.png" alt="imagen de reproductor de audio"></div>
+  <p class="info-p">Tambien, podrás ver las tres opciones de palabras que mencionamos antes, y se veran asi:</p>
+  <div class="img-container opciones-container"><img src="../media/media/opciones.jpg" alt="" class="tutorial-img opciones-img"></div>
+  <p class="info-p">
+    Al apretar el boton, se reproduce un audio de la palabra correcta. Una vez que se reprodujo el objetivo es presionar la opcion correcta de las tres.
+  </p>
+  <p class="info-p">
+    Trata de acertar la mayor cantidad posible de palabras!
+  </p>
+</section>
+</main>
 {% endblock %}
