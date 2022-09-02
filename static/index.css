@@ -161,6 +161,10 @@ main * {
   .answer {
     margin-left: .5rem !important;
   }
+
+  .sub-title {
+    text-align: center !important;
+  }
 }
 
 @media screen and (max-width: 450px) {
