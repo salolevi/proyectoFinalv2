@@ -50,7 +50,7 @@ def IndexView(request):
 class GamesView(View):
   template_name = "games.html"
   
-  def get(self, *args, **kwargs):   
+  def get(self, request):   
     return render(self.request, self.template_name)
   
 class ErrorView(View):
