@@ -80,7 +80,7 @@ main * {
 
 .girlimg-container {
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: center;
 }
 
@@ -95,6 +95,7 @@ main * {
   margin: .8em 0;
   max-width: 15em;
   border-radius: 5px;
+  align-self: center;
 }
 
 .content-container {
@@ -136,6 +137,29 @@ main * {
     margin-inline: 0;
     width: auto;
     border-radius: 15px;
+    padding: 10px;
+  }
+
+  .get-playing {
+    justify-content: center;
+  }
+
+  .get-playing * {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .content-container img {
+    display: none;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .answer {
+    margin-left: .5rem !important;
   }
 }
 
