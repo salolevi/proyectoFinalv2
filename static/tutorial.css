@@ -37,6 +37,7 @@
   width: 75%;
   max-width: unset;
   min-width: 250px;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 768px) {
