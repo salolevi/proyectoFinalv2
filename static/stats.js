@@ -29,6 +29,14 @@ fetch('../../get-scores/1/1')
       data: info,
       responsive: true
     })
+    const container = document.getElementById('chartg1l1');
+    const performanceDiv = document.createElement('DIV');
+    performanceDiv.classList.add('performance-div');
+    const { performance } = data;
+    if (performance && !container.contains(document.querySelector(`#${container.getAttribute('id')} .no-stats-chart`))) {
+      performanceDiv.textContent = 'Tu puntuacion promedio es superior a la del común de los jugadores, sigue asi!';
+      container.appendChild(performanceDiv);
+    }
 });
 
 fetch('../../get-scores/1/2')
@@ -62,6 +70,14 @@ fetch('../../get-scores/1/2')
       data: info,
       responsive: true,
     })
+    const container = document.getElementById('chartg1l2');
+    const performanceDiv = document.createElement('DIV');
+    performanceDiv.classList.add('performance-div');
+    const { performance } = data;
+    if (performance && !container.contains(document.querySelector(`#${container.getAttribute('id')} .no-stats-chart`))) {
+      performanceDiv.textContent = 'Tu puntuacion promedio es superior a la del común de los jugadores, sigue asi!';
+      container.appendChild(performanceDiv);
+    }
   });
 
   fetch('../../get-scores/1/3')
@@ -94,7 +110,15 @@ fetch('../../get-scores/1/2')
       type: 'line',
       data: info,
       responsive: true,
-    })
+    });
+    const container = document.getElementById('chartg1l3');
+    const performanceDiv = document.createElement('DIV');
+    performanceDiv.classList.add('performance-div');
+    const { performance } = data;
+    if (performance && !container.contains(document.querySelector(`#${container.getAttribute('id')} .no-stats-chart`))) {
+      performanceDiv.textContent = 'Tu puntuacion promedio es superior a la del común de los jugadores, sigue asi!';
+      container.appendChild(performanceDiv);
+    }
 })
 
 
@@ -128,7 +152,15 @@ fetch('../../get-scores/2/1')
       type: 'line',
       data: info,
       responsive: true,
-    })
+    });
+    const container = document.getElementById('chartg2l1');
+    const performanceDiv = document.createElement('DIV');
+    performanceDiv.classList.add('performance-div');
+    const { performance } = data;
+    if (performance && !container.contains(document.querySelector(`#${container.getAttribute('id')} .no-stats-chart`))) {
+      performanceDiv.textContent = 'Tu puntuacion promedio es superior a la del común de los jugadores, sigue asi!';
+      container.appendChild(performanceDiv);
+    }
 });
 
 fetch('../../get-scores/2/2')
@@ -161,7 +193,15 @@ fetch('../../get-scores/2/2')
       type: 'line',
       data: info,
       responsive: true,
-    })
+    });
+    const container = document.getElementById('chartg2l2');
+    const performanceDiv = document.createElement('DIV');
+    performanceDiv.classList.add('performance-div');
+    const { performance } = data;
+    if (performance && !container.contains(document.querySelector(`#${container.getAttribute('id')} .no-stats-chart`))) {
+      performanceDiv.textContent = 'Tu puntuacion promedio es superior a la del común de los jugadores, sigue asi!';
+      container.appendChild(performanceDiv);
+    }
   });
 
   fetch('../../get-scores/2/3')
@@ -194,7 +234,15 @@ fetch('../../get-scores/2/2')
       type: 'line',
       data: info,
       responsive: true,
-    })
+    });
+    const container = document.getElementById('chartg2l3');
+    const performanceDiv = document.createElement('DIV');
+    performanceDiv.classList.add('performance-div');
+    const { performance } = data;
+    if (performance && !container.contains(document.querySelector(`#${container.getAttribute('id')} .no-stats-chart`))) {
+      performanceDiv.textContent = 'Tu puntuacion promedio es superior a la del común de los jugadores, sigue asi!';
+      container.appendChild(performanceDiv);
+    }
   })
 
   fetch('../../get-scores/3/1')
@@ -242,8 +290,22 @@ fetch('../../get-scores/2/2')
     const chartGameThree = new Chart(ctx, {
       type: 'line',
       data: info,
-    })
-  })
+    });
+
+    const container = document.getElementById('chartg3l1');
+    const performanceDiv = document.createElement('DIV');
+    performanceDiv.classList.add('performance-div');
+    const { performanceSeconds, performanceMovements } = data;
+    
+    
+    if ((performanceSeconds || performanceMovements) && !container.contains(document.querySelector(`#${container.getAttribute('id')} .no-stats-chart`))) {
+      if (performanceSeconds && performanceMovements) performanceDiv.textContent = `Superas al resto de los jugadores en tiempo y movimientos para superar el juego!`
+      else {
+        performanceDiv.textContent = `Superas al resto de jugadores en ${performanceSeconds ? 'tiempo' : ''}${performanceMovements ? 'movimientos' : ''}`;
+      }
+    } 
+    container.appendChild(performanceDiv);
+  });
 
   fetch('../../get-scores/3/2')
   .then(res => res.json())
@@ -290,7 +352,20 @@ fetch('../../get-scores/2/2')
     const chartGameThree = new Chart(ctx, {
       type: 'line',
       data: info,
-    })
+    });
+    const container = document.getElementById('chartg3l2');
+    const performanceDiv = document.createElement('DIV');
+    performanceDiv.classList.add('performance-div');
+    const { performanceSeconds, performanceMovements } = data;
+    
+    
+    if ((performanceSeconds || performanceMovements) && !container.contains(document.querySelector(`#${container.getAttribute('id')} .no-stats-chart`))) {
+      if (performanceSeconds && performanceMovements) performanceDiv.textContent = `Superas al resto de los jugadores en tiempo y movimientos para superar el juego!`
+      else {
+        performanceDiv.textContent = `Superas al resto de jugadores en ${performanceSeconds ? 'tiempo' : ''}${performanceMovements ? 'movimientos' : ''}`;
+      }
+    } 
+    container.appendChild(performanceDiv);
   })
 
   fetch('../../get-scores/3/3')
@@ -338,7 +413,20 @@ fetch('../../get-scores/2/2')
     const chartGameThree = new Chart(ctx, {
       type: 'line',
       data: info,
-    })
+    });
+    const container = document.getElementById('chartg3l3');
+    const performanceDiv = document.createElement('DIV');
+    performanceDiv.classList.add('performance-div');
+    const { performanceSeconds, performanceMovements } = data;
+    
+    
+    if ((performanceSeconds || performanceMovements) && !container.contains(document.querySelector(`#${container.getAttribute('id')} .no-stats-chart`))) {
+      if (performanceSeconds && performanceMovements) performanceDiv.textContent = `Superas al resto de los jugadores en tiempo y movimientos para superar el juego!`
+      else {
+        performanceDiv.textContent = `Superas al resto de jugadores en ${performanceSeconds ? 'tiempo' : ''}${performanceMovements ? 'movimientos' : ''}`;
+      }
+    } 
+    container.appendChild(performanceDiv);
   })
 
 fetch('../../get-scores/4/1')
@@ -371,7 +459,15 @@ fetch('../../get-scores/4/1')
     const chartGameFour = new Chart(ctx, {
       type: 'line',
       data: info
-    })
+    });
+    const container = document.getElementById('chartg4l1');
+    const performanceDiv = document.createElement('DIV');
+    performanceDiv.classList.add('performance-div');
+    const { performanceSeconds } = data;
+    if (performanceSeconds && !container.contains(document.querySelector(`#${container.getAttribute('id')} .no-stats-chart`))) {
+      performanceDiv.textContent = 'Tu puntuacion promedio es superior a la del común de los jugadores, sigue asi!';
+      container.appendChild(performanceDiv);
+    }
   })
 
   fetch('../../get-scores/4/2')
@@ -404,7 +500,15 @@ fetch('../../get-scores/4/1')
     const chartGameFour = new Chart(ctx, {
       type: 'line',
       data: info
-    })
+    });
+    const container = document.getElementById('chartg4l2');
+    const performanceDiv = document.createElement('DIV');
+    performanceDiv.classList.add('performance-div');
+    const { performanceSeconds } = data;
+    if (performanceSeconds && !container.contains(document.querySelector(`#${container.getAttribute('id')} .no-stats-chart`))) {
+      performanceDiv.textContent = 'Tu puntuacion promedio es superior a la del común de los jugadores, sigue asi!';
+      container.appendChild(performanceDiv);
+    }
   })
 
   fetch('../../get-scores/4/3')
@@ -437,7 +541,16 @@ fetch('../../get-scores/4/1')
     const chartGameFour = new Chart(ctx, {
       type: 'line',
       data: info
-    })
+    });
+
+    const container = document.getElementById('chartg4l3');
+    const performanceDiv = document.createElement('DIV');
+    performanceDiv.classList.add('performance-div');
+    const { performanceSeconds } = data;
+    if (performanceSeconds && !container.contains(document.querySelector(`#${container.getAttribute('id')} .no-stats-chart`))) {
+      performanceDiv.textContent = 'Tu puntuacion promedio es superior a la del común de los jugadores, sigue asi!';
+      container.appendChild(performanceDiv);
+    }
   })
 
 const averageScore = document.querySelectorAll('.average-score');
