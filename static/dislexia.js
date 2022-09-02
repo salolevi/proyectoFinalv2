@@ -830,7 +830,6 @@ let words_game2_level3 = [
   'presidente'
 ];
 
-console.log(`Nivel 3: ${words_game2_level3.length}`);
 //Mezclo las palabras
 words_game1_level1.shuffle();
 words_game1_level1.length = 10;
@@ -1094,7 +1093,7 @@ const assignKeyEvents = () => {
   assignedKeyEvents = true;
   document.body.addEventListener('keyup', (ev) => {
     let actual = ev.target;
-    let isLetter = /^[a-zA-Z]$/.test(ev.key);
+    let isLetter = /^[a-zA-Zñ]$/.test(ev.key);
     if (actual.classList.contains('letra-empty') && isLetter) {
       let emptyLettersCount = document.querySelectorAll('.letra-empty').length;
       if (actual.value.length === Number(actual.getAttribute('maxlength'))) {
