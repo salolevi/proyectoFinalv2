@@ -459,7 +459,15 @@ fetch('../../get-scores/4/1')
     const chartGameFour = new Chart(ctx, {
       type: 'line',
       data: info
-    })
+    });
+    const container = document.getElementById('chartg4l1');
+    const performanceDiv = document.createElement('DIV');
+    performanceDiv.classList.add('performance-div');
+    const { performanceSeconds } = data;
+    if (performanceSeconds && !container.contains(document.querySelector(`#${container.getAttribute('id')} .no-stats-chart`))) {
+      performanceDiv.textContent = 'Tu puntuacion promedio es superior a la del común de los jugadores, sigue asi!';
+      container.appendChild(performanceDiv);
+    }
   })
 
   fetch('../../get-scores/4/2')
@@ -492,7 +500,15 @@ fetch('../../get-scores/4/1')
     const chartGameFour = new Chart(ctx, {
       type: 'line',
       data: info
-    })
+    });
+    const container = document.getElementById('chartg4l2');
+    const performanceDiv = document.createElement('DIV');
+    performanceDiv.classList.add('performance-div');
+    const { performanceSeconds } = data;
+    if (performanceSeconds && !container.contains(document.querySelector(`#${container.getAttribute('id')} .no-stats-chart`))) {
+      performanceDiv.textContent = 'Tu puntuacion promedio es superior a la del común de los jugadores, sigue asi!';
+      container.appendChild(performanceDiv);
+    }
   })
 
   fetch('../../get-scores/4/3')
@@ -525,7 +541,16 @@ fetch('../../get-scores/4/1')
     const chartGameFour = new Chart(ctx, {
       type: 'line',
       data: info
-    })
+    });
+
+    const container = document.getElementById('chartg4l3');
+    const performanceDiv = document.createElement('DIV');
+    performanceDiv.classList.add('performance-div');
+    const { performanceSeconds } = data;
+    if (performanceSeconds && !container.contains(document.querySelector(`#${container.getAttribute('id')} .no-stats-chart`))) {
+      performanceDiv.textContent = 'Tu puntuacion promedio es superior a la del común de los jugadores, sigue asi!';
+      container.appendChild(performanceDiv);
+    }
   })
 
 const averageScore = document.querySelectorAll('.average-score');
