@@ -68,6 +68,7 @@ header {
   align-items: center;
   font-family: 'Magic Owl', sans-serif;
   box-sizing: border-box;
+  gap: 3em;
 }
 
 .absolute-footer {
@@ -78,6 +79,26 @@ header {
 
 .block-footer {
   display: none;
+}
+
+.footer-ul {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+}
+
+.footer-link img {
+  width: 1.4em;
+  aspect-ratio: 1;
+  filter: invert(100%) sepia(6%) saturate(46%) hue-rotate(50deg) brightness(121%) contrast(100%);
+}
+
+.footer-link img:hover {
+  filter: invert(69%) sepia(59%) saturate(2920%) hue-rotate(306deg) brightness(102%) contrast(81%);
+}
+
+.rights {
+  color: #fff;
 }
 
 a {

@@ -67,8 +67,22 @@
   </div>
   {% block content %}
   {% endblock %}
-  <footer class="footer absolute-footer">All rights reserved</footer>
-  <footer class="footer block-footer">All rights reserved</footer>
+  <footer class="footer absolute-footer"><nav>
+    <ul class="footer-ul">
+      <li><a href="https://www.linkedin.com/in/salomon-giorgio-levi-aparain-69b8aa170/" class="footer-link" target="_blank"><img src="{% static 'icons/linIn.svg'%}" alt="linkedIn profile"></a></li>
+      <li><a href="https://github.com/salolevi" class="footer-link" target="_blank"><img src="{% static 'icons/github.svg'%}" alt=""></a></li>
+    </ul>
+  </nav>
+  <span class="rights">All rights reserved</span></footer>
+  <footer class="footer block-footer">
+    <nav>
+      <ul class="footer-ul">
+        <li><a href="https://www.linkedin.com/in/salomon-giorgio-levi-aparain-69b8aa170/" class="footer-link" target="_blank"><img src="{% static 'icons/linIn.svg'%}" alt="linkedIn profile"></a></li>
+        <li><a href="https://github.com/salolevi" class="footer-link" target="_blank"><img src="{% static 'icons/github.svg'%}" alt=""></a></li>
+      </ul>
+    </nav>
+    <span class="rights">All rights reserved</span>
+  </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 </body>
