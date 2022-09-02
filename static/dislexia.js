@@ -1365,12 +1365,37 @@ const startGame = () => {
   startButtonTwo.classList.add('start-two');
   gameContainer.appendChild(startButtonOne);
   gameContainer.appendChild(startButtonTwo);
+  const helpContainer = document.createElement('div');
+  helpContainer.classList.add('help-container')
+  const helpLink = document.createElement('a');
+  helpLink.classList.add('help-link');
+  helpLink.textContent = '?';
+  helpLink.setAttribute('href', '/tutorials');
+  helpLink.setAttribute('target', '_blank');
+  const tutorialText = document.createElement('p');
+  tutorialText.classList.add('about-text');
+  tutorialText.classList.add('about-game');
+  tutorialText.textContent = 'Como jugar?';
+  helpContainer.appendChild(helpLink);
+  helpContainer.appendChild(tutorialText);
+  gameContainer.appendChild(helpContainer);
+  
+  helpLink.addEventListener('mouseenter', e => {
+    tutorialText.style.opacity = '1';
+  });
+
+  helpLink.addEventListener('mouseleave', e => {
+    tutorialText.style.opacity = '0';
+  });
+
   startButtonOne.addEventListener('click', (ev) => {
+    
     selectAudio.play();
     ev.target.style.display = 'none';
     gameContainer.style.animationName = 'backgroundLevel1';
     gameContainer.style.animationPlayState = 'running';
     gameContainer.removeChild(startButtonTwo);
+    gameContainer.removeChild(helpContainer);
     gameContainer.removeChild(welcomeContainer);
     setTimeout(() => {
       renderGameOne(1);
@@ -1382,6 +1407,7 @@ const startGame = () => {
     gameContainer.style.animationName = 'backgroundLevel2';
     gameContainer.style.animationPlayState = 'running';
     gameContainer.removeChild(startButtonOne);
+    gameContainer.removeChild(helpContainer);
     gameContainer.removeChild(welcomeContainer);
     setTimeout(() => {
       renderGameTwo(1);

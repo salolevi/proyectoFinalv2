@@ -177,6 +177,32 @@ canvas {
 
 }
 
+.help-container {
+  position: absolute;
+  top: 1em;
+  left: calc(100% + 2rem);
+  display: flex;
+  gap: 1em;
+}
+
+.help-link {
+  display: block;
+  background-color: #e2d734;
+  border: 5px solid #222;
+  color: #222;
+  border-radius: 10px;
+  padding: .5em 1em;
+  font-size: 1.5em;
+  font-family: 'Mario', 'Comic Sans MS', sans-serif;
+  cursor: pointer;
+  text-align: center;
+}
+
+.help-link:hover {
+  background-color: #222;
+  color: #e2d734;
+}
+
 @keyframes messageAnimation {
   0% {
     transform: translateY(-120vh);

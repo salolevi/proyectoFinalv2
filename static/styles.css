@@ -759,7 +759,11 @@ span {
   text-align: center;
   font-family: 'Dosis', sans-serif;
   opacity: 0;
-  transition: opacity .25s ease-in;
+  transition: opacity .25s ease-in !important;
+}
+
+.about-game {
+  margin: 0;
 }
 
 @media screen and (max-width:860px) {
