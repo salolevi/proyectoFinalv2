@@ -204,3 +204,7 @@ def getScores(request, gameID, levelID):
 def aboutDislexia (request):
   if request.method == 'GET':
     return render (request, 'about-dislexia.html')
+
+def TutorialView(request):
+  if request.method == 'GET':
+    return render(request, 'tutorials.html')

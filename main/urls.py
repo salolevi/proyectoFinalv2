@@ -10,5 +10,6 @@ urlpatterns = [
     path('send-score', views.send_score, name='send-score'),
     path('get-scores/<gameID>/<levelID>', views.getScores, name='get-scores'),
     path('about-dislexia', views.aboutDislexia, name='about-dislexia'),
-    path('logica', views.LogicGame, name='logic')
+    path('logica', views.LogicGame, name='logic'),
+    path('tutorials', views.TutorialView, name='tutorials')
 ]
