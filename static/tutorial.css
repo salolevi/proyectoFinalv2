@@ -45,10 +45,34 @@
   border-radius: 10px;
 }
 
+.imgs-container {
+  flex-wrap: wrap;
+}
+
+.imgs-container * {
+  flex: 1;
+  width: 100%;
+  flex-basis: 150px;
+  flex-wrap: wrap;
+}
+
+.curved-arrow {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .content-container {
     width: auto;
     border-radius: 15px;
     padding: 10px;
+  }
+}
+
+@media screen and (max-width: 518px) {
+  .aside-arrow {
+    display: none;
+  }
+  .curved-arrow {
+    display: block;
   }
 }
